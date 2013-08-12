@@ -1,0 +1,196 @@
+<!--#set var="TITLE" value="TopoTools Plugin, Version 1.0"-->
+<!--#include virtual="/include/header-over.shtml"-->
+
+<!-- CONTENT STARTS HERE -->
+
+<h3>Scope and usage</h3>
+<p>Starting with VMD version 1.8.7 it is now possible to store the complete topology
+information, i.e. not only bonds, but also angle, dihedral, and improper definitions
+as well as their force field type labels (if available). This now allows to do
+a large variety of modifications to topology data or even building topologies from
+scratch. The focus lies hereby on being able to perform many operations manually
+or scripted and thus being less focused on and optimized for biomolecules like psfgen.
+</p>
+
+<p>In combination with the new command <tt>mol new atoms &lt;number&</tt> it is now
+also possible to do many operations directly that previously required writing and 
+manipulating temporary files and reading them back into VMD, or even write complete
+molecule or simulation data readers in Tcl script. This is especially useful for
+file formats, where additional input from the user is required, for example reading
+LAMMPS format "data" (=topology) files, where the "style" of the <i>Atoms</i> section
+cannot be deduced from the data. Of course write support is also possible.</p>
+
+<p>The underlying Tcl script API in VMD itself had been designed to be minimalistic,
+since most operations are not computationally demanding and could be programmed with
+scripting. The <b>topotools</b> packages is supposed to provide a <i>middleware</i>, i.e.
+flexible script commands that make it easier to use the existing interface.</p>
+
+<p>Finally <b>topotools</b> also contains some utilities and applications for more 
+complex operations like combining multiple molecules (=different files) or 
+multiple selections into one new molecule, or building larger systems by replicating
+a given unitcell.</p>
+
+
+<h3>Main command interface</h3>
+<p>This is the <i>middleware</i> part of the package that provides abstract 
+operations on top of the low-level API. This is modeled after the example
+of the internal <tt>mol</tt> and <tt>molinfo</tt> command, or the 
+<tt>pbc</tt> command from the PBCTools package to provide a somewhat 
+consistent interface to the functionality. All command lines start with 
+the <tt>topo</tt> keyword and then take a subcommand name to determine
+the actual functionality that is requested.</p>
+
+<pre>
+ usage: topo &lt;command&gt; [args...] &lt;flags&gt;
+ 
+ common flags:
+   -molid     &lt;num&gt;|top    molecule id (default: 'top')
+   -sel       &lt;selection&gt;  atom selection function or text (default: 'all')
+
+ flags only applicable to "bond" commands:
+   -bondtype  &lt;typename&gt;   bond type name (default: unknown)
+   -bondorder &lt;bondorder&gt;  bond order parameter (default: 1)
+ 
+ commands:
+   help                    prints this message
+ 
+   numbonds                returns the number of unique bonds.
+   numbondtypes            returns the number of bond types.
+   bondtypenames           returns the list of bond types names.
+   clearbonds              deletes all bonds. 
+   retypebonds             resets all bond types. 
+ 
+   addbond &lt;id1&gt; &lt;id2&gt;     (re-)defines a single bond.
+   delbond &lt;id1&gt; &lt;id2&gt;     deletes a single bond, if it exists.
+ 
+   getbondlist [type|order|both|none]
+      returns a list of unique bonds, optionally
+      including bond order and bond type.
+   setbondlist &lt;list&gt; [type|order|both|none]
+      resets all bonds from a list in the same
+      format as returned by 'topo getbondlist'.
+      bond order or -type are reset to defaults if not given.
+ 
+   num(angle|dihedral|improper)s       returns the number of unique (angle|dihedral|improper)s
+   num(angle|dihedral|improper)types   returns the number of (angle|dihedral|improper) types
+   (angle|dihedral|improper)typenames  returns the list of bond type names
+   clear(angle|dihedral|improper)s     deletes all (angle|dihedral|improper)s. 
+   sort(angle|dihedral|improper)s      sorts the list of (angle|dihedral|improper)s
+                                       according to atom index and removes duplicates
+
+   retype(angle|dihedral|improper)s    resets all angle types. 
+ 
+   addangle &lt;id1&gt; &lt;id2&gt; &lt;id3&gt; [&lt;type&gt;] (re-defines) a single angle.
+   delangle &lt;id1&gt; &lt;id2&gt; &lt;id3&gt;  (re-defines) a single angle.
+   add(dihedral|improper) &lt;id1&gt; &lt;id2&gt; &lt;id3&gt; &lt;id4&gt; [&lt;type&gt;] (re-defines) a single (dihedral|improper).
+   del(dihedral|improper) &lt;id1&gt; &lt;id2&gt; &lt;id3&gt; &lt;id4&gt; (re-defines) a single (dihedral|improper).
+ 
+ 
+   getanglelist  returns the list of angle definitions
+                 in the form {type &lt;id1&gt; &lt;id2&gt; &lt;id3&gt;}
+   setanglelist &lt;list&gt;
+                 resets angle definitions from a list in the same
+                 format as retured by 'topo getanglelist'
+   get(dihedral|improper)list  returns the list of (dihedral|improper) definitions
+                 in the form {type &lt;id1&gt; &lt;id2&gt; &lt;id3&gt; &lt;id4&gt;}
+   set(dihedral|improper)list &lt;list&gt;
+                 resets (dihedral|improper) definitions from a list in the same
+                 format as retured by 'topo get(dihedral|improper)list'
+ 
+ NOTE: for angle, dihedral, and improper lists, the
+       type field currently has to be always present.
+
+   readlammpsdata &lt;filename&gt; [&lt;atomstyle&gt;]
+      read atom properties, bond, angle, dihedral and other related data
+      from a LAMMPS data file. 'atomstyle' is the value given to the 'atom_style'
+      parameter ('angle', 'atomic', 'bond', 'charge', 'full', 'molecular'). default value is 'full'.
+      the molecule/selection this info is being added to must have a matching number of atoms.
+
+  writelammpsdata &lt;filename&gt; [&lt;atomstyle&gt;]
+      write atom properties, bond, angle, dihedral and other related data
+      to a LAMMPS data file. 'atomstyle' is the value given to the 'atom_style'
+      parameter ('angle', 'atomic', 'bond', 'charge', 'full', 'molecular'). default value is 'full'.
+      Only data that is present is written. 
+
+</pre>
+
+<h3>Utility functions:</h3>
+<p>These are useful and convenient tools written on top of the topotools API.
+You can access them directly with their <tt>::TopoTools::</tt> namespace
+prefix or use <tt>namespace import ::TopoTools::&lt;pattern&gt;</tt> to
+import some or all of them into your current namespace.</p>
+
+<h4>mergemols</h4>
+Combines multiple separate molecules into one file. Usage:<br>
+<pre>
+  ::TopoTools::mergemols &lt;list of molecule ids&gt;
+</pre>
+
+Example usage:
+<pre>
+package require topotools 1.0
+
+# load to be merged molecules into VMD
+set midlist {}
+set mol [mol new part1.psf waitfor all]
+mol addfile part1.pdb
+lappend midlist $mol
+set mol [mol new part2.psf waitfor all]
+mol addfile part2.pdb
+lappend midlist $mol
+
+# do the magic
+set mol [::TopoTools::mergemols $midlist]
+animate write psf merged.psf $mol
+animate write pdb merged.pdb $mol
+</pre>
+
+
+<h4>selections2mol</h4>
+This is very similar to the previous <tt>mergemols</tt> command. It combines 
+one or multiple atom selections, which can be taken from different molecules, 
+into one new molecule. Usage:<br>
+<pre>
+  ::TopoTools::selections2mol &lt;list of atom selection functions&gt;
+</pre>
+
+Example usage:
+<pre>
+package require topotools 1.0
+
+set sellist {}
+set sel [atomselect 0 protein]
+lappend sellist $sel
+set sel [atomselect 0 protein]
+$sel frame 200
+$sel moveby {50.0 50.0 0.0}
+lappend sellist $sel
+set sel [atomselect 1 "same residue as (within 3.0 of chain L)"]
+lappend sellist $sel
+
+# do the magic
+set mol [::TopoTools::selections2mol $sellist]
+animate write psf combinedsel.psf $mol
+animate write pdb combinedsel.pdb $mol
+</pre>
+
+
+<h4>replicatemol</h4>
+Replicate the current unitcell according to integer replicate counts.
+This currently assumes an orthorhombic cell.
+<pre>
+package require topotools 1.0
+
+# load a molecule
+set mol [mol new pegc12e8-small.xml type hoomd waitfor all]
+
+# do the magic
+set newmol [::TopoTools::replicatemol $mol 2 2 1 ]
+animate write hoomd replicated.xml $newmol
+</pre>
+
+<h3>Author</h3>
+<p><a href="http://www.cmm.upenn.edu/~akohlmey/">Axel Kohlmeyer</a>.</p>
+
+
+<!--#include virtual="/include/footer-over.shtml"-->

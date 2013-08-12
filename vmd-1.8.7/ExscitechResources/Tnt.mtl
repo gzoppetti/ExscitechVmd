@@ -1,0 +1,14 @@
+newmtl tnta
+Kd 0.2000 0.2000 0.2000
+illum 0
+map_Kd TntSideA.tga
+
+newmtl tntb
+Kd 0.2000 0.2000 0.2000
+illum 0
+map_Kd TntSideB.tga
+
+newmtl tntc
+Kd 0.2000 0.2000 0.2000
+illum 0
+map_Kd TntSideC.tga

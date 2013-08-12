@@ -1,0 +1,223 @@
+<diagram>
+  <listOfNodes class="linked-list">
+    <class name="VMDApp">
+      <attribute>Animation* anim</attribute>
+      <attribute>DisplayDevice* display</attribute>
+      <attribute>Scene* scene</attribute>
+      <attribute>CommandQueue* commandQueue</attribute>
+      <attribute>MoleculeList* moleculeList</attribute>
+      <attribute>GeometryList* geometryList</attribute>
+      <method>scene_rotate_by</method>
+      <method>scene_rotate_to</method>
+      <method>scene_translate_by</method>
+      <method>scene_translate_to</method>
+      <method>scene_scale_by</method>
+      <method>scene_scale_to</method>
+      <method>display_update</method>
+      <method>display_update_ui</method>
+      <method>molecule_new</method>
+      <method>molecule_load</method>
+      <method>molecule_delete</method>
+      <method>molecule_activate</method>
+      <method>molecule_is_active</method>
+      <method>molecule_display</method>
+      <method>molecule_is_displayed</method>
+      <method>num_molreps</method>
+      <method>molrep_set_style</method>
+      <method>molrep_get_style</method>
+      <method>molrep_get_color</method>
+      <method>molrep_set_color</method>
+      <method>molrep_set_selection</method>
+      <method>molrep_get_selection</method>
+      <method>VMDupdate</method>
+      <method>add_menu</method>
+      <method>remove_menu</method>
+      <method>menu_name</method>
+      <method>menu_status</method>
+      <method>menu_location</method>
+      <method>menu_show</method>
+      <method>menu_move</method>
+      <method>menu_select_mol</method>
+      <method>display_set_screen_height</method>
+      <method>display_get_screen_height</method>
+      <method>display_set_nearclip</method>
+      <method>display_set_farclip</method>
+      <location x="11" y="7"/>
+    </class>
+    <class name="Scene">
+      <attribute>LightState lightState[]</attribute>
+      <attribute>DisplayColor* background</attribute>
+      <attribute>DisplayColor* backgradtop</attribute>
+      <attribute>DisplayColor* backgradbot</attribute>
+      <attribute>DisplayColor* foreground</attribute>
+      <method>define_light</method>
+      <method>activate_light</method>
+      <method>rotate_light</method>
+      <method>move_light</method>
+      <method>light_pos</method>
+      <method>light_color</method>
+      <method>reset_lights</method>
+      <method>light_active</method>
+      <location x="242" y="8"/>
+    </class>
+    <class name="MoleculeList">
+      <attribute>Molecule* molList[]</attribute>
+      <method>mol_index_from_id</method>
+      <method>mol_from_id</method>
+      <method>add_molecule</method>
+      <method>del_molecule</method>
+      <method>del_all_molecules</method>
+      <method>set_color</method>
+      <method>set_representation</method>
+      <method>set_selection</method>
+      <method>set_material</method>
+      <method>add_rep</method>
+      <method>change_rep</method>
+      <method>change_repcolor</method>
+      <method>change_repmethod</method>
+      <method>change_repsel</method>
+      <method>del_rep</method>
+      <method>active</method>
+      <method>activate</method>
+      <method>inactivate</method>
+      <method>displayed</method>
+      <method>show</method>
+      <method>hide</method>
+      <method>fixed</method>
+      <method>fix</method>
+      <method>unfix</method>
+      <location x="426" y="5"/>
+    </class>
+    <class name="DrawMolecule">
+      <attribute>default attribute</attribute>
+      <method>del_rep</method>
+      <method>add_rep</method>
+      <method>force_recalc</method>
+      <method>current</method>
+      <method>get_frame</method>
+      <method>get_last_frame</method>
+      <method>delete_Frame</method>
+      <method>append_frame</method>
+      <method>duplicate_frame</method>
+      <method>scale_factor</method>
+      <location x="931" y="3"/>
+    </class>
+    <class name="Displayable">
+      <attribute>Matrix4 rotm</attribute>
+      <attribute>float globt[3]</attribute>
+      <attribute>float centt[3]</attribute>
+      <attribute>float scale</attribute>
+      <attribute>Matrix4 tm</attribute>
+      <method>need_matrix_recalc</method>
+      <method>add_child</method>
+      <method>remove_child</method>
+      <method>displayed</method>
+      <method>off</method>
+      <method>on</method>
+      <method>fixed</method>
+      <method>fix</method>
+      <method>unfix</method>
+      <method>scale_on</method>
+      <method>scale_off</method>
+      <method>scaling</method>
+      <method>rot_on</method>
+      <method>rot_off</method>
+      <method>rotating</method>
+      <method>cent_trans_on</method>
+      <method>cent_trans_off</method>
+      <method>cent_translating</method>
+      <method>glob_trans_on</method>
+      <method>glob_trans_off</method>
+      <method>glob_translating</method>
+      <method>reset_transformation</method>
+      <method>set_scale</method>
+      <method>mult_scale</method>
+      <method>add_rot</method>
+      <method>set_rot</method>
+      <method>set_glob_trans</method>
+      <method>add_glob_trans</method>
+      <method>set_cent_trans</method>
+      <method>add_cent_trans</method>
+      <method>change_center</method>
+      <method>change_material</method>
+      <method>curr_material</method>
+      <method>update_material</method>
+      <method>delete_material</method>
+      <location x="1055" y="2"/>
+    </class>
+    <class name="Molecule">
+      <method>rename</method>
+      <method>num_files</method>
+      <method>get_new_frames</method>
+      <method>next_frame</method>
+      <method>cancel</method>
+      <method>file_in_progress</method>
+      <method>prepare</method>
+      <method>addForce</method>
+      <method>addPersistentForce</method>
+      <location x="560" y="4"/>
+    </class>
+    <class name="BaseMolecule">
+      <attribute>int nAtoms</attribute>
+      <attribute>int nResidues</attribute>
+      <attribute>int nWaters</attribute>
+      <attribute>int nSegments</attribute>
+      <attribute>int nFragments</attribute>
+      <attribute>int nProteinFragments</attribute>
+      <attribute>int nNucleicFragments</attribute>
+      <attribute>NameList&lt;int&gt; atomNames</attribute>
+      <attribute>NameList&lt;int&gt; atomTypes</attribute>
+      <attribute>NameList&lt;int&gt; resNames</attribute>
+      <attribute>NameList&lt;int&gt; chainNames</attribute>
+      <attribute>NameList&lt;int&gt; segNames</attribute>
+      <attribute>NameList&lt;int&gt; altlocNames</attribute>
+      <attribute>ResizeArray&lt;int&gt; angleTypes</attribute>
+      <attribute>ResizeArray&lt;int&gt; dihedralTypes</attribute>
+      <attribute>ResizeArray&lt;int&gt; improperTypes</attribute>
+      <attribute>NameList&lt;int&gt; bondTypeNames</attribute>
+      <attribute>NameList&lt;int&gt; angleTypeNames</attribute>
+      <attribute>NameList&lt;int&gt; dihedralTypeNames</attribute>
+      <attribute>NameList&lt;int&gt; improperTypeNames</attribute>
+      <method>radius</method>
+      <method>mass</method>
+      <method>charge</method>
+      <method>beta</method>
+      <method>occupancy</method>
+      <method>count_bonds</method>
+      <method>init_atoms</method>
+      <method>add_atom</method>
+      <method>add_bond</method>
+      <method>id</method>
+      <method>molname</method>
+      <method>atom</method>
+      <method>residue</method>
+      <method>fragment</method>
+      <method>add_volume_data</method>
+      <location x="691" y="3"/>
+    </class>
+    <class name="MoleculeGraphics">
+      <attribute>default attribute</attribute>
+      <method>add_point</method>
+      <method>add_pickpoint</method>
+      <method>add_triangle</method>
+      <method>add_trinorm</method>
+      <method>add_tricolor</method>
+      <method>add_line</method>
+      <method>add_Cylinder</method>
+      <method>add_cone</method>
+      <method>add_sphere</method>
+      <method>add_text</method>
+      <method>use_materials</method>
+      <method>use_color</method>
+      <method>use_material</method>
+      <method>delete_id</method>
+      <method>delete_all</method>
+      <method>replac_id</method>
+      <method>index_id</method>
+      <method>num_elements</method>
+      <method>default method</method>
+      <location x="1199" y="4"/>
+    </class>
+  </listOfNodes>
+  <listOfRelationships class="linked-list"/>
+</diagram>

@@ -1,0 +1,25 @@
+Children Hierarchy on root at startup
+
+11Displayable
+	12DisplayColor
+	12DisplayColor
+	12DisplayColor
+	12DisplayColor
+	13DisplayRocker
+	4Axes
+	3FPS
+	12GeometryList
+	5Stage
+	8VMDTitle
+	8Molecule
+		16MoleculeGraphics
+		9DrawForce
+		11DrawMolItem
+		
+		
+BUG:
+Reset Transformation will break scale on fixed() objects.
+
+NOTE:
+display_get_height, display_get_Width return the value in INCHES, not pixels.
+Use display_get_size for the size in pixels.

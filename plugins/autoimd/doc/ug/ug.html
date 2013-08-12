@@ -1,0 +1,469 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>AutoIMD User's Guide</TITLE>
+<META NAME="description" CONTENT="AutoIMD User's Guide">
+<META NAME="keywords" CONTENT="ug">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ug.css">
+
+</HEAD>
+
+<BODY BGCOLOR="WHITE">
+<!--Navigation Panel-->
+<IMG WIDTH="81" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next_inactive"
+ SRC="file:/usr/local/lib/latex2html/icons/nx_grp_g.gif"> 
+<A NAME="tex2html7"
+  HREF="http://www.ks.uiuc.edu/Research/vmd/">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/lib/latex2html/icons/up.gif"></A> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/lib/latex2html/icons/prev_g.gif">   
+<BR>
+<B> Up:</B> <A NAME="tex2html8"
+  HREF="http://www.ks.uiuc.edu/Research/vmd/">Main VMD Page</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<P>
+
+<P>
+
+<P>
+<BR>
+<BR>
+<BR>
+
+<P>
+<DIV ALIGN="CENTER">
+				
+<BR>
+<BR>
+<BR>
+<BR>
+  <FONT SIZE="+4">AutoIMD User's Guide</FONT>		
+<BR>
+<BR>
+<BR>
+<BR>
+  <FONT SIZE="+2">Version 1.3</FONT>		
+<BR>
+<BR>
+<BR>
+  				
+<BR>
+<BR>
+<BR>
+<BR>
+  <FONT SIZE="+2">Jordi Cohen, Paul Grayson</FONT>			
+<BR>
+<BR>
+<BR>
+June 23, 2003
+<BR>
+<BR>
+<BR>
+  				
+<BR>
+<BR>
+<BR>
+<BR>
+  <FONT SIZE="+1">Theoretical Biophysics Group</FONT>                  
+<BR>  <FONT SIZE="+1">University of Illinois and Beckman Institute</FONT>  
+<BR>  <FONT SIZE="+1">405 N. Mathews</FONT>                                
+<BR>  <FONT SIZE="+1">Urbana, IL  61801</FONT>                             
+<BR>
+</DIV>
+<BR>
+<BR>
+
+<P>
+
+<P>
+
+<H1><A NAME="SECTION00010000000000000000">
+Introduction to AutoIMD</A>
+</H1>
+
+<P>
+AutoIMD is a means of quickly starting a NAMD molecular dynamics 
+simulations from atomic coordinates in VMD. The simulation can then be visualized in
+real-time on the VMD graphics screen. With the appropriate devices (such
+as a VRPN tracker), the user can also interact with a running simulation
+and apply forces to individual atoms or residues. Such an interaction is 
+extremely useful when building and modeling systems, and can also be used
+to gain precious insights by tinkering with key residues and atoms. <BR> 
+
+<P>
+While the <A NAME="tex2html1"
+  HREF="http://www.ks.uiuc.edu/Research/vmd/imd/"><I>Interactive Molecular Dynamics</I></A>
+(IMD) technology that enables 
+all of this is an intrinsic part of VMD, AutoIMD makes it much more
+ accessible and useful. In general terms, AutoIMD adds the following capabilities: <BR> 
+<BR>
+
+<UL>
+<LI>The user can instantaneously get a simulation running for a subset of his/her system which is specified through a VMD atom selection. 
+</LI>
+<LI>Instead of a full-blown simulation, AutoIMD can also be used to quickly 
+minimize the energies of parts of a system (<EM>e.g.</EM>: on which external
+ manipulations have been performed, for example).
+</LI>
+<LI>It provides a graphical user interface for setting basic simulation parameters as well as for specifying which machine or cluster to run the simulation on.
+</LI>
+</UL>
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:autoimd-diagram"></A><A NAME="247"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 1:</STRONG>
+An example AutoIMD session. The molten zone is in the center, surrounded by the fixed zone and then by the excluded zone. A pointer is being used to interact with the system in real-time.</CAPTION>
+<TR><TD><IMG
+ WIDTH="300" HEIGHT="286" BORDER="0"
+ SRC="img1.gif"
+ ALT="\begin{figure}\begin{center}
+\par\par\latex{
+\includegraphics[scale=0.625]{autoimd-diagram} }
+\end{center} \end{figure}"></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+Fig.&nbsp;<A HREF="ug.html#fig:autoimd-diagram">1</A> is an example of an AutoIMD session.  When using
+AutoIMD, you can divide up your system into three distinct regions,
+shown in the figure:<A NAME="tex2html3"
+  HREF="#foot253"><SUP>1</SUP></A> <BR> 
+<BR>
+
+<UL>
+<LI>The <EM>molten zone</EM> is the region where the atoms are allowed
+to move freely, typically surrounded on all sides by the fixed zone.
+This is the part of the system that you are interested in interacting
+with (typically using a <EM>pointer</EM> as shown). You can refer to this
+region through the <TT>imdmolten</TT> atomselect macro.
+</LI>
+<LI>The <EM>fixed zone</EM> is included in the simulation, but its
+atoms are held fixed. Forces from atoms in the fixed zone will
+affect the moving atoms and constrain their motion. You can refer to this
+region through the <TT>imdfixed</TT> macro.
+</LI>
+<LI>The <EM>excluded zone</EM> is removed from your system before
+the simulation is started and are ignored by the simulation (in order to speed it up).
+You can refer to this region through the <TT>imdexcluded</TT> macro.
+</LI>
+</UL>
+
+<P>
+
+<H1><A NAME="SECTION00020000000000000000">
+AutoIMD Requirements</A>
+</H1>
+
+<P>
+To get started using AutoIMD with your system, you will need the following: <BR> 
+<BR>
+
+<OL>
+<LI>A computer running UNIX, with VMD (version 1.8.1 or later)
+ installed. Computers runnning Windows are not currently supported.
+</LI>
+<LI>An installed copy of NAMD, either on the local machine or on a 
+cluster. If you wish to run your simulations on a local cluster, you 
+need to perform some additional steps which are detailed later, in section
+ <A HREF="ug.html#par:customize">4</A>.
+</LI>
+<LI>If you wish to use a haptic device, you must also set up VMD
+ accordingly (see the VMD documentation).
+</LI>
+<LI>Any kind of coordinate file (PDB, DCD, etc.) as well as a PSF file
+ describing your system.
+</LI>
+<LI>A CHARMM parameter file for your simulation.
+</LI>
+</OL>
+
+<P>
+
+<H1><A NAME="SECTION00030000000000000000">
+How to Run an AutoIMD session</A>
+</H1>
+
+<P>
+1. Start VMD, load your system (make sure to include a PSF file), and start AutoIMD
+from the <B>Extensions&nbsp;<IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\to$"> autoimd</B> menu item (in the VMD main window). The AutoIMD window 
+(Fig.&nbsp;<A HREF="ug.html#fig:autoimd-GUI">2</A>) should appear. <BR>
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:autoimd-GUI"></A><A NAME="269"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2:</STRONG>
+The AutoIMD main window.</CAPTION>
+<TR><TD><IMG
+ WIDTH="421" HEIGHT="288" BORDER="0"
+ SRC="img3.gif"
+ ALT="\begin{figure}\begin{center}
+\par\par\latex{
+\includegraphics[scale=0.625]{autoimd-GUI} }
+\end{center} \end{figure}"></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+2. Create your AutoIMD scratch directory, where AutoIMD will store its
+temporary files (by default, AutoIMD looks for the directory <TT>$HOME/autoimd</TT>). 
+The scratch directory needs to be accessible on both
+your local machine and the host on which NAMD will run. Do not use this directory
+to store your own files. <BR>
+
+<P>
+3. Select the <B>Settings<IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\to$">Simulation Parameters...</B> menu item from 
+the AutoIMD window. The dialog box shown in Fig.&nbsp;<A HREF="ug.html#fig:simsettings-GUI">3</A> should pop up. Use this dialog box to tell AutoIMD the location of your scratch directory.
+You must also specify a <A NAME="tex2html6"
+  HREF="http://www.pharmacy.umaryland.edu/faculty/amackere/research.html">CHARMM parameter</A>
+(<I>e.g.</I>, par_file.inp) file for your simulation (or a 
+space-separated list of files). To do this, first delete the default text that is already in the param file text entry field, and then add all the files that you need (if you need more than one), one at a time, using the <B>Add</B> button. Finally, click <B>OK</B> to close this dialog box when you are done. <BR>
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="fig:simsettings-GUI"></A><A NAME="292"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3:</STRONG>
+The AutoIMD Simulation Parameters dialog box.</CAPTION>
+<TR><TD><IMG
+ WIDTH="490" HEIGHT="201" BORDER="0"
+ SRC="img4.gif"
+ ALT="\begin{figure}\begin{center}
+\par\par\latex{
+\includegraphics[scale=0.625]{simsettings-GUI} }
+\end{center} \end{figure}"></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+4. Specify the molten zone by entering a VMD atom selection into the text box. <BR>
+
+<P>
+ <I>NOTE: Because
+of the way that AutoIMD currently works, you should avoid referencing atoms by their <TT>index</TT> 
+or <TT>residue</TT> number (since they will change in the simulated system), instead, refer to 
+atoms using their <TT>name</TT>, <TT>resid</TT> and <TT>segname</TT> or <TT>chain</TT>, <I>etc</I>.</I> <BR>  
+
+<P>
+5. Optionally, you can also change the fixed zone that is used to hold the molten zone into place, although the default should work. 
+Note that the fixed zone that you specify might later be adjusted by AutoIMD to include entire
+residues, this is normal. <BR>
+
+<P>
+6. Pick a server and adjust the number of processors. <BR>
+
+<P>
+7. Click the <B>Submit</B> button to start your NAMD simulation. <BR>
+
+<P>
+ <I>NOTE: If you get an error message saying ``Unable to
+    open psf file xxx.psf.", you need to reload your PSF file
+    on top of your current molecule one more time and click  Submit again.</I> <BR>  
+
+<P>
+8. Click <B>Connect</B> to connect to the simulation with IMD.
+You should see the atoms start to move.  <BR>
+
+<P>
+ <I>NOTE: It might take a few seconds for the NAMD
+    simulation to get started. During this time, VMD will not be able
+    to connect and you will see some error messages of the type: 
+      Error connecting to host on port xxxx. This is
+    normal, and these errors can usually be ignored. VMD will connect as soon
+    as NAMD is ready.</I> <BR>  
+
+<P>
+ <I>NOTE: If after waiting a long time, AutoIMD still does not connect, your
+simulation may have had trouble starting properly. Make sure that your simulation is actually running.
+ If not, your NAMD job may have aborted. Check the NAMD output in the  autoimd.log file in your scratch directory to 
+find the reason (NAMD will say there why it crashed, etc.). Once this is fixed, you can click on Discard and then Submit, to try again.
+If your simulation <I>is</I> running, AutoIMD may be trying to connect to the wrong machine or port number.</I> <BR>  
+
+<P>
+9. Interact with your system for a while.  You can use the <B>Mouse&nbsp;<IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\to$"> Force</B> menu items, or a 3D tracker to pull on your atoms. Alternatively, just can also just watch your system equilibrate. At any
+point during your simulation, you can save a PDB snapshot of your system by
+choosing the <B>File&nbsp;<IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\to$"> Save Full PDB As...</B> menu item. <BR>
+
+<P>
+10. If you want to stop the simulation temporarily, click
+<B>Pause</B>.  Click <B>Pause</B> again to continue. <BR>
+
+<P>
+11. When you are done, click <B>Finish</B>.  The coordinates
+of your atoms in your originally loaded molecule will updated, and the
+simulation will stop. <B>Discard</B> also stops the simulation, but
+does not update the coordinates and you will be brought back to your initial state. 
+Use it if anything goes wrong. <BR>
+
+<P>
+
+<H1><A NAME="SECTION00040000000000000000"></A>
+<A NAME="par:customize"></A>
+<BR>
+Making your settings permanent and adding new servers
+</H1>
+
+<P>
+If you use AutoIMD a lot, you might wish that could set your default settings 
+in a startup script and not have to worry about typing them in each time. Almost
+everything in AutoIMD is customizable by setting the appropriate variables. <BR> 
+
+<P>
+To set your default scratch directory and CHARMM parameter file, you can include 
+the following lines (provided as an example only) in your <TT>.vmdrc</TT> startup file. Be sure to use absolute paths! <BR> 
+<BR>
+<PRE>
+    package require autoimd
+
+    autoimd set scratchdir  /home/user/scratchdir
+    autoimd set parfiles    {/home/par_paramfile1.inp  /home/par_paramfile2.inp  ...}
+    [...]
+</PRE>
+
+<P>
+For more advanced customization, it is recommended that you copy the file 
+<TT>autoimd-local.tcl</TT> that is distributed with the AutoIMD package, to your local
+directory. You can then edit it to suit your needs (it is self-documented). Have it be run at
+ startup by adding the following line to your <TT>.vmdrc</TT> file (be sure to use the right path): <BR> 
+<BR>
+<PRE>
+    source autoimd-local.tcl
+</PRE>
+
+<P>
+If you have access to a local cluster for running NAMD, this file is also where you would tell
+ AutoIMD how to access it. <BR> 
+
+<P>
+
+<H1><A NAME="SECTION00050000000000000000">
+Customizing the representations used during AutoIMD</A>
+</H1>
+
+<P>
+AutoIMD uses multiple representations to help you keep track of the
+molten, fixed, and excluded zones in your simulation.  When a
+simulation is submitted, two molecules are used at once: one
+containing the original, complete structure and one containing just
+the atoms needed for IMD.  To avoid showing the same atoms twice,
+AutoIMD displays only the excluded and fixed zone of the original molecule. 
+To accomplish this, the atomselection macros <TT>imdexclude</TT>,
+<TT>imdfixed</TT>, and <TT>imdmolten</TT> are defined to correspond to
+the three regions of the simulation. You can take advantage of them to 
+select desired parts of your simulations. <BR> 
+
+<P>
+You can customize both molecules' representations with the VMD
+Graphics Form, just as in a normal VMD session. AutoIMD saves the
+representation used for the IMD molecule when ending a simulation and
+reloads it when a new simulation is submitted.  The IMD representation
+can be permanently customized through AutoIMD's <TT>imdrep</TT> variable. 
+Here is an example of how it can be used: <BR> 
+<BR>
+<PRE>
+    autoimd set imdrep {
+        mol representation Bonds 0.300000 6.000000
+        mol color Name
+        mol selection "imdmolten and not hydrogen and not water"
+        mol material Opaque
+        mol addrep $imdmol
+
+        mol representation VDW 1.000000 8.000000
+        mol color Name
+        mol selection "imdmolten and numbonds 0"
+        mol material Opaque
+        mol addrep $imdmol
+
+        mol representation Bonds 0.300000 6.000000
+        mol color Name
+        mol selection "imdmolten and water"
+        mol material Opaque
+        mol addrep $imdmol
+
+        mol representation Tube 0.400000 6.000000
+        mol color ColorID 12
+        mol selection "imdfrozen"
+        mol material Opaque
+        mol addrep $imdmol
+    }
+</PRE>
+
+<P>
+To view the current IMD representation, you would type (at the VMD prompt): <BR> 
+<BR>
+<PRE>
+    puts $AutoIMD::imdrep
+</PRE>
+
+<P>
+
+<H1><A NAME="SECTION00060000000000000000">
+Getting Additional Help</A>
+</H1>
+
+<P>
+For additional help, as well as to provide feedback, please send an email to <TT>vmdks.uiuc.edu</TT>. <BR> 
+
+<P>
+<BR><HR><H4>Footnotes</H4>
+<DL>
+<DT><A NAME="foot253">... figure:</A><A NAME="foot253"
+ HREF="ug.html#tex2html3"><SUP>1</SUP></A>
+<DD> The ``molten zone'' method used here
+was first discussed in the context of IMD in J.&nbsp;Prins et&nbsp;al.
+A&nbsp;virtual environment for steered molecular dynamics. <I>Future
+Generation Computer Systems</I> <B>15</B>, 485-495 (1999).
+
+</DL><HR>
+<!--Navigation Panel-->
+<IMG WIDTH="81" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next_inactive"
+ SRC="file:/usr/local/lib/latex2html/icons/nx_grp_g.gif"> 
+<A NAME="tex2html7"
+  HREF="http://www.ks.uiuc.edu/Research/vmd/">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/local/lib/latex2html/icons/up.gif"></A> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/local/lib/latex2html/icons/prev_g.gif">   
+<BR>
+<B> Up:</B> <A NAME="tex2html8"
+  HREF="http://www.ks.uiuc.edu/Research/vmd/">Main VMD Page</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+vmd@ks.uiuc.edu
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,171 @@
+<!--#set var="TITLE" value="IR Spectral Density Calculator Plugin, Version 1.0"-->
+<!--#include virtual="/include/header-over.shtml"-->
+
+<!-- CONTENT STARTS HERE -->
+
+    <a href="irspecgui.png"><img style="border: 0; padding: 0 0 1em 1em"
+	src="irspecgui_small.png" align="right"></a>
+
+    <p>This plugin provides a graphical interface to compute spectral densities
+      from trajectories using time series data created with the <tt>measure dipole</tt>
+      command in VMD and a custom plugin to compute the auto-correlated fourier 
+      transform. Please note that this is using the <b>total dipole moment</b> of the selection
+      and not averaging over individual molecules. The latter and other types of auto-correlations
+      can be done through the script interface described below. The spectral density plugin also 
+      supports a selection of thermal corrections to the peak intensities. It is recommended to
+      stick to the default (harmonic) unless you know what you are doing.
+      You have to have a trajectory already loaded and have the option to 
+      view the resulting spectrum in a <a href="../multiplot/">MultiPlot</a>
+      window and write it to a file.</p>
+
+    <h3>Remarks</h3>
+<img style="border: 0; padding: 0 0 1em 1em" src="multiplot_spectrum.png" align="right">
+    <p>In order to get meaningful results, the selection of atoms has to have
+     (partial) charges assigned, so loading a corresponding topology file (.psf, .parm7), 
+     that contains this information is highly recommended. For cases, where this is not 
+      available, you have the options to either guess charges using the CHARMM guess routine
+     from the <a href="../apbsrun/">APBSrun plugin</a> or to load an atom name to
+     charge mapping from an external file. Instead of using the simple guess, you
+     may want to consider using the <a href="../autopsf/">AutoPSF plugin</a> to create 
+     a matching .psf file for your system.</p>
+     
+    <p>This plugin can also be used to compute spectral densities from ab initio
+     MD simulations, if one has computed maximally localized Wannier functions along
+     the trajectory. A corresponding manually loadable charge mapping would look
+     like be following (element X stands for the Wannier centers):</p>
+<pre>
+     # pseudopotential valence charges from cpmd run. 
+     Zn  12.0 
+     O    6.0 
+     N    5.0
+     C    4.0
+     H    1.0
+     X   -2.0 # electron pairs from localization
+</pre>
+
+    <h3>Script Interface and Examples</h3>
+    <p>Apart from going through the GUI, which is limited to computing power spectra of a group of
+      selected atoms through auto-correlation of the total dipole moment, one can also use the lowlevel 
+      command, <tt>specden</tt>, for more flexible auto-correlation data calculations. 
+      Below are a few example application scripts. For very large data sets, the specden plugin
+      can also be compiled multi-threaded through OpenMP (not done by default to avoid incompatibilities
+      with the more general VMD threading infrastructure that is currently not available to plugins).
+    <p>
+    <h4>Syntax</h4>
+      The <tt>specden</tt> command is added to the tcl script interpreter through:
+<pre>
+    package require specden
+</pre>
+    And used as <tt>specden &lt;x-,y-,z-data&gt; &lt;deta t&gt; &lt;max. freq&gt; ?&lt;norm&gt;? ?&lt;temp&gt;? ?&lt;oversamp&gt;?</tt> for example like this:
+<pre>
+    specden $dat 10.0 3000.0 harmonic 300.0
+</pre>
+    <p>The individual arguments are:
+    <dl>
+      <dt>&lt;x-,y-,z-data&gt;</dt>
+      <dd>This is a list of lists of xyx-triples, which can be any data like 
+      dipole moment vectors, velocities, positions, etc. for one-, or two-dimensional
+      data sets, the missing entries can be padded with zeroes.</dd>
+      <dt>&lt;delta t&gt;</dt>
+      <dd>Real time between the individual data sets in atomic units (1 a.u. ~= 0.0242 fs, 1ps ~= 41341.4 a.u.).</dd>
+      <dt>&lt;max. freq&gt;</dt>
+      <dd>Largest frequency to be considered in the calculation in wavenumbers (cm^-1).
+      The maximum allowed value depends on the size of the data set.</dd>
+      <dt>&lt;norm&gt;</dt>
+      <dd>Renormalization/Correction method of the spectral density. Optional.<br>
+        <tt>fourier:</tt> is the plain power spectrum of the input data (normalized to unity in the 
+        output frequency range; <tt>classical:</tt> is the power spectrum with a prefactor of 
+        <i>\omega ( 1 - \exp(-\beta \hbar \omega) )</i> corresponding to the classical/Gordon limit;
+        <tt>kubo:</tt> is the power spectrum with a prefactor of <i>\omega \tanh(\beta \hbar \omega/2)</i>
+        corresponding to the Kubo correction; <tt>harmonic:</tt> is the power spectrum with a prefactor 
+        of <i>\omega \beta \hbar \omega</i>  corresponding to the high temperature / harmonic limit (this is 
+        the recommended correction factor); <tt>schofield:</tt> is the power spectrum with a prefactor 
+        of <i>\omega ( 1 - \exp(-\beta \hbar \omega) ) \exp(\beta \hbar \omega /2)</i> corresponding to Schofield's 
+        correction.<br> (Default: harmonic).</dd>
+      <dt>&lt;temp&gt;</dt>
+      <dd>Temperature of the system in Kelvin. Needed for the corrections from above. 
+        Optional.<br> (Default: 300.0)</dd>
+      <dt>&lt;oversamp&gt;</dt>
+      <dd>Integer that determines the noisyness and resolution of the resulting spectrum 
+        through oversampling. Optional. A value of 1 gives maximal resolution and noise.
+        Larger values reduce noice corresponding to a square root law.</dd>
+    </dl>
+    </p>
+     
+    <h4>Example 1: data from external file</h4>
+    We assume the data file has its information in columns (here: CPMD style ENERGIES files)
+    and we want to compute the power spectrum of column two for a pair of files and 
+    plot them using the multiplot plugin to compare them.
+<pre>
+    # compare effect of fictitious mass on fictitious vibronic DOS in CP dynamics
+    package require specden
+    package require multiplot
+
+    set fp [open "ENERGIES-cp-200au" "r"]
+    set dlist {}
+    while { [gets $fp dat] >= 0 } {
+        lappend dlist [list [lindex $dat 1] 0.0 0.0]
+    }
+    close $fp
+    lassign [specden $dlist 4.0 20000.0] flist slist
+    set ph [multiplot -x $flist -y $slist -title "EKINC Power Spectrum" -lines -linewidth 3 -marker points -plot]
+
+    set fp [open "ENERGIES-cp-400au" "r"]
+    set dlist {}
+    while { [gets $fp dat] >= 0 } {
+        lappend dlist [list [lindex $dat 1] 0.0 0.0]
+    }
+    lassign [specden $dlist 4.0 20000.0] flist slist
+    close $fp
+    $ph add $flist $slist -lines -linecolor red -linewidth 3 -plot 
+</pre>
+
+    <h4>Example 2: Position auto-correlation</h4>
+    We want to compute the power spectrum of all H labeled atoms from a position 
+    auto-correlation function (works the same way for velocity auto-correlation
+    functions, if your trajectory file contains velocities instead of positions).
+    This example works in text mode and the output is a file with the individual
+    spectra as columns and an averaged spectrum as the last column.
+<pre>
+    # calculate power spectrum from position auto-correlation of hydrogen atoms
+    package require specden
+
+    set mol [mol new {h2o.psf} waitfor all]
+    mol addfile {TRAJEC-cp-200.xyz} waitfor all
+
+    set sel [atomselect $mol {name H}]
+    set nf [molinfo $mol get numframes]
+    set na [$sel num]
+
+    set reslist {}
+    for {set a 0} {$a < $na} {incr a} {
+        set dlist {}
+        for {set f 0} {$f < $nf} {incr f} {
+            $sel frame $f
+            lappend dlist [lindex [$sel get {x y z}] $a]
+        }
+        lassign [specden $dlist 400.0 3000.0 harm 330.0 1] flist slist
+        lappend reslist $slist
+    }
+
+    # write out the result as: fequency, h1, h2, ..., <h>
+    set fp [open "posacfspec-h.dat" "w"]
+    set ns [llength $flist]
+    for {set i 0} {$i < $ns} {incr i} {
+        puts -nonewline $fp "[lindex $flist $i] "
+        set avg 0.0
+        for {set a 0} {$a < $na} {incr a} {
+            set val [lindex $reslist $a $i]
+            puts -nonewline $fp "$val "
+            set avg [expr {$avg + $val}]
+        }
+        puts $fp "[expr $avg / $na]"
+    }
+    close $fp
+</pre>
+    
+<h3>Author</h3>
+<p><a href="http://www.cmm.upenn.edu/~akohlmey/">Axel Kohlmeyer</a>.</p>
+
+<!--#include virtual="/include/footer-over.shtml"-->
+</BODY></HTML>

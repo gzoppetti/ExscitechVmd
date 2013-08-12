@@ -1,0 +1,98 @@
+Information about how to write new games using the ExSciTech framework
+
+CREATING A NEW GAME
+===================
+
+1. Create a new folder in MuVmd/vmd-1.8.7/src/Exscitech/Games to hold
+your game source code, as well as game icon (optional) and html game
+instructions (also optional)
+
+2. Create a class that extends the Game class provided in
+src/Exscitech/Games and implements all virtual methods.
+
+3. Modify the following classes (in src/Exscitech/Games):
+
+     GameController
+
+	Add an identifier for your game to the ExscitechGame enum
+	
+        In the switch statement in the startNewGame method, add a case
+        for your game enum that sets ms_currentGame to be a new
+        instance of your game 
+    
+     GameInfoManager
+
+	This class consists of several methods, each with a switch
+	statement that returns a value based on game type. Add a case
+	for your game enum in these methods: 
+	getGameType (required - returns the category, learning or 
+	  job-submit, of a game)
+	getGameTitle (required - name of game as you want it to appear) 
+	gameHasOfflineMode (optional - defaults to false, return true 
+	  if you provide offline functionality)
+	getGameIconPath (optional - path of game icon, if you provide one) 
+	getGameInstructionsPath (optional - path of html instructions, if 
+	  you provide them).
+	
+
+4. Modify the Makefile (MuVmd/vmd-1.8.7/src/Makefile)
+
+   Under the EXSCITECH_GAMES_CPP list, add Exscitech/Games/<game
+   folder>/<game name>.C To use Qt slots (for button callbacks, etc.)
+   add Exscitech/Games/<game folder>/<game name>.hpp to the
+   EXSCITECH_MOC_HEADERS list (Note: to use slots, you must have also
+   redefined Q_OBJECT in your header file)
+	
+5. Modify the build script (MuVmd/MuScripts/BuildVmd.sh)
+
+   In the list of mkdir's, add the line: 
+   mkdir ../vmd-1.8.7/LINUXAMD64/Exscitech/Games/<game folder>
+	
+6. Add the directory
+
+    Manually add the folder (same name as the one you created to hold
+    your game) in vmd-1.8.7/LINUXAMD64/Exscitech/Games
+    
+ 
+CREATING GAME WINDOWS
+=====================
+
+For your main game window, create and store a new QtWindow. The
+QtWindow ensures that key and mouse events are forwarded to your game
+(via the "handleKeyboardInput" "handleKeyboardUp" "handleMouseInput"
+"handleMouseMove" "handleMouseRelease" and "handleMouseWheel"
+functions). It also properly terminates the game when closed. To add
+an exit button, you can simply connect the button's clicked signal to
+your window's close slot.
+
+To display the VMD graphics widget inside your window, get the
+VmdGlWidget (GameController::ms_vmdGlWindow) and add it to your
+window's layout (or do this manually with setParent and
+setGeometry). Once the window is visible, the Vmd update loop will run
+and graphics can be displayed. NOTE: Allow at least one Vmd cycle
+between making the window visible and adding any graphics, to ensure
+they display properly.
+
+The Game class automatically gives you methods to handle key and mouse
+presses in the window. To create callbacks to respond to button
+presses or other Qt events from widgets in you window, define Q_OBJECT
+in your header file and make the additional modification to the
+Makefile described in #4 above.
+
+SERVER COMMUNICATION
+====================
+(TODO: fill this in once protocol established)
+
+ENDING A GAME
+============= 
+
+The state of the Vmd graphics widget must be restored when a game
+ends, so as not to interfere with other games run later. You should
+remove any molecules that were loaded and restore any other settings
+that were changed. If you set the VmdGlWidget to respond to any vmd
+events, you should call the widget's "restoreDefaults" method before
+exiting.  CAUTION: before deleting the game window in your game's
+destructor, you must first remove the VmdGlWidget from the window with
+GameController::ms_vmdGlWindow->setParent(NULL). Otherwise the Vmd
+widget will be destroyed along with the window and the application
+will crash.

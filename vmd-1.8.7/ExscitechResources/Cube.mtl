@@ -1,0 +1,5 @@
+# mat0
+newmtl crate
+Kd 0.2000 0.2000 0.2000
+illum 0
+map_Kd DefaultTexture.tga

@@ -1,0 +1,35 @@
+Note: These are the Exscitech changes made to core VMD.
+
+Displayable.h
+	-Only allow a displayable to translation, rotate, or scale only if the parent allows it. 
+
+DisplayDevice.h
+	-added methods to get the clip planes.
+	-in set_eye_dir - added const correctness.
+
+DisplayDevice.C
+	-Normalize the eye direction.
+
+DisplayDevice.h
+	-virtual void makeContextCurrent
+
+FltkOpenGLDisplayDevice.C
+	-Need GLEW before GL and GLU
+
+OpenGLRenderer.C
+	-Commented out glEnabledClientState.
+	-Ensure OpenGL context is set first (void normal())
+	-Disable vertex array state x 2
+
+Scene.C
+	-Call to drawGraphics()
+
+VMDApp.C
+	-Spliced in define for QtOpenGLDisplayDevice
+
+vmdmain.C
+	-GameController::initPlugin
+	-brute force QT initialization
+	-GameController::updatePlugin
+	-GameController::shutdownPlugin
+

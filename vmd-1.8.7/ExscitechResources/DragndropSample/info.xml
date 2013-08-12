@@ -1,0 +1,34 @@
+<info>
+	<protein>
+		<name>Da Classic</name>
+		<file>0.pdb</file>
+	</protein>
+	<protein>
+		<name>Something</name>
+		<file>1.pdb</file>
+	</protein>
+	<protein>
+		<name>Protein 3</name>
+		<file>2.pdb</file>
+	</protein>
+	<ligand>
+		<name>Mr Ligand</name>
+		<file>3.pdb</file>
+	</ligand>
+	<ligand>
+		<name>Atomonizer</name>
+		<file>4.pdb</file>
+	</ligand>
+	<ligand>
+		<name>Der Ligand</name>
+		<file>5.pdb</file>
+	</ligand>
+	<ligand>
+		<name>Numbah 4</name>
+		<file>6.pdb</file>
+	</ligand>
+	<ligand>
+		<name>Mudcrab</name>
+		<file>7.pdb</file>
+	</ligand>
+</info>

@@ -1,0 +1,257 @@
+##
+## Makefile for parallel ion placement tool
+##
+
+# Command (if any) needed to patch the Intel C/C++ compiler's 
+# resulting binary so it can run unhindered on AMD processors.
+# By default this is set to 'touch', since it only matters on x86
+# platforms, and only then when using Intel C/C++ compilers.
+HACKICXXBINARY = touch
+
+default:
+	@echo "Pick a build:"
+	@echo "---------------"
+	@echo "  aix5-xlc         (32-bit)"
+	@echo "  aix5-64-xlc      (64-bit)"
+	@echo "  irix6-cc         (32-bit, mips3)"
+	@echo "  irix6-64-cc      (64-bit, mips4)"
+	@echo "  linux-gcc        (32-bit)"
+	@echo "  linux-gcc-simple (32-bit)"
+	@echo "  linux-gcc-amd    (64-bit)"
+	@echo "  linux-gcc-amd2   (64-bit)"
+	@echo "  linux-gcc-debug  (32-bit)"
+	@echo "  linux-icc        (32-bit, P4/Xeon tuned)"
+	@echo "  linux-icc-thr    (32-bit, P4/Xeon tuned, SSE, multithreaded)"
+	@echo "  linux-icc-sse2   (32-bit, P4/Xeon tuned, SSE2)"
+	@echo "  linux-icc-sse3   (32-bit, P4/Xeon tuned, SSE3)"
+	@echo "  linux-ia64-thr   (64-bit, Itanium2 tuned, NCSA Altix)"
+	@echo "  solaris          (32-bit)"
+	@echo "  solaris-64       (64-bit)"
+	@echo "---------------"
+	@echo "  make <build>"
+
+
+aix5-xlc:
+	$(MAKE) all \
+	"CC  = xlc" \
+	"CFLAGS   = -w -qinlglue -qarch=com -qtune=pwr3" \
+	"CXX  = xlC" \
+	"CXXFLAGS   = -w -qinlglue -qarch=com -qtune=pwr3" \
+	"ARCH = AIX5" \
+	"LFLAGS = -lm"
+
+aix5-64-xlc:
+	$(MAKE) all \
+	"CXX  = xlc" \
+	"CFLAGS   =  -w -qinlglue -q64 -qarch=com -qtune=pwr4" \
+	"CXX  = xlC" \
+	"CXXFLAGS   =  -w -qinlglue -q64 -qarch=com -qtune=pwr4" \
+	"ARCH = AIX5_64" \
+	"LFLAGS = -lm"
+
+irix6-cc:
+	$(MAKE) all \
+	"CC  = cc" \
+	"CFLAGS   =  -O2 -fullwarn -n32 -mips3" \
+	"CXX  = CC" \
+	"CXXFLAGS   =  -O2 -fullwarn -n32 -mips3" \
+	"ARCH = IRIX6" \
+	"LFLAGS = -lm"
+
+irix6-64-cc:
+	$(MAKE) all \
+	"CC  = cc" \
+	"CFLAGS   =  -O2 -fullwarn -64 -mips4" \
+	"CXX  = CC" \
+	"CXXFLAGS   =  -O2 -fullwarn -64 -mips4" \
+	"ARCH = IRIX6_64" \
+	"LFLAGS = -lm"
+
+linux-gcc:
+	$(MAKE) all \
+	"CC  = cc" \
+	"CFLAGS   = -Wall -m32 -O5 -ffast-math -fomit-frame-pointer -fno-math-errno" \
+	"CXX  = c++" \
+	"CXXFLAGS   = -Wall -m32 -O5 -ffast-math -fomit-frame-pointer -fno-math-errno" \
+	"ARCH = LINUX" \
+	"LFLAGS = -lm"
+
+linux-cuda:
+	$(MAKE) gpuionize \
+	"CC  = cc" \
+	"CFLAGS   = -Wall -m32 -O5 -ffast-math -fomit-frame-pointer -fno-math-errno -DCUDA" \
+	"CXX  = c++" \
+	"CXXFLAGS   = -Wall -m32 -O5 -ffast-math -fomit-frame-pointer -fno-math-errno" \
+	"ARCH = LINUX" \
+	"LFLAGS = -lm"
+
+linux-cuda-thr:
+	$(MAKE) gpuionize \
+	"CC  = cc" \
+	"CFLAGS   = -Wall -m32 -O5 -ffast-math -fomit-frame-pointer -fno-math-errno -DCUDA -DTHR" \
+	"CXX  = c++" \
+	"CXXFLAGS   = -Wall -m32 -O5 -ffast-math -fomit-frame-pointer -fno-math-errno" \
+	"ARCH = LINUX" \
+	"LFLAGS = -lm -lpthread"
+
+linux-gcc-mgrid:
+	$(MAKE) all \
+	"CC  = cc" \
+	"CFLAGS   = -Wall -m64 -O5 -ffast-math -fomit-frame-pointer -fno-math-errno -I/home/dhardy/Linux/include/mdx -DMGRID" \
+	"CXX  = c++" \
+	"CXXFLAGS   = -Wall -m64 -O5 -ffast-math -fomit-frame-pointer -fno-math-errno -I/home/dhardy/Linux/include/mdx -DMGRID" \
+	"CXX  = c++" \
+	"ARCH = LINUXAMD64" \
+	"LFLAGS = -lm -L/home/dhardy/Linux/lib -lmgrid"
+
+linux-gcc-simple:
+	$(MAKE) all \
+	"CC  = cc" \
+	"CFLAGS   = -Wall -m32 -O2 " \
+	"CXX  = c++" \
+	"CXXFLAGS   = -Wall -m32 -O2 " \
+	"ARCH = LINUX" \
+	"LFLAGS = -lm"
+
+linux-gcc-amd:
+	$(MAKE) all \
+	"CC  = cc" \
+	"CFLAGS   = -Wall -m64 -O5 -ffast-math -fomit-frame-pointer -fno-math-errno" \
+	"CXX  = c++" \
+	"CXXFLAGS   = -Wall -m64 -O5 -ffast-math -fomit-frame-pointer -fno-math-errno" \
+	"ARCH = LINUXAMD64" \
+	"LFLAGS = -lm"
+
+linux-gcc-amd2:
+	$(MAKE) all \
+	"CC  = cc" \
+	"CFLAGS   = -Wall -m64 -O5 -ffast-math -fomit-frame-pointer -fno-math-errno -fno-trapping-math -ffinite-math-only" \
+	"CXX  = c++" \
+	"CXXFLAGS   = -Wall -m64 -O5 -ffast-math -fomit-frame-pointer -fno-math-errno -fno-trapping-math -ffinite-math-only" \
+	"ARCH = LINUXAMD64" \
+	"LFLAGS = -lm"
+
+linux-gcc-debug:
+	$(MAKE) all \
+	"CC  = cc" \
+	"CFLAGS   = -Wall -m32 -g -DDEBUG" \
+	"CXX  = c++" \
+	"CXXFLAGS   = -Wall -m32 -g -DDEBUG" \
+	"ARCH = LINUX" \
+	"LFLAGS = -lm"
+
+linux-ia64-thr:
+	$(MAKE) all \
+	"CC  = icc" \
+	"CFLAGS   = -fast -static -DTHR" \
+	"CXX  = icpc" \
+	"CXXFLAGS   = -fast -static -DTHR" \
+	"ARCH = LINUXIA64" \
+	"LFLAGS = -lm -lpthread"
+
+linux-icc:
+	$(MAKE) all \
+	"CC  = icc" \
+	"CFLAGS   = -axW -fno-exceptions -fomit-frame-pointer -fno-math-errno -no-prec-sqrt -pc32 -vec-report=3 -ipo -O3 -static" \
+	"CXX  = icpc" \
+	"CXXFLAGS   = -axW -fno-exceptions -fomit-frame-pointer -fno-math-errno -no-prec-sqrt -pc32 -vec-report=3 -ipo -O3 -static" \
+	"ARCH = LINUX" \
+	"LFLAGS = -lm"
+
+linux-icc-thr:
+	$(MAKE) all \
+	"CC  = icc" \
+	"CFLAGS   = -axW -fno-exceptions -fomit-frame-pointer -fno-math-errno -no-prec-sqrt -pc32 -vec-report=3 -ipo -O3 -static -DTHR" \
+	"CXX  = icpc" \
+	"CXXFLAGS   = -axW -fno-exceptions -fomit-frame-pointer -fno-math-errno -no-prec-sqrt -pc32 -vec-report=3 -ipo -O3 -static -DTHR" \
+	"ARCH = LINUX" \
+	"LFLAGS = -lm -lpthread"
+
+linux-icc-sse2:
+	$(MAKE) all \
+	"CC  = icc" \
+	"CFLAGS   = -fno-exceptions -fomit-frame-pointer -fno-math-errno -fast -no-prec-sqrt -pc32 -axP -vec-report=3" \
+	"CXX  = icpc" \
+	"CXXFLAGS   = -fno-exceptions -fomit-frame-pointer -fno-math-errno -fast -no-prec-sqrt -pc32 -axP -vec-report=3" \
+	"HACKICXXBINARY = ../icchack/intel_check_executable_patch" \
+	"ARCH = LINUX" \
+	"LFLAGS = -lm"
+
+linux-icc-sse3:
+	$(MAKE) all \
+	"CC  = icc" \
+	"CFLAGS   = -fno-exceptions -fomit-frame-pointer -fno-math-errno -fast -no-prec-sqrt -pc32 -msse3 -vec-report=3" \
+	"CXX  = icpc" \
+	"CXXFLAGS   = -fno-exceptions -fomit-frame-pointer -fno-math-errno -fast -no-prec-sqrt -pc32 -msse3 -vec-report=3" \
+	"HACKICXXBINARY = ../icchack/intel_check_executable_patch" \
+	"ARCH = LINUX" \
+	"LFLAGS = -lm"
+
+linux-icc-sse3-64:
+	$(MAKE) all \
+	"CC  = icc" \
+	"CFLAGS   = -m64 -fno-exceptions -fomit-frame-pointer -fno-math-errno -fast -no-prec-sqrt -pc32 -msse3 -vec-report=3" \
+	"CXX  = icpc" \
+	"CXXFLAGS   = -m64 -fno-exceptions -fomit-frame-pointer -fno-math-errno -fast -no-prec-sqrt -pc32 -msse3 -vec-report=3" \
+	"HACKICXXBINARY = ../icchack/intel_check_executable_patch" \
+	"ARCH = LINUXAMD64" \
+	"LFLAGS = -lm"
+
+solaris:
+	$(MAKE) all \
+	"CC  = cc" \
+	"CFLAGS   = -v -native -xarch=native -fast" \
+	"CXX  = CC" \
+	"CXXFLAGS   = -v -native -xarch=native -fast" \
+	"ARCH = SOLARIS2" \
+	"LFLAGS = -lm"
+	
+solaris-64:
+	$(MAKE) all \
+	"CC  = cc" \
+	"CFLAGS   = -v -xarch=native64 -fast -native" \
+	"CXX  = CC" \
+	"CXXFLAGS   = -v -xarch=native64 -fast -native" \
+	"ARCH = SOLARIS2_64" \
+	"LFLAGS = -lm"
+
+
+IONBINS = cionize 
+IONOBJS = cionize.o energymgrid.o energythr.o \
+	 getplugins.o hash.o threads.o  util.o
+
+GPUOBJS = cudaenergythr.o
+
+all: $(IONBINS)
+
+.c.o:
+	$(CC) $(CFLAGS) -I$(PLUGINDIR)/include -I$(PLUGINDIR)/$(ARCH)/molfile -c $<
+
+cionize: $(IONOBJS)
+	$(CXX) $(CXXFLAGS) $(IONOBJS) -o $@ $(LFLAGS) -L$(PLUGINDIR)/$(ARCH)/molfile -lmolfile_plugin -L/home/johns/vmd/lib/netcdf/lib_$(ARCH) -lnetcdf -L/home/johns/vmd/lib/tcl/lib_$(ARCH) -ltcl8.4 -lm -ldl
+	$(HACKICXXBINARY) $@
+
+CUDACC = nvcc
+CUDAHOME = /Projects/vmd/cuda/sdk
+CUDAINCS = -I$(CUDAHOME)/common/inc
+CUDALIBS = -L$(CUDAHOME)/common/lib -lcuda -lcudart
+CUDACCFLAGS = -O3 -Xcompiler "-m32" $(CUDAINCS)
+cudaenergythr.o:
+	$(CUDACC) $(CUDACCFLAGS) -c cudaenergythr.cu
+
+gpuionize: $(IONOBJS) $(GPUOBJS)
+	$(CXX) $(CXXFLAGS) $(IONOBJS) $(GPUOBJS) -o $@ $(LFLAGS) -L$(PLUGINDIR)/$(ARCH)/molfile -lmolfile_plugin -L/home/johns/vmd/lib/netcdf/lib_$(ARCH) -lnetcdf -L/home/johns/vmd/lib/tcl/lib_$(ARCH) -ltcl8.4 $(CUDALIBS) -ldl
+
+test: 
+	./cionize -n 4 -b 10 -r 3.0 -i 1.0 -g 0.5 -p 24 ../testfiles/helix.pdb testoutput.pdb
+	@echo "Comparing test output with known-correct run results..."
+	diff testoutput.pdb ../testfiles/output.pdb.test
+
+test-runionize:
+	../scripts/runionize.pl ../testfiles/runionize.conf
+	@echo "Comparing test output with known-correct run results..."
+	diff testoutput-runionize.pdb ../testfiles/output.pdb.test
+
+clean:
+	rm -f $(IONBINS) $(IONOBJS) $(GPUOBJS) ./*~ *.s testoutput*.pdb
+

@@ -1,0 +1,106 @@
+<!--#set var="TITLE" value="Nanotube Builder Plugin, Version 1.0"-->
+<!--#include virtual="/include/header-over.shtml"-->
+
+<!-- CONTENT STARTS HERE -->
+
+<h3>About Nanotube Builder Plugin</h3>
+<img style="border: 0; padding: 0 0 1em 1em" src="nanotube_gui.png" align="right" alt="Nanotube GUI">
+
+<p>
+  Single-wall carbon nanotubes (SWCNs) are cylindrical tubes of carbon
+  atoms that can assume a wide range of atomic structures. Each
+  structure is defined by two positive integers (n,m) called the chiral
+  indices. The Nanotube Builder plugin generates SWCN structures of
+  arbitrary length and chirality for the purpose of molecular
+  simulations or nanoscience education. This plugin produces the unit
+  cell of a SWCN by first generating coordinates of a rectangular
+  graphene sheet with dimensions corresponding to the particular chiral
+  indices specified by the user. These coordinates are then mapped onto
+  a cylinder to generate the SWCN unit cell with its central axis
+  aligned in the z-direction. The unit cell is then replicated along the
+  z-axis to generate a SWCN of the desired length. The structure is
+  loaded into VMD as a new molecule and contains the appropriate box
+  dimensions for a SWCN periodic in the z-direction. Below are further
+  details on SWCN structure.
+</p>
+  
+<h3>Structure of a SWCN</h3>
+<p>
+<img style="border: 0; padding: 0 0 1em 1em" src="swcn-construction.png" align="right" alt="SWCN Construction from Graphene Sheet">
+
+  A SWCN can be thought of as a single sheet of graphite (graphene)
+  rolled up into a seamless molecular cylinder (see figure on the right). 
+  <b>C</b> is the chiral vector and indicates the direction of the rolling.
+
+  <b>C</b> extends from one carbon atom to a crystallographically equivalent
+  atom on the graphene lattice. Thus, <b>C</b> can be written as a linear
+  combination of the lattice basis vectors:</p>
+    <div align="center">
+      <b>C</b> = <tt>n</tt> <b>a<sub>1</sub></b> 
+      + <tt>m</tt> <b>a<sub>2</sub></b>
+    </div>
+<p>Here, <tt>n</tt> and <tt>m</tt> are positive integers known as the chiral 
+ indices. All physical properties of a given SWCN ultimately depend on these
+ two numbers. SWCNs of different atomic structure result for various choices
+ of <tt>n</tt> and <tt>m</tt> (see figure on the left). High symmetry 
+armchair and zigzag SWCNs occur for m = n and m = 0, respectively.</p> 
+
+<p>
+<img style="border: 0; padding: 0 0 1em 1em" src="swcn-types.png" align="left" alt="SWCN types">
+
+  The length of <b>C</b> equals the circumference of the resulting SWCN. 
+  Thus, the SWCN diameter <i>d</i> is  given by</p>
+<div align="center">
+      <i>d</i> = |<b>C</b>| / <i>pi</i> 
+      = <i>a</i> sqrt(<tt>n</tt><sup>2</sup> + <tt>n</tt> <tt>m</tt> 
+      + <tt>m</tt><sup>2</sup>)
+</div>
+
+<p>
+ Here, a = 2.49 Angstrom is the lattice constant of the graphene honeycomb 
+ lattice.</p>
+
+<p>The translation vector <b>T</b> connects two equivalent carbon atoms 
+  along the SWCN axis and is given by</p>
+
+ <div align="center">
+      <b>T</b> = [ (2<tt>m</tt> + <tt>n</tt>)<b>a<sub>1</sub></b> 
+      -  (<tt>m</tt> + 2<tt>n</tt>) <b>a<sub>2</sub></b>] /
+      gcd(2<tt>m</tt> + <tt>n</tt>,<tt>m</tt> + 2<tt>n</tt>)
+</div>
+<p> where gcd is the greatest common divisor function. The length of <b>T</b>
+ gives the length of the SWCN unit cell and can be written as:</p>
+
+ <div align="center">
+      |<b>T</b>| = sqrt(3)<i>d</i> /
+      gcd(2<tt>m</tt> + <tt>n</tt>,<tt>m</tt> + 2<tt>n</tt>)
+</div>
+</p>
+
+<h3>Using Nanotube Builder</h3>
+
+<p>Nanotube Builder can be run from the VMD console via the command:</p>
+
+<pre>
+    nanotube -l &lt;length&gt; -n &lt;n&gt; -m &lt;m&gt;
+</pre>
+    <dl>
+      <dt><tt>length</tt></dt>
+      <dd>is the desired length of the nanotube in nanometers (nm).</dd>
+      <dt><tt>n</tt> and <tt>m</tt></dt>
+      <dd>are the chiral indices. They should be positive integers.
+      </dd>
+    </dl>
+
+<p><i>Note:</i> because <b>Nanotube Builder</b> constructs SWCNs by first 
+   generating the unit cell, its actual length will be a multiple of the 
+   unit cell length determined by the chiral indices.</p>
+<p>This plugin can also be run using a GUI located in VMD Extensions
+   menu under Modeling/Nanotube Builder.</p>
+
+<h3>Author</h3>
+<p><a href="http://www.cmm.upenn.edu/~bob/">Robert R. Johnson</a>.</p>
+
+
+<!--#include virtual="/include/footer-over.shtml"-->
+</BODY></HTML>

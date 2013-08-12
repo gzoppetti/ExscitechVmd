@@ -1,0 +1,20 @@
+Lipid	
+Cholesterol	http://en.wikipedia.org/wiki/Cholesterol
+Oleic Acid	http://en.wikipedia.org/wiki/Oleic_Acid
+Vitamin E	http://en.wikipedia.org/wiki/Vitamin_E
+DPPC	http://en.wikipedia.org/wiki/Dipalmitoylphosphatidylcholine
+|Peptide  
+methionyl-leucyl-phenylalanine	http://en.wikipedia.org/wiki/N-formyl-L-methionyl-L-leucyl-L-phenylalanine
+Glutathione	http://en.wikipedia.org/wiki/Glutathione
+Morphiceptin	http://en.wikipedia.org/wiki/Morphiceptin
+Valinomycin	http://en.wikipedia.org/wiki/Valinomycin
+|Carbohydrate  
+Glucose	http://en.wikipedia.org/wiki/Glucose
+Raffinose	http://en.wikipedia.org/wiki/Raffinose
+Chondroitin Sulfate	http://en.wikipedia.org/wiki/Chondroitin_sulfate
+Lactulose	http://en.wikipedia.org/wiki/Lactulose
+|Nucleic Acid 	
+Adenosine Triphosphate	http://en.wikipedia.org/wiki/Adenosine_Triphosphate
+Guanosine Diphosphate	http://en.wikipedia.org/wiki/Guanosine_diphosphate
+Uridine Monophosphate	http://en.wikipedia.org/wiki/Uridine_monophosphate
+Cytidine Diphosphate	http://en.wikipedia.org/wiki/Cytidine_diphosphate

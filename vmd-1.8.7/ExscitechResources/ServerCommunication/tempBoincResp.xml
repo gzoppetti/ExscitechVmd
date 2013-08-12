@@ -1,0 +1,135 @@
+<scheduler_reply>
+<scheduler_version>603</scheduler_version>
+<master_url>http://docking.cis.udel.edu/</master_url>
+<request_delay>3.000000</request_delay>
+<project_name>Docking</project_name>
+<user_name>Your user name</user_name>
+<user_total_credit>1217235.513445</user_total_credit>
+<user_expavg_credit>2375.070694</user_expavg_credit>
+<user_create_time>1158706572</user_create_time>
+<email_hash>dc0ca6ca707bfa9d0a2c27c16a277bf9</email_hash>
+<cross_project_id>d0fbab08692065ea326c65bcc30c4990</cross_project_id>
+
+<host_total_credit>1180224.932618</host_total_credit>
+<host_expavg_credit>2375.072696</host_expavg_credit>
+<host_venue>home</host_venue>
+<host_create_time>1217273227</host_create_time>
+<app>
+    <name>LG1</name>
+    <user_friendly_name>Learning game</user_friendly_name>
+</app>
+<file_info>
+    <name>some_dummy_file_c1</name>
+    <url>http://docking.cis.udel.edu/download/some_dummy_file_c1</url>
+    <executable/>
+    <file_signature>
+aba6eb9b470708d4eedbab0e73f0430a257065dd493a181e8887b8d6559fbf83
+136f0c00283a016507a1bbb92c82ce06ef1320db4510068e5bd82825608e6c3c
+c4235aaac255102e5bcaa3895b405ce135a95fc34ad441a795df1df776c49e28
+532a1dedb4ef55da74d4103f1a364bbc2fb2c31ec33fab4bd84545380b02aafc
+.
+    </file_signature>
+    <nbytes>6127812.000000</nbytes>
+</file_info>
+<app_version>
+    <app_name>LG1</app_name>
+    <version_num>1</version_num>
+    <api_version>1</api_version>
+    <file_ref>
+       <file_name>some_dummy_file_c1</file_name>
+       <main_program/>
+    </file_ref>
+    <platform>LG1c1</platform>
+    <avg_ncpus>1.000000</avg_ncpus>
+    <max_ncpus>1.000000</max_ncpus>
+    <flops>2488066215.012265</flops>
+</app_version>
+<file_info>
+    <name>lg1c1_345_jpgs_0_name.jpg</name>
+    <url>http://docking.cis.udel.edu/download/359/lg1c1_345_jpgs_0_name.jpg</url>
+    <md5_cksum>a0daf5d056721c25ac6e415236991a51</md5_cksum>
+    <nbytes>1216055</nbytes>
+</file_info>
+<file_info>
+    <name>lg1c1_345_jpgs_1_name.jpg</name>
+    <url>http://docking.cis.udel.edu/download/8c/lg1c1_345_jpgs_1_name.jpg</url>
+    <md5_cksum>a0daf5d056721c25ac6e415236991a51</md5_cksum>
+    <nbytes>1216055</nbytes>
+</file_info>
+<file_info>
+    <name>lg1c1_345_jpgs_0_name.jpg</name>
+    <url>http://docking.cis.udel.edu/download/35b/lg1c1_345_jpgs_2_name.jpg</url>
+    <md5_cksum>a0daf5d056721c25ac6e415236991a51</md5_cksum>
+    <nbytes>1216055</nbytes>
+</file_info>
+<file_info>
+    <name>lg1c1_345_pdbs_0_name.pdb</name>
+    <url>http://docking.cis.udel.edu/download/a34/lg1c1_345_pdbs_0_name.pdb</url>
+    <md5_cksum>a0daf5d056721c25ac6e415236991a51</md5_cksum>
+    <nbytes>1216055</nbytes>
+</file_info>
+<file_info>
+    <name>lg1c1_345_pdbs_1_name.pdb</name>
+    <url>http://docking.cis.udel.edu/download/129/lg1c1_345_pdbs_1_name.pdb</url>
+    <md5_cksum>a0daf5d056721c25ac6e415236991a51</md5_cksum>
+    <nbytes>1216055</nbytes>
+</file_info>
+<file_info>
+    <name>lg1c1_345_pdbs_2_name.pdb</name>
+    <url>http://docking.cis.udel.edu/download/756/lg1c1_345_pdbs_2_name.pdb</url>
+    <md5_cksum>a0daf5d056721c25ac6e415236991a51</md5_cksum>
+    <nbytes>1216055</nbytes>
+</file_info>
+<file_info>
+    <name>lg1c1_345_options.txt</name>
+    <url>http://docking.cis.udel.edu/download/75/lg1c1_345_options.pdb</url>
+    <md5_cksum>a0daf5d056721c25ac6e415236991a51</md5_cksum>
+    <nbytes>1216055</nbytes>
+</file_info>
+<workunit>
+    <rsc_fpops_est>42096977010731.000000</rsc_fpops_est>
+    <rsc_fpops_bound>1262909310321930.000000</rsc_fpops_bound>
+    <rsc_memory_bound>50000000.000000</rsc_memory_bound>
+    <rsc_disk_bound>165000000.000000</rsc_disk_bound>
+    <name>lg1c1_345</name>
+    <app_name>LG1</app_name>
+<file_ref>
+    <file_name>lg1c1_345_pdbs_0_name.jpg</file_name>
+    <open_name>0_name.jpg</open_name>
+</file_ref>
+<file_ref>
+    <file_name>lg1c1_345_pdbs_1_name.jpg</file_name>
+    <open_name>1_name.jpg</open_name>
+</file_ref>
+<file_ref>
+    <file_name>lg1c1_345_pdbs_2_name.jpg</file_name>
+    <open_name>2_name.jpg</open_name>
+</file_ref>
+<file_ref>
+    <file_name>lg1c1_345_pdbs_0_name.pdb</file_name>
+    <open_name>0_name.pdb</open_name>
+</file_ref>
+<file_ref>
+    <file_name>lg1c1_345_pdbs_1_name.pdb</file_name>
+    <open_name>1_name.pdb</open_name>
+</file_ref>
+<file_ref>
+    <file_name>lg1c1_345_pdbs_2_name.pdb</file_name>
+    <open_name>2_name.pdb</open_name>
+</file_ref>
+<file_ref>
+    <file_name>lg1c1_345_options.txt</file_name>
+    <open_name>options.txt</open_name>
+</file_ref>
+<credit>143.129722</credit>
+</workunit>
+<result>
+<report_deadline>1298580063</report_deadline>
+<wu_name>lg1c1_345</wu_name>
+<name>lg1c1_345_0</name>
+    <platform>LG1c1</platform>
+    <version_num>1</version_num>
+    <plan_class></plan_class>
+</result>
+</scheduler_reply>
+

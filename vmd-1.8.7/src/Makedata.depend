@@ -1,0 +1,1737 @@
+OpenGLExtensions.o: OpenGLExtensions.C OpenGLExtensions.h Inform.h \
+ utilities.h
+OpenGLRenderer.o: OpenGLRenderer.C OpenGLRenderer.h DisplayDevice.h \
+ Matrix4.h Stack.h ResizeArray.h utilities.h Scene.h Displayable.h \
+ Pickable.h VMDDisplayList.h MaterialList.h NameList.h hash.h \
+ OpenGLExtensions.h OpenGLCache.h DispCmds.h Inform.h Hershey.h \
+ OpenGLStipples.h
+OpenGLShader.o: OpenGLShader.C OpenGLExtensions.h
+OpenGLCache.o: OpenGLCache.C OpenGLCache.h OpenGLExtensions.h
+Hershey.o: Hershey.C Hershey.h
+Animation.o: Animation.C Animation.h MoleculeList.h Molecule.h \
+ DrawMolecule.h BaseMolecule.h NameList.h ResizeArray.h utilities.h \
+ hash.h Atom.h Residue.h Timestep.h Matrix4.h QMTimestep.h QMData.h \
+ Fragment.h intstack.h SmallRing.h Inform.h SmallRingLinkages.h inthash.h \
+ Displayable.h Pickable.h VMDDisplayList.h MaterialList.h DrawMolItem.h \
+ config.h DispCmds.h AtomColor.h AtomRep.h AtomSel.h PickMode.h \
+ VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h JString.h UIObject.h \
+ VMDApp.h PluginMgr.h ../plugins/include/vmdplugin.h CmdAnimate.h \
+ Command.h
+ArtDisplayDevice.o: ArtDisplayDevice.C ArtDisplayDevice.h FileRenderer.h \
+ DisplayDevice.h Matrix4.h Stack.h ResizeArray.h utilities.h Scene.h \
+ Displayable.h Pickable.h VMDDisplayList.h MaterialList.h NameList.h \
+ hash.h Inform.h DispCmds.h
+AtomColor.o: AtomColor.C AtomColor.h utilities.h DrawMolecule.h \
+ BaseMolecule.h NameList.h ResizeArray.h hash.h Atom.h Residue.h \
+ Timestep.h Matrix4.h QMTimestep.h QMData.h Fragment.h intstack.h \
+ SmallRing.h Inform.h SmallRingLinkages.h inthash.h Displayable.h \
+ Pickable.h VMDDisplayList.h MaterialList.h DrawMolItem.h config.h \
+ DispCmds.h AtomRep.h AtomSel.h PickMode.h VolumeTexture.h Surf.h \
+ MSMSInterface.h VMDThreads.h MoleculeList.h Molecule.h JString.h Scene.h \
+ VolumetricData.h PeriodicTable.h
+AtomParser.o: AtomParser.C AtomParser.h JString.h Inform.h
+AtomLexer.o: AtomLexer.C AtomParser.h JString.h y.tab.h Inform.h \
+ SymbolTable.h NameList.h ResizeArray.h utilities.h hash.h Command.h
+AtomRep.o: AtomRep.C AtomRep.h Inform.h utilities.h config.h
+AtomSel.o: AtomSel.C Atom.h utilities.h AtomSel.h DrawMolecule.h \
+ BaseMolecule.h NameList.h ResizeArray.h hash.h Residue.h Timestep.h \
+ Matrix4.h QMTimestep.h QMData.h Fragment.h intstack.h SmallRing.h \
+ Inform.h SmallRingLinkages.h inthash.h Displayable.h Pickable.h \
+ VMDDisplayList.h MaterialList.h DrawMolItem.h config.h DispCmds.h \
+ AtomColor.h AtomRep.h PickMode.h VolumeTexture.h Surf.h MSMSInterface.h \
+ VMDThreads.h MoleculeList.h Molecule.h JString.h VMDApp.h PluginMgr.h \
+ ../plugins/include/vmdplugin.h SymbolTable.h Command.h ParseTree.h \
+ AtomParser.h JRegex.h pcre.h VolumetricData.h PeriodicTable.h \
+ DrawRingsUtils.h
+Axes.o: Axes.C Axes.h Displayable.h Matrix4.h ResizeArray.h Pickable.h \
+ utilities.h VMDDisplayList.h MaterialList.h NameList.h hash.h DispCmds.h \
+ DisplayDevice.h Stack.h Scene.h
+BaseMolecule.o: BaseMolecule.C Inform.h utilities.h intstack.h \
+ BaseMolecule.h NameList.h ResizeArray.h hash.h Atom.h Residue.h \
+ Timestep.h Matrix4.h QMTimestep.h QMData.h Fragment.h SmallRing.h \
+ SmallRingLinkages.h inthash.h VolumetricData.h
+Benchmark.o: Benchmark.C utilities.h
+BondSearch.o: BondSearch.C BondSearch.h ResizeArray.h SpatialSearch.h \
+ Timestep.h Matrix4.h QMTimestep.h QMData.h BaseMolecule.h NameList.h \
+ utilities.h hash.h Atom.h Residue.h Fragment.h intstack.h SmallRing.h \
+ Inform.h SmallRingLinkages.h inthash.h Molecule.h DrawMolecule.h \
+ Displayable.h Pickable.h VMDDisplayList.h MaterialList.h DrawMolItem.h \
+ config.h DispCmds.h AtomColor.h AtomRep.h AtomSel.h PickMode.h \
+ VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h
+CmdAnimate.o: CmdAnimate.C config.h CmdAnimate.h Command.h Inform.h \
+ Animation.h MoleculeList.h Molecule.h DrawMolecule.h BaseMolecule.h \
+ NameList.h ResizeArray.h utilities.h hash.h Atom.h Residue.h Timestep.h \
+ Matrix4.h QMTimestep.h QMData.h Fragment.h intstack.h SmallRing.h \
+ SmallRingLinkages.h inthash.h Displayable.h Pickable.h VMDDisplayList.h \
+ MaterialList.h DrawMolItem.h DispCmds.h AtomColor.h AtomRep.h AtomSel.h \
+ PickMode.h VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h JString.h \
+ UIObject.h CommandQueue.h VMDApp.h PluginMgr.h \
+ ../plugins/include/vmdplugin.h CoorPluginData.h CoorData.h
+CmdColor.o: CmdColor.C CmdColor.h Command.h Inform.h utilities.h
+CmdDisplay.o: CmdDisplay.C config.h CmdDisplay.h Command.h Inform.h \
+ DisplayDevice.h Matrix4.h Stack.h ResizeArray.h utilities.h
+CmdLabel.o: CmdLabel.C config.h CmdLabel.h Command.h Inform.h utilities.h
+CmdMaterial.o: CmdMaterial.C CmdMaterial.h Command.h Inform.h \
+ MaterialList.h NameList.h ResizeArray.h utilities.h hash.h config.h
+CmdMenu.o: CmdMenu.C CmdMenu.h Command.h Inform.h utilities.h
+CmdMol.o: CmdMol.C config.h CmdMol.h Command.h Inform.h VMDApp.h \
+ PluginMgr.h ResizeArray.h ../plugins/include/vmdplugin.h NameList.h \
+ utilities.h hash.h JString.h VMDDisplayList.h Matrix4.h
+CmdRender.o: CmdRender.C CmdRender.h Command.h Inform.h utilities.h
+CmdTrans.o: CmdTrans.C CmdTrans.h Command.h Inform.h Matrix4.h
+CommandQueue.o: CommandQueue.C CommandQueue.h ResizeArray.h Command.h \
+ Inform.h UIObject.h TextEvent.h JString.h TextInterp.h utilities.h \
+ DisplayDevice.h Matrix4.h Stack.h config.h
+CoorPluginData.o: CoorPluginData.C CoorPluginData.h utilities.h \
+ CoorData.h MolFilePlugin.h ../plugins/include/molfile_plugin.h \
+ ../plugins/include/vmdplugin.h Inform.h Molecule.h DrawMolecule.h \
+ BaseMolecule.h NameList.h ResizeArray.h hash.h Atom.h Residue.h \
+ Timestep.h Matrix4.h QMTimestep.h QMData.h Fragment.h intstack.h \
+ SmallRing.h SmallRingLinkages.h inthash.h Displayable.h Pickable.h \
+ VMDDisplayList.h MaterialList.h DrawMolItem.h config.h DispCmds.h \
+ AtomColor.h AtomRep.h AtomSel.h PickMode.h VolumeTexture.h Surf.h \
+ MSMSInterface.h VMDThreads.h
+CUDAAccel.o: CUDAAccel.C config.h Inform.h ResizeArray.h CUDAAccel.h \
+ VMDThreads.h CUDAKernels.h
+DisplayDevice.o: DisplayDevice.C DisplayDevice.h Matrix4.h Stack.h \
+ ResizeArray.h utilities.h Inform.h DispCmds.h Mouse.h UIObject.h \
+ Command.h NameList.h hash.h VMDDisplayList.h Scene.h Displayable.h \
+ Pickable.h MaterialList.h
+Displayable.o: Displayable.C Displayable.h Matrix4.h ResizeArray.h \
+ Pickable.h utilities.h VMDDisplayList.h MaterialList.h NameList.h hash.h \
+ DispCmds.h PickList.h Command.h Inform.h VMDApp.h PluginMgr.h \
+ ../plugins/include/vmdplugin.h JString.h DisplayDevice.h Stack.h
+DisplayRocker.o: DisplayRocker.C DisplayRocker.h Displayable.h Matrix4.h \
+ ResizeArray.h Pickable.h utilities.h VMDDisplayList.h MaterialList.h \
+ NameList.h hash.h
+DispCmds.o: DispCmds.C Exscitech/Graphics/VolmapExscitech.hpp \
+ VolumetricData.h VMDApp.h PluginMgr.h ResizeArray.h \
+ ../plugins/include/vmdplugin.h NameList.h utilities.h hash.h JString.h \
+ Molecule.h DrawMolecule.h BaseMolecule.h Atom.h Residue.h Timestep.h \
+ Matrix4.h QMTimestep.h QMData.h Fragment.h intstack.h SmallRing.h \
+ Inform.h SmallRingLinkages.h inthash.h Displayable.h Pickable.h \
+ VMDDisplayList.h MaterialList.h DrawMolItem.h config.h DispCmds.h \
+ AtomColor.h AtomRep.h AtomSel.h PickMode.h VolumeTexture.h Surf.h \
+ MSMSInterface.h VMDThreads.h Isosurface.h Scene.h MoleculeList.h \
+ Molecule.h UIText.h UIObject.h TclTextInterp.h TextInterp.h TextEvent.h \
+ Command.h DisplayDevice.h Stack.h Exscitech/Graphics/VolmapPiece.hpp \
+ Exscitech/Graphics/Drawable.hpp Exscitech/Graphics/IDrawable.hpp \
+ Exscitech/Display/Camera.hpp Exscitech/Graphics/Transformable.hpp \
+ Exscitech/Math/Vector3.hpp Exscitech/Math/Math.hpp \
+ Exscitech/Math/Matrix3x3.hpp Exscitech/Types.hpp \
+ Exscitech/Math/Quaternion.hpp Exscitech/Math/Matrix3x4.hpp \
+ Exscitech/Math/Matrix4x4.hpp Exscitech/Math/Vector4.hpp \
+ Exscitech/Math/Vector2.hpp Exscitech/Graphics/Shaders/ShaderProgram.hpp \
+ Exscitech/Graphics/Shaders/LightUniformManager.hpp \
+ Exscitech/Graphics/Lighting/Material.hpp \
+ Exscitech/Graphics/Lighting/Texture.hpp \
+ Exscitech/Games/GameController.hpp /usr/include/qt4/QtGui/QPushButton \
+  Exscitech/Display/VmdGlWidget.hpp \
+ /usr/include/qt4/QtOpenGL/QGLWidget  \
+ Exscitech/Utilities/ErrorLog.hpp DispCmds.h utilities.h Matrix4.h \
+ VMDDisplayList.h Inform.h VMDApp.h
+DrawMolecule.o: DrawMolecule.C DrawMolecule.h BaseMolecule.h NameList.h \
+ ResizeArray.h utilities.h hash.h Atom.h Residue.h Timestep.h Matrix4.h \
+ QMTimestep.h QMData.h Fragment.h intstack.h SmallRing.h Inform.h \
+ SmallRingLinkages.h inthash.h Displayable.h Pickable.h VMDDisplayList.h \
+ MaterialList.h DrawMolItem.h config.h DispCmds.h AtomColor.h AtomRep.h \
+ AtomSel.h PickMode.h VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h \
+ VMDApp.h PluginMgr.h ../plugins/include/vmdplugin.h JString.h \
+ MoleculeList.h Molecule.h CommandQueue.h Command.h CmdAnimate.h \
+ Animation.h UIObject.h Stride.h PickList.h TextEvent.h TextInterp.h \
+ DisplayDevice.h Stack.h MoleculeGraphics.h BondSearch.h SpatialSearch.h \
+ DrawForce.h VolumetricData.h CUDAAccel.h
+DrawMolItem.o: DrawMolItem.C DrawMolItem.h config.h Displayable.h \
+ Matrix4.h ResizeArray.h Pickable.h utilities.h VMDDisplayList.h \
+ MaterialList.h NameList.h hash.h DispCmds.h AtomColor.h AtomRep.h \
+ AtomSel.h PickMode.h BaseMolecule.h Atom.h Residue.h Timestep.h \
+ QMTimestep.h QMData.h Fragment.h intstack.h SmallRing.h Inform.h \
+ SmallRingLinkages.h inthash.h VolumeTexture.h Surf.h MSMSInterface.h \
+ Molecule.h DrawMolecule.h VMDThreads.h Scene.h TextEvent.h Command.h \
+ JString.h TextInterp.h DisplayDevice.h Stack.h BondSearch.h \
+ SpatialSearch.h VMDApp.h PluginMgr.h ../plugins/include/vmdplugin.h \
+ VolumetricData.h
+DrawMolItem2.o: DrawMolItem2.C DrawMolItem.h config.h Displayable.h \
+ Matrix4.h ResizeArray.h Pickable.h utilities.h VMDDisplayList.h \
+ MaterialList.h NameList.h hash.h DispCmds.h AtomColor.h AtomRep.h \
+ AtomSel.h PickMode.h BaseMolecule.h Atom.h Residue.h Timestep.h \
+ QMTimestep.h QMData.h Fragment.h intstack.h SmallRing.h Inform.h \
+ SmallRingLinkages.h inthash.h VolumeTexture.h Surf.h MSMSInterface.h \
+ DrawMolecule.h VMDThreads.h Scene.h DrawMolItemSolventPoints.data
+DrawMolItemRibbons.o: DrawMolItemRibbons.C DrawMolItem.h config.h \
+ Displayable.h Matrix4.h ResizeArray.h Pickable.h utilities.h \
+ VMDDisplayList.h MaterialList.h NameList.h hash.h DispCmds.h AtomColor.h \
+ AtomRep.h AtomSel.h PickMode.h BaseMolecule.h Atom.h Residue.h \
+ Timestep.h QMTimestep.h QMData.h Fragment.h intstack.h SmallRing.h \
+ Inform.h SmallRingLinkages.h inthash.h VolumeTexture.h Surf.h \
+ MSMSInterface.h DrawMolecule.h VMDThreads.h Scene.h TextEvent.h \
+ Command.h JString.h TextInterp.h DisplayDevice.h Stack.h BondSearch.h \
+ SpatialSearch.h
+DrawMolItemMSMS.o: DrawMolItemMSMS.C DrawMolecule.h BaseMolecule.h \
+ NameList.h ResizeArray.h utilities.h hash.h Atom.h Residue.h Timestep.h \
+ Matrix4.h QMTimestep.h QMData.h Fragment.h intstack.h SmallRing.h \
+ Inform.h SmallRingLinkages.h inthash.h Displayable.h Pickable.h \
+ VMDDisplayList.h MaterialList.h DrawMolItem.h config.h DispCmds.h \
+ AtomColor.h AtomRep.h AtomSel.h PickMode.h VolumeTexture.h Surf.h \
+ MSMSInterface.h VMDThreads.h Scene.h
+DrawMolItemRings.o: DrawMolItemRings.C utilities.h DrawMolItem.h config.h \
+ Displayable.h Matrix4.h ResizeArray.h Pickable.h VMDDisplayList.h \
+ MaterialList.h NameList.h hash.h DispCmds.h AtomColor.h AtomRep.h \
+ AtomSel.h PickMode.h BaseMolecule.h Atom.h Residue.h Timestep.h \
+ QMTimestep.h QMData.h Fragment.h intstack.h SmallRing.h Inform.h \
+ SmallRingLinkages.h inthash.h VolumeTexture.h Surf.h MSMSInterface.h \
+ DrawMolecule.h VMDThreads.h DrawRingsUtils.h
+DrawMolItemOrbital.o: DrawMolItemOrbital.C DrawMolItem.h config.h \
+ Displayable.h Matrix4.h ResizeArray.h Pickable.h utilities.h \
+ VMDDisplayList.h MaterialList.h NameList.h hash.h DispCmds.h AtomColor.h \
+ AtomRep.h AtomSel.h PickMode.h BaseMolecule.h Atom.h Residue.h \
+ Timestep.h QMTimestep.h QMData.h Fragment.h intstack.h SmallRing.h \
+ Inform.h SmallRingLinkages.h inthash.h VolumeTexture.h Surf.h \
+ MSMSInterface.h DrawMolecule.h VMDThreads.h Isosurface.h MoleculeList.h \
+ Molecule.h JString.h Scene.h Orbital.h VolumetricData.h VMDApp.h \
+ PluginMgr.h ../plugins/include/vmdplugin.h
+DrawMolItemSurface.o: DrawMolItemSurface.C DrawMolecule.h BaseMolecule.h \
+ NameList.h ResizeArray.h utilities.h hash.h Atom.h Residue.h Timestep.h \
+ Matrix4.h QMTimestep.h QMData.h Fragment.h intstack.h SmallRing.h \
+ Inform.h SmallRingLinkages.h inthash.h Displayable.h Pickable.h \
+ VMDDisplayList.h MaterialList.h DrawMolItem.h config.h DispCmds.h \
+ AtomColor.h AtomRep.h AtomSel.h PickMode.h VolumeTexture.h Surf.h \
+ MSMSInterface.h VMDThreads.h Scene.h
+DrawMolItemVolume.o: DrawMolItemVolume.C DrawMolItem.h config.h \
+ Displayable.h Matrix4.h ResizeArray.h Pickable.h utilities.h \
+ VMDDisplayList.h MaterialList.h NameList.h hash.h DispCmds.h AtomColor.h \
+ AtomRep.h AtomSel.h PickMode.h BaseMolecule.h Atom.h Residue.h \
+ Timestep.h QMTimestep.h QMData.h Fragment.h intstack.h SmallRing.h \
+ Inform.h SmallRingLinkages.h inthash.h VolumeTexture.h Surf.h \
+ MSMSInterface.h DrawMolecule.h VMDThreads.h Isosurface.h MoleculeList.h \
+ Molecule.h JString.h Scene.h VolumetricData.h VMDApp.h PluginMgr.h \
+ ../plugins/include/vmdplugin.h
+DrawForce.o: DrawForce.C DrawForce.h Displayable.h Matrix4.h \
+ ResizeArray.h Pickable.h utilities.h VMDDisplayList.h MaterialList.h \
+ NameList.h hash.h DispCmds.h DrawMolecule.h BaseMolecule.h Atom.h \
+ Residue.h Timestep.h QMTimestep.h QMData.h Fragment.h intstack.h \
+ SmallRing.h Inform.h SmallRingLinkages.h inthash.h DrawMolItem.h \
+ config.h AtomColor.h AtomRep.h AtomSel.h PickMode.h VolumeTexture.h \
+ Surf.h MSMSInterface.h VMDThreads.h DisplayDevice.h Stack.h Scene.h \
+ Mouse.h UIObject.h Command.h VMDApp.h PluginMgr.h \
+ ../plugins/include/vmdplugin.h JString.h
+DrawRingsUtils.o: DrawRingsUtils.C utilities.h AtomColor.h Scene.h \
+ Displayable.h Matrix4.h ResizeArray.h Pickable.h VMDDisplayList.h \
+ MaterialList.h NameList.h hash.h DrawRingsUtils.h SmallRing.h Inform.h
+FileRenderList.o: FileRenderList.C config.h FileRenderList.h NameList.h \
+ ResizeArray.h utilities.h hash.h VMDApp.h PluginMgr.h \
+ ../plugins/include/vmdplugin.h JString.h CmdRender.h Command.h Inform.h \
+ CommandQueue.h Scene.h Displayable.h Matrix4.h Pickable.h \
+ VMDDisplayList.h MaterialList.h DisplayDevice.h Stack.h TextEvent.h \
+ TextInterp.h ArtDisplayDevice.h FileRenderer.h GelatoDisplayDevice.h \
+ POV3DisplayDevice.h PSDisplayDevice.h DepthSortObj.h DispCmds.h \
+ SortableArray.h R3dDisplayDevice.h RayShadeDisplayDevice.h \
+ RadianceDisplayDevice.h RenderManDisplayDevice.h SnapshotDisplayDevice.h \
+ STLDisplayDevice.h TachyonDisplayDevice.h VrmlDisplayDevice.h \
+ Vrml2DisplayDevice.h WavefrontDisplayDevice.h
+FileRenderer.o: FileRenderer.C utilities.h DispCmds.h FileRenderer.h \
+ DisplayDevice.h Matrix4.h Stack.h ResizeArray.h Scene.h Displayable.h \
+ Pickable.h VMDDisplayList.h MaterialList.h NameList.h hash.h Inform.h \
+ Hershey.h
+FltkOpenGLDisplayDevice.o: FltkOpenGLDisplayDevice.C \
+ FltkOpenGLDisplayDevice.h OpenGLRenderer.h DisplayDevice.h Matrix4.h \
+ Stack.h ResizeArray.h utilities.h Scene.h Displayable.h Pickable.h \
+ VMDDisplayList.h MaterialList.h NameList.h hash.h OpenGLExtensions.h \
+ OpenGLCache.h Inform.h config.h VMDApp.h PluginMgr.h \
+ ../plugins/include/vmdplugin.h JString.h
+FPS.o: FPS.C FPS.h Displayable.h Matrix4.h ResizeArray.h Pickable.h \
+ utilities.h VMDDisplayList.h MaterialList.h NameList.h hash.h \
+ DisplayDevice.h Stack.h DispCmds.h Scene.h
+GelatoDisplayDevice.o: GelatoDisplayDevice.C GelatoDisplayDevice.h \
+ FileRenderer.h DisplayDevice.h Matrix4.h Stack.h ResizeArray.h \
+ utilities.h Scene.h Displayable.h Pickable.h VMDDisplayList.h \
+ MaterialList.h NameList.h hash.h Inform.h config.h
+GeometryAngle.o: GeometryAngle.C GeometryAngle.h GeometryMol.h \
+ Displayable.h Matrix4.h ResizeArray.h Pickable.h utilities.h \
+ VMDDisplayList.h MaterialList.h NameList.h hash.h JString.h \
+ MoleculeList.h Molecule.h DrawMolecule.h BaseMolecule.h Atom.h Residue.h \
+ Timestep.h QMTimestep.h QMData.h Fragment.h intstack.h SmallRing.h \
+ Inform.h SmallRingLinkages.h inthash.h DrawMolItem.h config.h DispCmds.h \
+ AtomColor.h AtomRep.h AtomSel.h PickMode.h VolumeTexture.h Surf.h \
+ MSMSInterface.h VMDThreads.h
+GeometryAtom.o: GeometryAtom.C GeometryAtom.h GeometryMol.h Displayable.h \
+ Matrix4.h ResizeArray.h Pickable.h utilities.h VMDDisplayList.h \
+ MaterialList.h NameList.h hash.h JString.h MoleculeList.h Molecule.h \
+ DrawMolecule.h BaseMolecule.h Atom.h Residue.h Timestep.h QMTimestep.h \
+ QMData.h Fragment.h intstack.h SmallRing.h Inform.h SmallRingLinkages.h \
+ inthash.h DrawMolItem.h config.h DispCmds.h AtomColor.h AtomRep.h \
+ AtomSel.h PickMode.h VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h
+GeometryBond.o: GeometryBond.C GeometryBond.h GeometryMol.h Displayable.h \
+ Matrix4.h ResizeArray.h Pickable.h utilities.h VMDDisplayList.h \
+ MaterialList.h NameList.h hash.h JString.h MoleculeList.h Molecule.h \
+ DrawMolecule.h BaseMolecule.h Atom.h Residue.h Timestep.h QMTimestep.h \
+ QMData.h Fragment.h intstack.h SmallRing.h Inform.h SmallRingLinkages.h \
+ inthash.h DrawMolItem.h config.h DispCmds.h AtomColor.h AtomRep.h \
+ AtomSel.h PickMode.h VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h
+GeometryDihedral.o: GeometryDihedral.C GeometryDihedral.h GeometryMol.h \
+ Displayable.h Matrix4.h ResizeArray.h Pickable.h utilities.h \
+ VMDDisplayList.h MaterialList.h NameList.h hash.h JString.h \
+ MoleculeList.h Molecule.h DrawMolecule.h BaseMolecule.h Atom.h Residue.h \
+ Timestep.h QMTimestep.h QMData.h Fragment.h intstack.h SmallRing.h \
+ Inform.h SmallRingLinkages.h inthash.h DrawMolItem.h config.h DispCmds.h \
+ AtomColor.h AtomRep.h AtomSel.h PickMode.h VolumeTexture.h Surf.h \
+ MSMSInterface.h VMDThreads.h
+GeometryList.o: GeometryList.C GeometryList.h Displayable.h Matrix4.h \
+ ResizeArray.h Pickable.h utilities.h VMDDisplayList.h MaterialList.h \
+ NameList.h hash.h GeometryMol.h JString.h DispCmds.h GeometryAtom.h \
+ GeometryBond.h GeometryAngle.h GeometryDihedral.h GeometrySpring.h \
+ DisplayDevice.h Stack.h MoleculeList.h Molecule.h DrawMolecule.h \
+ BaseMolecule.h Atom.h Residue.h Timestep.h QMTimestep.h QMData.h \
+ Fragment.h intstack.h SmallRing.h Inform.h SmallRingLinkages.h inthash.h \
+ DrawMolItem.h config.h AtomColor.h AtomRep.h AtomSel.h PickMode.h \
+ VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h VMDApp.h PluginMgr.h \
+ ../plugins/include/vmdplugin.h Scene.h
+GeometryMol.o: GeometryMol.C GeometryMol.h Displayable.h Matrix4.h \
+ ResizeArray.h Pickable.h utilities.h VMDDisplayList.h MaterialList.h \
+ NameList.h hash.h JString.h MoleculeList.h Molecule.h DrawMolecule.h \
+ BaseMolecule.h Atom.h Residue.h Timestep.h QMTimestep.h QMData.h \
+ Fragment.h intstack.h SmallRing.h Inform.h SmallRingLinkages.h inthash.h \
+ DrawMolItem.h config.h DispCmds.h AtomColor.h AtomRep.h AtomSel.h \
+ PickMode.h VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h VMDApp.h \
+ PluginMgr.h ../plugins/include/vmdplugin.h TextEvent.h Command.h \
+ TextInterp.h DisplayDevice.h Stack.h CommandQueue.h
+GeometrySpring.o: GeometrySpring.C GeometrySpring.h GeometryMol.h \
+ Displayable.h Matrix4.h ResizeArray.h Pickable.h utilities.h \
+ VMDDisplayList.h MaterialList.h NameList.h hash.h JString.h \
+ MoleculeList.h Molecule.h DrawMolecule.h BaseMolecule.h Atom.h Residue.h \
+ Timestep.h QMTimestep.h QMData.h Fragment.h intstack.h SmallRing.h \
+ Inform.h SmallRingLinkages.h inthash.h DrawMolItem.h config.h DispCmds.h \
+ AtomColor.h AtomRep.h AtomSel.h PickMode.h VolumeTexture.h Surf.h \
+ MSMSInterface.h VMDThreads.h
+Inform.o: Inform.C Inform.h config.h
+ImageIO.o: ImageIO.C ImageIO.h Inform.h
+Isosurface.o: Isosurface.C Inform.h utilities.h Isosurface.h \
+ BaseMolecule.h NameList.h ResizeArray.h hash.h Atom.h Residue.h \
+ Timestep.h Matrix4.h QMTimestep.h QMData.h Fragment.h intstack.h \
+ SmallRing.h SmallRingLinkages.h inthash.h VolumetricData.h
+JRegex.o: JRegex.C JRegex.h pcre.h Inform.h
+JString.o: JString.C JString.h
+macosxvmdstart.o: macosxvmdstart.C
+MaterialList.o: MaterialList.C MaterialList.h NameList.h ResizeArray.h \
+ utilities.h hash.h Displayable.h Matrix4.h Pickable.h VMDDisplayList.h
+Matrix4.o: Matrix4.C Matrix4.h utilities.h
+Measure.o: Measure.C Measure.h ResizeArray.h Molecule.h DrawMolecule.h \
+ BaseMolecule.h NameList.h utilities.h hash.h Atom.h Residue.h Timestep.h \
+ Matrix4.h QMTimestep.h QMData.h Fragment.h intstack.h SmallRing.h \
+ Inform.h SmallRingLinkages.h inthash.h Displayable.h Pickable.h \
+ VMDDisplayList.h MaterialList.h DrawMolItem.h config.h DispCmds.h \
+ AtomColor.h AtomRep.h AtomSel.h PickMode.h VolumeTexture.h Surf.h \
+ MSMSInterface.h VMDThreads.h fitrms.h SpatialSearch.h MoleculeList.h \
+ JString.h VMDApp.h PluginMgr.h ../plugins/include/vmdplugin.h
+MeasurePBC.o: MeasurePBC.C Measure.h ResizeArray.h Molecule.h \
+ DrawMolecule.h BaseMolecule.h NameList.h utilities.h hash.h Atom.h \
+ Residue.h Timestep.h Matrix4.h QMTimestep.h QMData.h Fragment.h \
+ intstack.h SmallRing.h Inform.h SmallRingLinkages.h inthash.h \
+ Displayable.h Pickable.h VMDDisplayList.h MaterialList.h DrawMolItem.h \
+ config.h DispCmds.h AtomColor.h AtomRep.h AtomSel.h PickMode.h \
+ VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h SpatialSearch.h \
+ MoleculeList.h JString.h VMDApp.h PluginMgr.h \
+ ../plugins/include/vmdplugin.h
+MeasureSurface.o: MeasureSurface.C Measure.h ResizeArray.h Molecule.h \
+ DrawMolecule.h BaseMolecule.h NameList.h utilities.h hash.h Atom.h \
+ Residue.h Timestep.h Matrix4.h QMTimestep.h QMData.h Fragment.h \
+ intstack.h SmallRing.h Inform.h SmallRingLinkages.h inthash.h \
+ Displayable.h Pickable.h VMDDisplayList.h MaterialList.h DrawMolItem.h \
+ config.h DispCmds.h AtomColor.h AtomRep.h AtomSel.h PickMode.h \
+ VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h
+MeasureSymmetry.o: MeasureSymmetry.C utilities.h Measure.h ResizeArray.h \
+ Molecule.h DrawMolecule.h BaseMolecule.h NameList.h hash.h Atom.h \
+ Residue.h Timestep.h Matrix4.h QMTimestep.h QMData.h Fragment.h \
+ intstack.h SmallRing.h Inform.h SmallRingLinkages.h inthash.h \
+ Displayable.h Pickable.h VMDDisplayList.h MaterialList.h DrawMolItem.h \
+ config.h DispCmds.h AtomColor.h AtomRep.h AtomSel.h PickMode.h \
+ VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h MeasureSymmetry.h \
+ MoleculeList.h JString.h SpatialSearch.h MoleculeGraphics.h
+Molecule.o: Molecule.C Molecule.h DrawMolecule.h BaseMolecule.h \
+ NameList.h ResizeArray.h utilities.h hash.h Atom.h Residue.h Timestep.h \
+ Matrix4.h QMTimestep.h QMData.h Fragment.h intstack.h SmallRing.h \
+ Inform.h SmallRingLinkages.h inthash.h Displayable.h Pickable.h \
+ VMDDisplayList.h MaterialList.h DrawMolItem.h config.h DispCmds.h \
+ AtomColor.h AtomRep.h AtomSel.h PickMode.h VolumeTexture.h Surf.h \
+ MSMSInterface.h VMDThreads.h DisplayDevice.h Stack.h TextEvent.h \
+ Command.h JString.h TextInterp.h VMDApp.h PluginMgr.h \
+ ../plugins/include/vmdplugin.h CommandQueue.h CoorData.h
+MoleculeList.o: MoleculeList.C MoleculeList.h Molecule.h DrawMolecule.h \
+ BaseMolecule.h NameList.h ResizeArray.h utilities.h hash.h Atom.h \
+ Residue.h Timestep.h Matrix4.h QMTimestep.h QMData.h Fragment.h \
+ intstack.h SmallRing.h Inform.h SmallRingLinkages.h inthash.h \
+ Displayable.h Pickable.h VMDDisplayList.h MaterialList.h DrawMolItem.h \
+ config.h DispCmds.h AtomColor.h AtomRep.h AtomSel.h PickMode.h \
+ VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h JString.h Scene.h \
+ VMDApp.h PluginMgr.h ../plugins/include/vmdplugin.h ParseTree.h \
+ SymbolTable.h Command.h AtomParser.h MoleculeGraphics.h
+MoleculeGraphics.o: MoleculeGraphics.C MoleculeGraphics.h DrawMolecule.h \
+ BaseMolecule.h NameList.h ResizeArray.h utilities.h hash.h Atom.h \
+ Residue.h Timestep.h Matrix4.h QMTimestep.h QMData.h Fragment.h \
+ intstack.h SmallRing.h Inform.h SmallRingLinkages.h inthash.h \
+ Displayable.h Pickable.h VMDDisplayList.h MaterialList.h DrawMolItem.h \
+ config.h DispCmds.h AtomColor.h AtomRep.h AtomSel.h PickMode.h \
+ VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h VMDApp.h PluginMgr.h \
+ ../plugins/include/vmdplugin.h JString.h Scene.h
+MolFilePlugin.o: MolFilePlugin.C MolFilePlugin.h \
+ ../plugins/include/molfile_plugin.h ../plugins/include/vmdplugin.h \
+ Molecule.h DrawMolecule.h BaseMolecule.h NameList.h ResizeArray.h \
+ utilities.h hash.h Atom.h Residue.h Timestep.h Matrix4.h QMTimestep.h \
+ QMData.h Fragment.h intstack.h SmallRing.h Inform.h SmallRingLinkages.h \
+ inthash.h Displayable.h Pickable.h VMDDisplayList.h MaterialList.h \
+ DrawMolItem.h config.h DispCmds.h AtomColor.h AtomRep.h AtomSel.h \
+ PickMode.h VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h Scene.h \
+ PeriodicTable.h VolumetricData.h MoleculeGraphics.h
+Mouse.o: Mouse.C Mouse.h UIObject.h Command.h Inform.h NameList.h \
+ ResizeArray.h utilities.h hash.h DisplayDevice.h Matrix4.h Stack.h \
+ TextEvent.h JString.h TextInterp.h CommandQueue.h PickList.h VMDApp.h \
+ PluginMgr.h ../plugins/include/vmdplugin.h
+MSMSInterface.o: MSMSInterface.C utilities.h vmdsock.h MSMSInterface.h \
+ ResizeArray.h Inform.h
+Orbital.o: Orbital.C Orbital.h QMData.h Molecule.h DrawMolecule.h \
+ BaseMolecule.h NameList.h ResizeArray.h utilities.h hash.h Atom.h \
+ Residue.h Timestep.h Matrix4.h QMTimestep.h Fragment.h intstack.h \
+ SmallRing.h Inform.h SmallRingLinkages.h inthash.h Displayable.h \
+ Pickable.h VMDDisplayList.h MaterialList.h DrawMolItem.h config.h \
+ DispCmds.h AtomColor.h AtomRep.h AtomSel.h PickMode.h VolumeTexture.h \
+ Surf.h MSMSInterface.h VMDThreads.h ../plugins/include/molfile_plugin.h \
+ ../plugins/include/vmdplugin.h CUDAKernels.h
+PeriodicTable.o: PeriodicTable.C
+P_JoystickTool.o: P_JoystickTool.C P_JoystickTool.h P_Tool.h UIObject.h \
+ JString.h Matrix4.h
+P_TugTool.o: P_TugTool.C P_TugTool.h P_Tool.h UIObject.h JString.h \
+ Matrix4.h utilities.h Displayable.h ResizeArray.h Pickable.h \
+ VMDDisplayList.h MaterialList.h NameList.h hash.h
+P_GrabTool.o: P_GrabTool.C P_GrabTool.h P_Tool.h UIObject.h JString.h \
+ Matrix4.h utilities.h
+P_PrintTool.o: P_PrintTool.C P_PrintTool.h P_Tool.h UIObject.h JString.h \
+ Matrix4.h utilities.h Inform.h
+P_PinchTool.o: P_PinchTool.C P_PinchTool.h P_Tool.h UIObject.h JString.h \
+ Matrix4.h utilities.h
+P_UIVR.o: P_UIVR.C TextEvent.h Command.h Inform.h JString.h TextInterp.h \
+ utilities.h DisplayDevice.h Matrix4.h Stack.h ResizeArray.h P_UIVR.h \
+ NameList.h hash.h UIObject.h Molecule.h DrawMolecule.h BaseMolecule.h \
+ Atom.h Residue.h Timestep.h QMTimestep.h QMData.h Fragment.h intstack.h \
+ SmallRing.h SmallRingLinkages.h inthash.h Displayable.h Pickable.h \
+ VMDDisplayList.h MaterialList.h DrawMolItem.h config.h DispCmds.h \
+ AtomColor.h AtomRep.h AtomSel.h PickMode.h VolumeTexture.h Surf.h \
+ MSMSInterface.h VMDThreads.h MoleculeList.h P_CmdTool.h VMDApp.h \
+ PluginMgr.h ../plugins/include/vmdplugin.h CommandQueue.h Scene.h \
+ PickList.h P_Tool.h P_RotateTool.h P_JoystickTool.h P_GrabTool.h \
+ P_PrintTool.h P_TugTool.h SpringTool.h P_PinchTool.h P_SensorConfig.h \
+ P_Tracker.h P_Feedback.h P_Buttons.h CmdLabel.h SpaceballButtons.h \
+ SpaceballTracker.h
+P_Buttons.o: P_Buttons.C P_Buttons.h ResizeArray.h P_SensorConfig.h \
+ JString.h Matrix4.h
+P_Tracker.o: P_Tracker.C Matrix4.h P_Tracker.h P_SensorConfig.h JString.h \
+ ResizeArray.h
+P_Tool.o: P_Tool.C P_Tracker.h Matrix4.h P_SensorConfig.h JString.h \
+ ResizeArray.h P_Feedback.h P_Buttons.h P_Tool.h UIObject.h DispCmds.h \
+ Scene.h Displayable.h Pickable.h utilities.h VMDDisplayList.h \
+ MaterialList.h NameList.h hash.h VMDApp.h PluginMgr.h \
+ ../plugins/include/vmdplugin.h AtomSel.h MoleculeList.h Molecule.h \
+ DrawMolecule.h BaseMolecule.h Atom.h Residue.h Timestep.h QMTimestep.h \
+ QMData.h Fragment.h intstack.h SmallRing.h Inform.h SmallRingLinkages.h \
+ inthash.h DrawMolItem.h config.h AtomColor.h AtomRep.h PickMode.h \
+ VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h PickList.h Command.h
+P_CmdTool.o: P_CmdTool.C P_CmdTool.h Command.h Inform.h Matrix4.h
+P_SensorConfig.o: P_SensorConfig.C P_SensorConfig.h JString.h \
+ ResizeArray.h Matrix4.h Inform.h utilities.h
+ParseTree.o: ParseTree.C AtomParser.h JString.h y.tab.h ParseTree.h \
+ SymbolTable.h NameList.h ResizeArray.h utilities.h hash.h Command.h \
+ Inform.h JRegex.h pcre.h AtomSel.h Timestep.h Matrix4.h QMTimestep.h \
+ QMData.h DrawMolecule.h BaseMolecule.h Atom.h Residue.h Fragment.h \
+ intstack.h SmallRing.h SmallRingLinkages.h inthash.h Displayable.h \
+ Pickable.h VMDDisplayList.h MaterialList.h DrawMolItem.h config.h \
+ DispCmds.h AtomColor.h AtomRep.h PickMode.h VolumeTexture.h Surf.h \
+ MSMSInterface.h VMDThreads.h SpatialSearch.h
+PickList.o: PickList.C PickList.h ResizeArray.h NameList.h utilities.h \
+ hash.h Command.h Inform.h DisplayDevice.h Matrix4.h Stack.h Pickable.h \
+ PickModeList.h PickMode.h VMDApp.h PluginMgr.h \
+ ../plugins/include/vmdplugin.h JString.h CommandQueue.h TextEvent.h \
+ TextInterp.h Molecule.h DrawMolecule.h BaseMolecule.h Atom.h Residue.h \
+ Timestep.h QMTimestep.h QMData.h Fragment.h intstack.h SmallRing.h \
+ SmallRingLinkages.h inthash.h Displayable.h VMDDisplayList.h \
+ MaterialList.h DrawMolItem.h config.h DispCmds.h AtomColor.h AtomRep.h \
+ AtomSel.h VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h \
+ MoleculeList.h
+PickModeAddBond.o: PickModeAddBond.C PickModeAddBond.h PickMode.h \
+ Pickable.h DisplayDevice.h Matrix4.h Stack.h ResizeArray.h utilities.h \
+ Inform.h DrawMolecule.h BaseMolecule.h NameList.h hash.h Atom.h \
+ Residue.h Timestep.h QMTimestep.h QMData.h Fragment.h intstack.h \
+ SmallRing.h SmallRingLinkages.h inthash.h Displayable.h VMDDisplayList.h \
+ MaterialList.h DrawMolItem.h config.h DispCmds.h AtomColor.h AtomRep.h \
+ AtomSel.h VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h \
+ CommandQueue.h Command.h TextEvent.h JString.h TextInterp.h VMDApp.h \
+ PluginMgr.h ../plugins/include/vmdplugin.h
+PickModeCenter.o: PickModeCenter.C PickModeCenter.h PickMode.h Pickable.h \
+ VMDApp.h PluginMgr.h ResizeArray.h ../plugins/include/vmdplugin.h \
+ NameList.h utilities.h hash.h JString.h MoleculeList.h Molecule.h \
+ DrawMolecule.h BaseMolecule.h Atom.h Residue.h Timestep.h Matrix4.h \
+ QMTimestep.h QMData.h Fragment.h intstack.h SmallRing.h Inform.h \
+ SmallRingLinkages.h inthash.h Displayable.h VMDDisplayList.h \
+ MaterialList.h DrawMolItem.h config.h DispCmds.h AtomColor.h AtomRep.h \
+ AtomSel.h VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h
+PickModeForce.o: PickModeForce.C PickModeForce.h PickMode.h Atom.h \
+ utilities.h Molecule.h DrawMolecule.h BaseMolecule.h NameList.h \
+ ResizeArray.h hash.h Residue.h Timestep.h Matrix4.h QMTimestep.h \
+ QMData.h Fragment.h intstack.h SmallRing.h Inform.h SmallRingLinkages.h \
+ inthash.h Displayable.h Pickable.h VMDDisplayList.h MaterialList.h \
+ DrawMolItem.h config.h DispCmds.h AtomColor.h AtomRep.h AtomSel.h \
+ VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h DisplayDevice.h \
+ Stack.h Mouse.h UIObject.h Command.h
+PickModeList.o: PickModeList.C PickModeList.h NameList.h ResizeArray.h \
+ utilities.h hash.h PickModeAddBond.h PickMode.h PickModeCenter.h \
+ PickModeForce.h PickModeMolLabel.h PickModeMove.h PickModeUser.h \
+ VMDApp.h PluginMgr.h ../plugins/include/vmdplugin.h JString.h
+PickModeMolLabel.o: PickModeMolLabel.C PickModeMolLabel.h PickMode.h \
+ Pickable.h DisplayDevice.h Matrix4.h Stack.h ResizeArray.h utilities.h \
+ Inform.h DrawMolecule.h BaseMolecule.h NameList.h hash.h Atom.h \
+ Residue.h Timestep.h QMTimestep.h QMData.h Fragment.h intstack.h \
+ SmallRing.h SmallRingLinkages.h inthash.h Displayable.h VMDDisplayList.h \
+ MaterialList.h DrawMolItem.h config.h DispCmds.h AtomColor.h AtomRep.h \
+ AtomSel.h VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h \
+ CommandQueue.h Command.h TextEvent.h JString.h TextInterp.h VMDApp.h \
+ PluginMgr.h ../plugins/include/vmdplugin.h
+PickModeMove.o: PickModeMove.C PickModeMove.h PickMode.h DrawMolecule.h \
+ BaseMolecule.h NameList.h ResizeArray.h utilities.h hash.h Atom.h \
+ Residue.h Timestep.h Matrix4.h QMTimestep.h QMData.h Fragment.h \
+ intstack.h SmallRing.h Inform.h SmallRingLinkages.h inthash.h \
+ Displayable.h Pickable.h VMDDisplayList.h MaterialList.h DrawMolItem.h \
+ config.h DispCmds.h AtomColor.h AtomRep.h AtomSel.h VolumeTexture.h \
+ Surf.h MSMSInterface.h VMDThreads.h VMDQuat.h Mouse.h UIObject.h \
+ Command.h DisplayDevice.h Stack.h
+PickModeUser.o: PickModeUser.C PickModeUser.h PickMode.h Pickable.h \
+ DisplayDevice.h Matrix4.h Stack.h ResizeArray.h utilities.h Inform.h \
+ DrawMolecule.h BaseMolecule.h NameList.h hash.h Atom.h Residue.h \
+ Timestep.h QMTimestep.h QMData.h Fragment.h intstack.h SmallRing.h \
+ SmallRingLinkages.h inthash.h Displayable.h VMDDisplayList.h \
+ MaterialList.h DrawMolItem.h config.h DispCmds.h AtomColor.h AtomRep.h \
+ AtomSel.h VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h \
+ CommandQueue.h Command.h TextEvent.h JString.h TextInterp.h VMDApp.h \
+ PluginMgr.h ../plugins/include/vmdplugin.h
+PlainTextInterp.o: PlainTextInterp.C PlainTextInterp.h TextInterp.h \
+ Inform.h utilities.h
+PluginMgr.o: PluginMgr.C PluginMgr.h ResizeArray.h \
+ ../plugins/include/vmdplugin.h vmddlopen.h Inform.h \
+ ../plugins/LINUXAMD64/molfile/libmolfile_plugin.h
+POV3DisplayDevice.o: POV3DisplayDevice.C POV3DisplayDevice.h \
+ FileRenderer.h DisplayDevice.h Matrix4.h Stack.h ResizeArray.h \
+ utilities.h Scene.h Displayable.h Pickable.h VMDDisplayList.h \
+ MaterialList.h NameList.h hash.h Inform.h DispCmds.h VMDApp.h \
+ PluginMgr.h ../plugins/include/vmdplugin.h JString.h
+PSDisplayDevice.o: PSDisplayDevice.C DepthSortObj.h Matrix4.h \
+ PSDisplayDevice.h DispCmds.h FileRenderer.h DisplayDevice.h Stack.h \
+ ResizeArray.h utilities.h Scene.h Displayable.h Pickable.h \
+ VMDDisplayList.h MaterialList.h NameList.h hash.h Inform.h \
+ SortableArray.h
+QMData.o: QMData.C QMData.h QMTimestep.h Orbital.h Molecule.h \
+ DrawMolecule.h BaseMolecule.h NameList.h ResizeArray.h utilities.h \
+ hash.h Atom.h Residue.h Timestep.h Matrix4.h Fragment.h intstack.h \
+ SmallRing.h Inform.h SmallRingLinkages.h inthash.h Displayable.h \
+ Pickable.h VMDDisplayList.h MaterialList.h DrawMolItem.h config.h \
+ DispCmds.h AtomColor.h AtomRep.h AtomSel.h PickMode.h VolumeTexture.h \
+ Surf.h MSMSInterface.h VMDThreads.h ../plugins/include/molfile_plugin.h \
+ ../plugins/include/vmdplugin.h
+QMTimestep.o: QMTimestep.C QMTimestep.h QMData.h Molecule.h \
+ DrawMolecule.h BaseMolecule.h NameList.h ResizeArray.h utilities.h \
+ hash.h Atom.h Residue.h Timestep.h Matrix4.h Fragment.h intstack.h \
+ SmallRing.h Inform.h SmallRingLinkages.h inthash.h Displayable.h \
+ Pickable.h VMDDisplayList.h MaterialList.h DrawMolItem.h config.h \
+ DispCmds.h AtomColor.h AtomRep.h AtomSel.h PickMode.h VolumeTexture.h \
+ Surf.h MSMSInterface.h VMDThreads.h ../plugins/include/molfile_plugin.h \
+ ../plugins/include/vmdplugin.h
+RadianceDisplayDevice.o: RadianceDisplayDevice.C RadianceDisplayDevice.h \
+ FileRenderer.h DisplayDevice.h Matrix4.h Stack.h ResizeArray.h \
+ utilities.h Scene.h Displayable.h Pickable.h VMDDisplayList.h \
+ MaterialList.h NameList.h hash.h Inform.h DispCmds.h
+RayShadeDisplayDevice.o: RayShadeDisplayDevice.C RayShadeDisplayDevice.h \
+ FileRenderer.h DisplayDevice.h Matrix4.h Stack.h ResizeArray.h \
+ utilities.h Scene.h Displayable.h Pickable.h VMDDisplayList.h \
+ MaterialList.h NameList.h hash.h Inform.h DispCmds.h
+R3dDisplayDevice.o: R3dDisplayDevice.C R3dDisplayDevice.h FileRenderer.h \
+ DisplayDevice.h Matrix4.h Stack.h ResizeArray.h utilities.h Scene.h \
+ Displayable.h Pickable.h VMDDisplayList.h MaterialList.h NameList.h \
+ hash.h Inform.h DispCmds.h
+RenderManDisplayDevice.o: RenderManDisplayDevice.C \
+ RenderManDisplayDevice.h FileRenderer.h DisplayDevice.h Matrix4.h \
+ Stack.h ResizeArray.h utilities.h Scene.h Displayable.h Pickable.h \
+ VMDDisplayList.h MaterialList.h NameList.h hash.h Inform.h
+Scene.o: Scene.C Scene.h Displayable.h Matrix4.h ResizeArray.h Pickable.h \
+ utilities.h VMDDisplayList.h MaterialList.h NameList.h hash.h \
+ DisplayDevice.h Stack.h Inform.h DispCmds.h FileRenderList.h \
+ FileRenderer.h Exscitech/Games/GameController.hpp \
+ /usr/include/qt4/QtGui/QPushButton  \
+  Exscitech/Display/VmdGlWidget.hpp \
+ /usr/include/qt4/QtOpenGL/QGLWidget  \
+ Exscitech/Utilities/ErrorLog.hpp
+SnapshotDisplayDevice.o: SnapshotDisplayDevice.C ImageIO.h \
+ SnapshotDisplayDevice.h FileRenderer.h DisplayDevice.h Matrix4.h Stack.h \
+ ResizeArray.h utilities.h Scene.h Displayable.h Pickable.h \
+ VMDDisplayList.h MaterialList.h NameList.h hash.h Inform.h config.h
+Spaceball.o: Spaceball.C Spaceball.h UIObject.h Command.h Inform.h \
+ NameList.h ResizeArray.h utilities.h hash.h DisplayDevice.h Matrix4.h \
+ Stack.h TextEvent.h JString.h TextInterp.h CommandQueue.h PickList.h \
+ Animation.h MoleculeList.h Molecule.h DrawMolecule.h BaseMolecule.h \
+ Atom.h Residue.h Timestep.h QMTimestep.h QMData.h Fragment.h intstack.h \
+ SmallRing.h SmallRingLinkages.h inthash.h Displayable.h Pickable.h \
+ VMDDisplayList.h MaterialList.h DrawMolItem.h config.h DispCmds.h \
+ AtomColor.h AtomRep.h AtomSel.h PickMode.h VolumeTexture.h Surf.h \
+ MSMSInterface.h VMDThreads.h VMDApp.h PluginMgr.h \
+ ../plugins/include/vmdplugin.h
+SpaceballButtons.o: SpaceballButtons.C VMDApp.h PluginMgr.h ResizeArray.h \
+ ../plugins/include/vmdplugin.h NameList.h utilities.h hash.h JString.h \
+ P_Buttons.h P_SensorConfig.h Matrix4.h SpaceballButtons.h Inform.h
+SpaceballTracker.o: SpaceballTracker.C VMDApp.h PluginMgr.h ResizeArray.h \
+ ../plugins/include/vmdplugin.h NameList.h utilities.h hash.h JString.h \
+ SpaceballTracker.h P_Tracker.h Matrix4.h P_SensorConfig.h Spaceball.h \
+ UIObject.h Command.h Inform.h
+SpatialSearch.o: SpatialSearch.C BondSearch.h ResizeArray.h \
+ SpatialSearch.h Timestep.h Matrix4.h QMTimestep.h QMData.h \
+ BaseMolecule.h NameList.h utilities.h hash.h Atom.h Residue.h Fragment.h \
+ intstack.h SmallRing.h Inform.h SmallRingLinkages.h inthash.h Molecule.h \
+ DrawMolecule.h Displayable.h Pickable.h VMDDisplayList.h MaterialList.h \
+ DrawMolItem.h config.h DispCmds.h AtomColor.h AtomRep.h AtomSel.h \
+ PickMode.h VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h
+SpringTool.o: SpringTool.C SpringTool.h P_Tool.h UIObject.h JString.h \
+ Matrix4.h utilities.h Molecule.h DrawMolecule.h BaseMolecule.h \
+ NameList.h ResizeArray.h hash.h Atom.h Residue.h Timestep.h QMTimestep.h \
+ QMData.h Fragment.h intstack.h SmallRing.h Inform.h SmallRingLinkages.h \
+ inthash.h Displayable.h Pickable.h VMDDisplayList.h MaterialList.h \
+ DrawMolItem.h config.h DispCmds.h AtomColor.h AtomRep.h AtomSel.h \
+ PickMode.h VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h VMDApp.h \
+ PluginMgr.h ../plugins/include/vmdplugin.h PickList.h Command.h \
+ MoleculeList.h
+Stage.o: Stage.C Stage.h Displayable.h Matrix4.h ResizeArray.h Pickable.h \
+ utilities.h VMDDisplayList.h MaterialList.h NameList.h hash.h DispCmds.h \
+ DisplayDevice.h Stack.h Scene.h Inform.h
+STLDisplayDevice.o: STLDisplayDevice.C STLDisplayDevice.h FileRenderer.h \
+ DisplayDevice.h Matrix4.h Stack.h ResizeArray.h utilities.h Scene.h \
+ Displayable.h Pickable.h VMDDisplayList.h MaterialList.h NameList.h \
+ hash.h Inform.h DispCmds.h
+Stride.o: Stride.C DrawMolecule.h BaseMolecule.h NameList.h ResizeArray.h \
+ utilities.h hash.h Atom.h Residue.h Timestep.h Matrix4.h QMTimestep.h \
+ QMData.h Fragment.h intstack.h SmallRing.h Inform.h SmallRingLinkages.h \
+ inthash.h Displayable.h Pickable.h VMDDisplayList.h MaterialList.h \
+ DrawMolItem.h config.h DispCmds.h AtomColor.h AtomRep.h AtomSel.h \
+ PickMode.h VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h Stride.h \
+ VMDDir.h
+Surf.o: Surf.C Surf.h ResizeArray.h Inform.h utilities.h
+SymbolTable.o: SymbolTable.C SymbolTable.h NameList.h ResizeArray.h \
+ utilities.h hash.h Command.h Inform.h AtomSel.h ParseTree.h AtomParser.h \
+ JString.h
+TachyonDisplayDevice.o: TachyonDisplayDevice.C TachyonDisplayDevice.h \
+ FileRenderer.h DisplayDevice.h Matrix4.h Stack.h ResizeArray.h \
+ utilities.h Scene.h Displayable.h Pickable.h VMDDisplayList.h \
+ MaterialList.h NameList.h hash.h Inform.h DispCmds.h config.h
+Timestep.o: Timestep.C Timestep.h ResizeArray.h Matrix4.h QMTimestep.h \
+ QMData.h Inform.h utilities.h
+UIObject.o: UIObject.C UIObject.h CommandQueue.h ResizeArray.h Command.h \
+ Inform.h utilities.h VMDApp.h PluginMgr.h ../plugins/include/vmdplugin.h \
+ NameList.h hash.h JString.h
+UIText.o: UIText.C UIText.h UIObject.h Inform.h TclTextInterp.h \
+ TextInterp.h JString.h TextEvent.h Command.h utilities.h DisplayDevice.h \
+ Matrix4.h Stack.h ResizeArray.h CommandQueue.h config.h \
+ PlainTextInterp.h VMDApp.h PluginMgr.h ../plugins/include/vmdplugin.h \
+ NameList.h hash.h Molecule.h DrawMolecule.h BaseMolecule.h Atom.h \
+ Residue.h Timestep.h QMTimestep.h QMData.h Fragment.h intstack.h \
+ SmallRing.h SmallRingLinkages.h inthash.h Displayable.h Pickable.h \
+ VMDDisplayList.h MaterialList.h DrawMolItem.h DispCmds.h AtomColor.h \
+ AtomRep.h AtomSel.h PickMode.h VolumeTexture.h Surf.h MSMSInterface.h \
+ VMDThreads.h MoleculeList.h SymbolTable.h
+VMDApp.o: VMDApp.C VMDDisplayList.h Matrix4.h CoorPluginData.h \
+ utilities.h CoorData.h PluginMgr.h ResizeArray.h \
+ ../plugins/include/vmdplugin.h MolFilePlugin.h \
+ ../plugins/include/molfile_plugin.h ../plugins/include/vmdplugin.h \
+ config.h Inform.h AtomSel.h VMDTitle.h Displayable.h Pickable.h \
+ MaterialList.h NameList.h hash.h DispCmds.h DisplayDevice.h Stack.h \
+ PickList.h Command.h PickModeList.h Scene.h CommandQueue.h UIText.h \
+ UIObject.h TclTextInterp.h TextInterp.h JString.h TextEvent.h Stage.h \
+ Axes.h DisplayRocker.h FPS.h MoleculeList.h Molecule.h DrawMolecule.h \
+ BaseMolecule.h Atom.h Residue.h Timestep.h QMTimestep.h QMData.h \
+ Fragment.h intstack.h SmallRing.h SmallRingLinkages.h inthash.h \
+ DrawMolItem.h AtomColor.h AtomRep.h PickMode.h VolumeTexture.h Surf.h \
+ MSMSInterface.h VMDThreads.h Mouse.h Spaceball.h GeometryList.h \
+ GeometryMol.h FileRenderer.h FileRenderList.h CmdAnimate.h Animation.h \
+ CmdMol.h VMDApp.h CmdMaterial.h CmdPlugin.h CmdRender.h CmdTrans.h \
+ CmdDisplay.h CmdColor.h CmdLabel.h CmdMenu.h P_UIVR.h P_CmdTool.h \
+ SymbolTable.h VMDCollab.h CUDAAccel.h Orbital.h \
+ Exscitech/Display/QtOpenGLDisplayDevice.hpp \
+ /usr/include/qt4/QtGui/QWidget  \
+ /usr/include/qt4/QtOpenGL/QGLWidget  \
+  OpenGLRenderer.h DisplayDevice.h Scene.h \
+ OpenGLExtensions.h OpenGLCache.h VMDMenu.h MainFltkMenu.h VMDFltkMenu.h \
+ ColorFltkMenu.h MaterialFltkMenu.h DisplayFltkMenu.h \
+ FileChooserFltkMenu.h SaveTrajectoryFltkMenu.h GeometryFltkMenu.h \
+ GraphicsFltkMenu.h RenderFltkMenu.h ToolFltkMenu.h
+VMDCollab.o: VMDCollab.C VMDCollab.h UIObject.h ResizeArray.h \
+ VMDThreads.h vmdsock.h Inform.h utilities.h TextEvent.h Command.h \
+ JString.h TextInterp.h DisplayDevice.h Matrix4.h Stack.h
+VMDDir.o: VMDDir.C VMDDir.h
+VMDDisplayList.o: VMDDisplayList.C VMDDisplayList.h Matrix4.h VMDApp.h \
+ PluginMgr.h ResizeArray.h ../plugins/include/vmdplugin.h NameList.h \
+ utilities.h hash.h JString.h Inform.h
+VMDMenu.o: VMDMenu.C VMDMenu.h UIObject.h utilities.h utilities.h
+VMDQuat.o: VMDQuat.C VMDQuat.h utilities.h
+VMDTitle.o: VMDTitle.C VMDTitle.h Displayable.h Matrix4.h ResizeArray.h \
+ Pickable.h utilities.h VMDDisplayList.h MaterialList.h NameList.h hash.h \
+ DispCmds.h DisplayDevice.h Stack.h config.h Scene.h
+VMDThreads.o: VMDThreads.C VMDThreads.h
+VolCPotential.o: VolCPotential.C config.h utilities.h Inform.h \
+ VMDThreads.h VolCPotential.h CUDAKernels.h
+VolMapCreate.o: VolMapCreate.C VMDApp.h PluginMgr.h ResizeArray.h \
+ ../plugins/include/vmdplugin.h NameList.h utilities.h hash.h JString.h \
+ MoleculeList.h Molecule.h DrawMolecule.h BaseMolecule.h Atom.h Residue.h \
+ Timestep.h Matrix4.h QMTimestep.h QMData.h Fragment.h intstack.h \
+ SmallRing.h Inform.h SmallRingLinkages.h inthash.h Displayable.h \
+ Pickable.h VMDDisplayList.h MaterialList.h DrawMolItem.h config.h \
+ DispCmds.h AtomColor.h AtomRep.h AtomSel.h PickMode.h VolumeTexture.h \
+ Surf.h MSMSInterface.h VMDThreads.h Measure.h SpatialSearch.h \
+ VolCPotential.h VolumetricData.h VolMapCreate.h msmpot.h
+VolMapCreateILS.o: VolMapCreateILS.C VolMapCreate.h Matrix4.h \
+ MoleculeList.h Molecule.h DrawMolecule.h BaseMolecule.h NameList.h \
+ ResizeArray.h utilities.h hash.h Atom.h Residue.h Timestep.h \
+ QMTimestep.h QMData.h Fragment.h intstack.h SmallRing.h Inform.h \
+ SmallRingLinkages.h inthash.h Displayable.h Pickable.h VMDDisplayList.h \
+ MaterialList.h DrawMolItem.h config.h DispCmds.h AtomColor.h AtomRep.h \
+ AtomSel.h PickMode.h VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h \
+ JString.h VolumetricData.h VMDApp.h PluginMgr.h \
+ ../plugins/include/vmdplugin.h Measure.h
+VolumetricData.o: VolumetricData.C VolumetricData.h Matrix4.h utilities.h
+VolumeTexture.o: VolumeTexture.C VolumeTexture.h VolumetricData.h \
+ AtomColor.h utilities.h Scene.h Displayable.h Matrix4.h ResizeArray.h \
+ Pickable.h VMDDisplayList.h MaterialList.h NameList.h hash.h VMDApp.h \
+ PluginMgr.h ../plugins/include/vmdplugin.h JString.h Inform.h
+VrmlDisplayDevice.o: VrmlDisplayDevice.C VrmlDisplayDevice.h \
+ FileRenderer.h DisplayDevice.h Matrix4.h Stack.h ResizeArray.h \
+ utilities.h Scene.h Displayable.h Pickable.h VMDDisplayList.h \
+ MaterialList.h NameList.h hash.h Inform.h DispCmds.h
+Vrml2DisplayDevice.o: Vrml2DisplayDevice.C Vrml2DisplayDevice.h \
+ FileRenderer.h DisplayDevice.h Matrix4.h Stack.h ResizeArray.h \
+ utilities.h Scene.h Displayable.h Pickable.h VMDDisplayList.h \
+ MaterialList.h NameList.h hash.h Inform.h DispCmds.h
+WavefrontDisplayDevice.o: WavefrontDisplayDevice.C \
+ WavefrontDisplayDevice.h FileRenderer.h DisplayDevice.h Matrix4.h \
+ Stack.h ResizeArray.h utilities.h Scene.h Displayable.h Pickable.h \
+ VMDDisplayList.h MaterialList.h NameList.h hash.h Inform.h DispCmds.h
+utilities.o: utilities.C utilities.h
+vmd.o: vmd.C vmd.h VMDApp.h PluginMgr.h ResizeArray.h \
+ ../plugins/include/vmdplugin.h NameList.h utilities.h hash.h JString.h \
+ config.h VMDThreads.h Inform.h CommandQueue.h Command.h TextEvent.h \
+ TextInterp.h DisplayDevice.h Matrix4.h Stack.h MaterialList.h \
+ SymbolTable.h
+vmdmain.o: vmdmain.C vmd.h VMDApp.h PluginMgr.h ResizeArray.h \
+ ../plugins/include/vmdplugin.h NameList.h utilities.h hash.h JString.h \
+ /usr/include/qt4/QtGui/QApplication \
+ Exscitech/Games/GameController.hpp /usr/include/qt4/QtGui/QPushButton \
+ Exscitech/Display/VmdGlWidget.hpp /usr/include/qt4/QtOpenGL/QGLWidget \
+  Exscitech/Utilities/ErrorLog.hpp \
+ /usr/include/qt4/QtGui/QStyle  \
+ /usr/include/qt4/QtGui/QCleanlooksStyle \
+ /usr/include/qt4/QtGui/QCDEStyle  \
+ /usr/include/qt4/QtGui/QMotifStyle  \
+ /usr/include/qt4/QtGui/QPlastiqueStyle \
+ 
+ColorInfo.o: ColorInfo.C TclCommands.h VMDApp.h PluginMgr.h ResizeArray.h \
+ ../plugins/include/vmdplugin.h NameList.h utilities.h hash.h JString.h
+TclCommands.o: TclCommands.C MoleculeList.h Molecule.h DrawMolecule.h \
+ BaseMolecule.h NameList.h ResizeArray.h utilities.h hash.h Atom.h \
+ Residue.h Timestep.h Matrix4.h QMTimestep.h QMData.h Fragment.h \
+ intstack.h SmallRing.h Inform.h SmallRingLinkages.h inthash.h \
+ Displayable.h Pickable.h VMDDisplayList.h MaterialList.h DrawMolItem.h \
+ config.h DispCmds.h AtomColor.h AtomRep.h AtomSel.h PickMode.h \
+ VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h JString.h \
+ TclCommands.h SymbolTable.h Command.h VMDApp.h PluginMgr.h \
+ ../plugins/include/vmdplugin.h MolFilePlugin.h \
+ ../plugins/include/molfile_plugin.h ../plugins/include/vmdplugin.h \
+ CommandQueue.h Measure.h
+TclMeasure.o: TclMeasure.C TclCommands.h AtomSel.h Matrix4.h \
+ SymbolTable.h NameList.h ResizeArray.h utilities.h hash.h Command.h \
+ Inform.h VMDApp.h PluginMgr.h ../plugins/include/vmdplugin.h JString.h \
+ MoleculeList.h Molecule.h DrawMolecule.h BaseMolecule.h Atom.h Residue.h \
+ Timestep.h QMTimestep.h QMData.h Fragment.h intstack.h SmallRing.h \
+ SmallRingLinkages.h inthash.h Displayable.h Pickable.h VMDDisplayList.h \
+ MaterialList.h DrawMolItem.h config.h DispCmds.h AtomColor.h AtomRep.h \
+ PickMode.h VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h Measure.h \
+ MeasureSymmetry.h SpatialSearch.h
+TclMolInfo.o: TclMolInfo.C MoleculeList.h Molecule.h DrawMolecule.h \
+ BaseMolecule.h NameList.h ResizeArray.h utilities.h hash.h Atom.h \
+ Residue.h Timestep.h Matrix4.h QMTimestep.h QMData.h Fragment.h \
+ intstack.h SmallRing.h Inform.h SmallRingLinkages.h inthash.h \
+ Displayable.h Pickable.h VMDDisplayList.h MaterialList.h DrawMolItem.h \
+ config.h DispCmds.h AtomColor.h AtomRep.h AtomSel.h PickMode.h \
+ VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h JString.h \
+ TclCommands.h VMDApp.h PluginMgr.h ../plugins/include/vmdplugin.h
+TclTextInterp.o: TclTextInterp.C TclTextInterp.h TextInterp.h JString.h \
+ TextEvent.h Command.h Inform.h utilities.h DisplayDevice.h Matrix4.h \
+ Stack.h ResizeArray.h TclCommands.h VMDApp.h PluginMgr.h \
+ ../plugins/include/vmdplugin.h NameList.h hash.h config.h
+TclVec.o: TclVec.C TclCommands.h Matrix4.h utilities.h
+TclGraphics.o: TclGraphics.C VMDApp.h PluginMgr.h ResizeArray.h \
+ ../plugins/include/vmdplugin.h NameList.h utilities.h hash.h JString.h \
+ Molecule.h DrawMolecule.h BaseMolecule.h Atom.h Residue.h Timestep.h \
+ Matrix4.h QMTimestep.h QMData.h Fragment.h intstack.h SmallRing.h \
+ Inform.h SmallRingLinkages.h inthash.h Displayable.h Pickable.h \
+ VMDDisplayList.h MaterialList.h DrawMolItem.h config.h DispCmds.h \
+ AtomColor.h AtomRep.h AtomSel.h PickMode.h VolumeTexture.h Surf.h \
+ MSMSInterface.h VMDThreads.h MoleculeList.h TclCommands.h Scene.h \
+ MoleculeGraphics.h
+TclVolMap.o: TclVolMap.C TclCommands.h AtomSel.h VMDApp.h PluginMgr.h \
+ ResizeArray.h ../plugins/include/vmdplugin.h NameList.h utilities.h \
+ hash.h JString.h MoleculeList.h Molecule.h DrawMolecule.h BaseMolecule.h \
+ Atom.h Residue.h Timestep.h Matrix4.h QMTimestep.h QMData.h Fragment.h \
+ intstack.h SmallRing.h Inform.h SmallRingLinkages.h inthash.h \
+ Displayable.h Pickable.h VMDDisplayList.h MaterialList.h DrawMolItem.h \
+ config.h DispCmds.h AtomColor.h AtomRep.h PickMode.h VolumeTexture.h \
+ Surf.h MSMSInterface.h VMDThreads.h Measure.h VolumetricData.h \
+ VolMapCreate.h MeasureSymmetry.h
+cmd_animate.o: cmd_animate.C config.h VMDApp.h PluginMgr.h ResizeArray.h \
+ ../plugins/include/vmdplugin.h NameList.h utilities.h hash.h JString.h \
+ MoleculeList.h Molecule.h DrawMolecule.h BaseMolecule.h Atom.h Residue.h \
+ Timestep.h Matrix4.h QMTimestep.h QMData.h Fragment.h intstack.h \
+ SmallRing.h Inform.h SmallRingLinkages.h inthash.h Displayable.h \
+ Pickable.h VMDDisplayList.h MaterialList.h DrawMolItem.h DispCmds.h \
+ AtomColor.h AtomRep.h AtomSel.h PickMode.h VolumeTexture.h Surf.h \
+ MSMSInterface.h VMDThreads.h TclCommands.h Animation.h UIObject.h
+cmd_collab.o: cmd_collab.C CommandQueue.h ResizeArray.h Command.h \
+ Inform.h VMDApp.h PluginMgr.h ../plugins/include/vmdplugin.h NameList.h \
+ utilities.h hash.h JString.h MoleculeList.h Molecule.h DrawMolecule.h \
+ BaseMolecule.h Atom.h Residue.h Timestep.h Matrix4.h QMTimestep.h \
+ QMData.h Fragment.h intstack.h SmallRing.h SmallRingLinkages.h inthash.h \
+ Displayable.h Pickable.h VMDDisplayList.h MaterialList.h DrawMolItem.h \
+ config.h DispCmds.h AtomColor.h AtomRep.h AtomSel.h PickMode.h \
+ VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h VMDCollab.h \
+ UIObject.h
+cmd_color.o: cmd_color.C VMDApp.h PluginMgr.h ResizeArray.h \
+ ../plugins/include/vmdplugin.h NameList.h utilities.h hash.h JString.h \
+ TclCommands.h config.h
+cmd_display.o: cmd_display.C config.h DisplayDevice.h Matrix4.h Stack.h \
+ ResizeArray.h utilities.h Axes.h Displayable.h Pickable.h \
+ VMDDisplayList.h MaterialList.h NameList.h hash.h DispCmds.h \
+ CommandQueue.h Command.h Inform.h MoleculeList.h Molecule.h \
+ DrawMolecule.h BaseMolecule.h Atom.h Residue.h Timestep.h QMTimestep.h \
+ QMData.h Fragment.h intstack.h SmallRing.h SmallRingLinkages.h inthash.h \
+ DrawMolItem.h AtomColor.h AtomRep.h AtomSel.h PickMode.h VolumeTexture.h \
+ Surf.h MSMSInterface.h VMDThreads.h JString.h VMDApp.h PluginMgr.h \
+ ../plugins/include/vmdplugin.h Stage.h TclCommands.h Scene.h
+cmd_imd.o: cmd_imd.C IMDMgr.h UIObject.h imd.h CommandQueue.h \
+ ResizeArray.h Command.h Inform.h VMDApp.h PluginMgr.h \
+ ../plugins/include/vmdplugin.h NameList.h utilities.h hash.h JString.h \
+ MoleculeList.h Molecule.h DrawMolecule.h BaseMolecule.h Atom.h Residue.h \
+ Timestep.h Matrix4.h QMTimestep.h QMData.h Fragment.h intstack.h \
+ SmallRing.h SmallRingLinkages.h inthash.h Displayable.h Pickable.h \
+ VMDDisplayList.h MaterialList.h DrawMolItem.h config.h DispCmds.h \
+ AtomColor.h AtomRep.h AtomSel.h PickMode.h VolumeTexture.h Surf.h \
+ MSMSInterface.h VMDThreads.h
+cmd_label.o: cmd_label.C config.h GeometryList.h Displayable.h Matrix4.h \
+ ResizeArray.h Pickable.h utilities.h VMDDisplayList.h MaterialList.h \
+ NameList.h hash.h GeometryMol.h JString.h DispCmds.h VMDApp.h \
+ PluginMgr.h ../plugins/include/vmdplugin.h
+cmd_material.o: cmd_material.C CmdMaterial.h Command.h Inform.h \
+ MaterialList.h NameList.h ResizeArray.h utilities.h hash.h config.h \
+ VMDApp.h PluginMgr.h ../plugins/include/vmdplugin.h JString.h
+cmd_menu.o: cmd_menu.C config.h utilities.h VMDApp.h PluginMgr.h \
+ ResizeArray.h ../plugins/include/vmdplugin.h NameList.h hash.h JString.h \
+ VMDTkMenu.h VMDMenu.h UIObject.h
+cmd_mol.o: cmd_mol.C config.h utilities.h VMDApp.h PluginMgr.h \
+ ResizeArray.h ../plugins/include/vmdplugin.h NameList.h hash.h JString.h \
+ TclCommands.h VMDDisplayList.h Matrix4.h MoleculeList.h Molecule.h \
+ DrawMolecule.h BaseMolecule.h Atom.h Residue.h Timestep.h QMTimestep.h \
+ QMData.h Fragment.h intstack.h SmallRing.h Inform.h SmallRingLinkages.h \
+ inthash.h Displayable.h Pickable.h MaterialList.h DrawMolItem.h \
+ DispCmds.h AtomColor.h AtomRep.h AtomSel.h PickMode.h VolumeTexture.h \
+ Surf.h MSMSInterface.h VMDThreads.h
+cmd_mouse.o: cmd_mouse.C config.h VMDApp.h PluginMgr.h ResizeArray.h \
+ ../plugins/include/vmdplugin.h NameList.h utilities.h hash.h JString.h \
+ Mouse.h UIObject.h Command.h Inform.h PickModeList.h
+cmd_plugin.o: cmd_plugin.C tcl_commands.h VMDApp.h PluginMgr.h \
+ ResizeArray.h ../plugins/include/vmdplugin.h NameList.h utilities.h \
+ hash.h JString.h config.h
+cmd_render.o: cmd_render.C config.h utilities.h VMDApp.h PluginMgr.h \
+ ResizeArray.h ../plugins/include/vmdplugin.h NameList.h hash.h JString.h \
+ DisplayDevice.h Matrix4.h Stack.h
+cmd_spaceball.o: cmd_spaceball.C config.h VMDApp.h PluginMgr.h \
+ ResizeArray.h ../plugins/include/vmdplugin.h NameList.h utilities.h \
+ hash.h JString.h Spaceball.h UIObject.h Command.h Inform.h
+cmd_tool.o: cmd_tool.C JString.h config.h UIObject.h CommandQueue.h \
+ ResizeArray.h Command.h Inform.h Displayable.h Matrix4.h Pickable.h \
+ utilities.h VMDDisplayList.h MaterialList.h NameList.h hash.h DispCmds.h \
+ MoleculeList.h Molecule.h DrawMolecule.h BaseMolecule.h Atom.h Residue.h \
+ Timestep.h QMTimestep.h QMData.h Fragment.h intstack.h SmallRing.h \
+ SmallRingLinkages.h inthash.h DrawMolItem.h AtomColor.h AtomRep.h \
+ AtomSel.h PickMode.h VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h \
+ P_Tracker.h P_SensorConfig.h P_Buttons.h P_Feedback.h P_Tool.h \
+ P_CmdTool.h VMDApp.h PluginMgr.h ../plugins/include/vmdplugin.h
+cmd_trans.o: cmd_trans.C config.h utilities.h VMDApp.h PluginMgr.h \
+ ResizeArray.h ../plugins/include/vmdplugin.h NameList.h hash.h JString.h
+cmd_user.o: cmd_user.C config.h Mouse.h UIObject.h Command.h Inform.h \
+ NameList.h ResizeArray.h utilities.h hash.h DisplayDevice.h Matrix4.h \
+ Stack.h JString.h VMDApp.h PluginMgr.h ../plugins/include/vmdplugin.h
+cmd_util.o: cmd_util.C config.h CommandQueue.h ResizeArray.h Command.h \
+ Inform.h utilities.h VMDApp.h PluginMgr.h ../plugins/include/vmdplugin.h \
+ NameList.h hash.h JString.h TextEvent.h TextInterp.h DisplayDevice.h \
+ Matrix4.h Stack.h
+cmd_vmdbench.o: cmd_vmdbench.C Benchmark.h config.h VMDApp.h PluginMgr.h \
+ ResizeArray.h ../plugins/include/vmdplugin.h NameList.h utilities.h \
+ hash.h JString.h TclCommands.h CUDAKernels.h VMDThreads.h
+tcl_commands.o: tcl_commands.C TclCommands.h tcl_commands.h config.h \
+ utilities.h CUDAKernels.h VMDThreads.h
+VMDTkMenu.o: VMDTkMenu.C VMDTkMenu.h VMDMenu.h UIObject.h utilities.h \
+ JString.h Inform.h
+ColorFltkMenu.o: ColorFltkMenu.C ColorFltkMenu.h VMDFltkMenu.h VMDMenu.h \
+ UIObject.h utilities.h Command.h Inform.h Scene.h Displayable.h \
+ Matrix4.h ResizeArray.h Pickable.h VMDDisplayList.h MaterialList.h \
+ NameList.h hash.h VMDApp.h PluginMgr.h ../plugins/include/vmdplugin.h \
+ JString.h
+DisplayFltkMenu.o: DisplayFltkMenu.C DisplayFltkMenu.h VMDFltkMenu.h \
+ VMDMenu.h UIObject.h utilities.h Command.h Inform.h VMDApp.h PluginMgr.h \
+ ResizeArray.h ../plugins/include/vmdplugin.h NameList.h hash.h JString.h \
+ DisplayDevice.h Matrix4.h Stack.h
+FileChooserFltkMenu.o: FileChooserFltkMenu.C FileChooserFltkMenu.h \
+ VMDFltkMenu.h VMDMenu.h UIObject.h utilities.h VMDApp.h PluginMgr.h \
+ ResizeArray.h ../plugins/include/vmdplugin.h NameList.h hash.h JString.h \
+ Command.h Inform.h ../plugins/include/molfile_plugin.h \
+ ../plugins/include/vmdplugin.h
+GraphicsFltkMenu.o: GraphicsFltkMenu.C GraphicsFltkMenu.h VMDFltkMenu.h \
+ VMDMenu.h UIObject.h utilities.h NameList.h ResizeArray.h hash.h \
+ GraphicsFltkReps.h AtomRep.h Molecule.h DrawMolecule.h BaseMolecule.h \
+ Atom.h Residue.h Timestep.h Matrix4.h QMTimestep.h QMData.h Fragment.h \
+ intstack.h SmallRing.h Inform.h SmallRingLinkages.h inthash.h \
+ Displayable.h Pickable.h VMDDisplayList.h MaterialList.h DrawMolItem.h \
+ config.h DispCmds.h AtomColor.h AtomSel.h PickMode.h VolumeTexture.h \
+ Surf.h MSMSInterface.h VMDThreads.h VMDApp.h PluginMgr.h \
+ ../plugins/include/vmdplugin.h JString.h MoleculeList.h Command.h \
+ SelectionBuilder.h CmdMol.h CommandQueue.h VolumetricData.h Scene.h
+SelectionBuilder.o: SelectionBuilder.C SelectionBuilder.h \
+ GraphicsFltkMenu.h VMDFltkMenu.h VMDMenu.h UIObject.h utilities.h \
+ NameList.h ResizeArray.h hash.h Molecule.h DrawMolecule.h BaseMolecule.h \
+ Atom.h Residue.h Timestep.h Matrix4.h QMTimestep.h QMData.h Fragment.h \
+ intstack.h SmallRing.h Inform.h SmallRingLinkages.h inthash.h \
+ Displayable.h Pickable.h VMDDisplayList.h MaterialList.h DrawMolItem.h \
+ config.h DispCmds.h AtomColor.h AtomRep.h AtomSel.h PickMode.h \
+ VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h SymbolTable.h \
+ Command.h ParseTree.h AtomParser.h JString.h
+GeometryFltkMenu.o: GeometryFltkMenu.C GeometryFltkMenu.h VMDFltkMenu.h \
+ VMDMenu.h UIObject.h utilities.h GeometryList.h Displayable.h Matrix4.h \
+ ResizeArray.h Pickable.h VMDDisplayList.h MaterialList.h NameList.h \
+ hash.h GeometryMol.h JString.h DispCmds.h Command.h Inform.h VMDApp.h \
+ PluginMgr.h ../plugins/include/vmdplugin.h PickList.h Atom.h Molecule.h \
+ DrawMolecule.h BaseMolecule.h Residue.h Timestep.h QMTimestep.h QMData.h \
+ Fragment.h intstack.h SmallRing.h SmallRingLinkages.h inthash.h \
+ DrawMolItem.h config.h AtomColor.h AtomRep.h AtomSel.h PickMode.h \
+ VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h MoleculeList.h \
+ TextEvent.h TextInterp.h DisplayDevice.h Stack.h
+MaterialFltkMenu.o: MaterialFltkMenu.C MaterialFltkMenu.h VMDFltkMenu.h \
+ VMDMenu.h UIObject.h utilities.h MaterialList.h NameList.h ResizeArray.h \
+ hash.h CmdMaterial.h Command.h Inform.h CommandQueue.h VMDApp.h \
+ PluginMgr.h ../plugins/include/vmdplugin.h JString.h
+MolBrowser.o: MolBrowser.C MolBrowser.h MainFltkMenu.h VMDFltkMenu.h \
+ VMDMenu.h UIObject.h utilities.h ResizeArray.h frame_selector.h VMDApp.h \
+ PluginMgr.h ../plugins/include/vmdplugin.h NameList.h hash.h JString.h \
+ Molecule.h DrawMolecule.h BaseMolecule.h Atom.h Residue.h Timestep.h \
+ Matrix4.h QMTimestep.h QMData.h Fragment.h intstack.h SmallRing.h \
+ Inform.h SmallRingLinkages.h inthash.h Displayable.h Pickable.h \
+ VMDDisplayList.h MaterialList.h DrawMolItem.h config.h DispCmds.h \
+ AtomColor.h AtomRep.h AtomSel.h PickMode.h VolumeTexture.h Surf.h \
+ MSMSInterface.h VMDThreads.h MoleculeList.h
+RenderFltkMenu.o: RenderFltkMenu.C RenderFltkMenu.h VMDFltkMenu.h \
+ VMDMenu.h UIObject.h utilities.h CmdRender.h Command.h Inform.h VMDApp.h \
+ PluginMgr.h ResizeArray.h ../plugins/include/vmdplugin.h NameList.h \
+ hash.h JString.h
+SaveTrajectoryFltkMenu.o: SaveTrajectoryFltkMenu.C \
+ SaveTrajectoryFltkMenu.h VMDFltkMenu.h VMDMenu.h UIObject.h utilities.h \
+ Command.h Inform.h VMDApp.h PluginMgr.h ResizeArray.h \
+ ../plugins/include/vmdplugin.h NameList.h hash.h JString.h \
+ MolFilePlugin.h ../plugins/include/molfile_plugin.h \
+ ../plugins/include/vmdplugin.h frame_selector.h CmdAnimate.h Animation.h \
+ MoleculeList.h Molecule.h DrawMolecule.h BaseMolecule.h Atom.h Residue.h \
+ Timestep.h Matrix4.h QMTimestep.h QMData.h Fragment.h intstack.h \
+ SmallRing.h SmallRingLinkages.h inthash.h Displayable.h Pickable.h \
+ VMDDisplayList.h MaterialList.h DrawMolItem.h config.h DispCmds.h \
+ AtomColor.h AtomRep.h AtomSel.h PickMode.h VolumeTexture.h Surf.h \
+ MSMSInterface.h VMDThreads.h VolumetricData.h
+VMDFltkMenu.o: VMDFltkMenu.C VMDFltkMenu.h VMDMenu.h UIObject.h \
+ utilities.h VMDApp.h PluginMgr.h ResizeArray.h \
+ ../plugins/include/vmdplugin.h NameList.h hash.h JString.h
+MainFltkMenu.o: MainFltkMenu.C Inform.h MainFltkMenu.h VMDFltkMenu.h \
+ VMDMenu.h UIObject.h utilities.h ResizeArray.h MolBrowser.h \
+ frame_selector.h TextEvent.h Command.h JString.h TextInterp.h \
+ DisplayDevice.h Matrix4.h Stack.h VMDApp.h PluginMgr.h \
+ ../plugins/include/vmdplugin.h NameList.h hash.h CommandQueue.h \
+ CmdMenu.h CmdAnimate.h Animation.h MoleculeList.h Molecule.h \
+ DrawMolecule.h BaseMolecule.h Atom.h Residue.h Timestep.h QMTimestep.h \
+ QMData.h Fragment.h intstack.h SmallRing.h SmallRingLinkages.h inthash.h \
+ Displayable.h Pickable.h VMDDisplayList.h MaterialList.h DrawMolItem.h \
+ config.h DispCmds.h AtomColor.h AtomRep.h AtomSel.h PickMode.h \
+ VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h Mouse.h FPS.h \
+ Stage.h Axes.h Scene.h PickModeList.h
+ToolFltkMenu.o: ToolFltkMenu.C ToolFltkMenu.h VMDFltkMenu.h VMDMenu.h \
+ UIObject.h utilities.h P_CmdTool.h Command.h Inform.h Matrix4.h VMDApp.h \
+ PluginMgr.h ResizeArray.h ../plugins/include/vmdplugin.h NameList.h \
+ hash.h JString.h P_UIVR.h P_Tool.h
+frame_selector.o: frame_selector.C frame_selector.h
+Exscitech/Games/GameController.o: Exscitech/Games/GameController.C \
+ /usr/include/qt4/QtGui/QApplication \
+ /usr/include/qt4/QtGui/QDesktopServices \
+  /usr/include/qt4/QtCore/QDir \
+  VMDApp.h PluginMgr.h \
+ ResizeArray.h ../plugins/include/vmdplugin.h NameList.h utilities.h \
+ hash.h JString.h DisplayDevice.h Matrix4.h Stack.h \
+ Exscitech/Display/QtWindow.hpp /usr/include/qt4/QtGui/QWidget \
+ Exscitech/Display/QtOpenGLDisplayDevice.hpp \
+ /usr/include/qt4/QtOpenGL/QGLWidget  \
+  OpenGLRenderer.h DisplayDevice.h Scene.h \
+ Displayable.h Pickable.h VMDDisplayList.h MaterialList.h \
+ OpenGLExtensions.h OpenGLCache.h Exscitech/Display/LoginWindow.hpp \
+ /usr/include/qt4/QtCore/QVariant  \
+  /usr/include/qt4/QtGui/QAction \
+  /usr/include/qt4/QtGui/QButtonGroup \
+  /usr/include/qt4/QtGui/QHBoxLayout \
+  /usr/include/qt4/QtGui/QHeaderView \
+  /usr/include/qt4/QtGui/QLabel \
+  /usr/include/qt4/QtGui/QLineEdit \
+  /usr/include/qt4/QtGui/QMainWindow \
+  /usr/include/qt4/QtGui/QPushButton \
+ /usr/include/qt4/QtGui/QStatusBar  \
+ /usr/include/qt4/QtGui/QVBoxLayout \
+ Exscitech/Display/GameSelectionWindow.hpp \
+ /usr/include/qt4/QtCore/QObject  \
+ /usr/include/qt4/QtWebKit/QWebView  \
+ Exscitech/Display/GameChoiceWidget.hpp \
+ Exscitech/Games/GameController.hpp Exscitech/Display/VmdGlWidget.hpp \
+ Exscitech/Utilities/ErrorLog.hpp \
+ Exscitech/Games/JobSubmitGame/JobSubmitGame.hpp Exscitech/Games/Game.hpp \
+ Exscitech/Math/Vector2.hpp Exscitech/Types.hpp Exscitech/Math/Math.hpp \
+ Exscitech/Math/Matrix3x3.hpp Exscitech/Math/Quaternion.hpp \
+ Exscitech/Math/Vector3.hpp \
+ Exscitech/Games/IdentificationGame/IdentificationGame.hpp \
+ /usr/include/qt4/QtGui/QBoxLayout /usr/include/qt4/QtGui/QComboBox \
+ Exscitech/Games/LindseyGame/LindseyGame.hpp \
+ /usr/include/qt4/QtCore/QTimer  \
+  Exscitech/Utilities/WorkunitId.hpp \
+ /usr/include/qt4/QtXml/QDomDocument  \
+ Exscitech/Utilities/CameraUtility.hpp Matrix4.h \
+ Exscitech/Math/Matrix3x4.hpp Exscitech/Math/Matrix4x4.hpp \
+ Exscitech/Math/Vector4.hpp
+Exscitech/Games/GameInfoManager.o: Exscitech/Games/GameInfoManager.C \
+ Exscitech/Games/GameInfoManager.hpp Exscitech/Games/GameController.hpp \
+ /usr/include/qt4/QtGui/QPushButton  \
+  Exscitech/Display/VmdGlWidget.hpp \
+ /usr/include/qt4/QtOpenGL/QGLWidget  \
+ Exscitech/Utilities/ErrorLog.hpp
+Exscitech/Games/Game.o: Exscitech/Games/Game.C Exscitech/Games/Game.hpp \
+ /usr/include/qt4/QtCore/QObject  \
+ 
+Exscitech/Games/JobSubmitGame/JobSubmitGame.o: \
+ Exscitech/Games/JobSubmitGame/JobSubmitGame.C \
+ /usr/include/qt4/QtWebKit/QWebView  \
+ /usr/include/qt4/QtCore/QObject  \
+ /usr/include/qt4/QtGui/QComboBox  \
+ /usr/include/qt4/QtGui/QMessageBox  \
+  /usr/include/qt4/QtGui/QLabel \
+  /usr/include/qt4/QtGui/QPushButton \
+ /usr/include/qt4/QtXml/QDomDocument  \
+ /usr/include/qt4/QtGui/QProgressDialog \
+ Exscitech/Games/JobSubmitGame/JobSubmitGame.hpp \
+ Exscitech/Display/QtWindow.hpp /usr/include/qt4/QtGui/QWidget \
+  Exscitech/Games/Game.hpp \
+ Exscitech/Math/Vector2.hpp Exscitech/Types.hpp Exscitech/Math/Math.hpp \
+ Exscitech/Math/Matrix3x3.hpp Exscitech/Math/Quaternion.hpp \
+ Exscitech/Math/Vector3.hpp Exscitech/Games/GameController.hpp \
+ Exscitech/Display/VmdGlWidget.hpp /usr/include/qt4/QtOpenGL/QGLWidget \
+  Exscitech/Utilities/ErrorLog.hpp \
+ Exscitech/Display/ImageSelectionWidget.hpp \
+ /usr/include/qt4/QtGui/QListView  \
+  /usr/include/qt4/QtGui/QStandardItemModel \
+ Exscitech/Display/ToggleWidget.hpp Exscitech/Display/ToggleButton.hpp \
+ Exscitech/Math/Matrix3x4.hpp Exscitech/Utilities/TransformUtility.hpp \
+ Displayable.h Matrix4.h ResizeArray.h Pickable.h utilities.h \
+ VMDDisplayList.h MaterialList.h NameList.h hash.h \
+ Exscitech/Graphics/Animation/KeyFrame.hpp \
+ Exscitech/Utilities/ServerCommunicationManager.hpp \
+ Exscitech/Utilities/ProteinServerData.hpp \
+ Exscitech/Utilities/ConformationServerData.hpp \
+ Exscitech/Utilities/LigandServerData.hpp \
+ Exscitech/Utilities/ImageUtility.hpp VMDApp.h PluginMgr.h \
+ ../plugins/include/vmdplugin.h JString.h FPS.h Displayable.h Axes.h \
+ DispCmds.h MoleculeList.h Molecule.h DrawMolecule.h BaseMolecule.h \
+ Atom.h Residue.h Timestep.h QMTimestep.h QMData.h Fragment.h intstack.h \
+ SmallRing.h Inform.h SmallRingLinkages.h inthash.h DrawMolItem.h \
+ config.h AtomColor.h AtomRep.h AtomSel.h PickMode.h VolumeTexture.h \
+ Surf.h MSMSInterface.h VMDThreads.h
+Exscitech/Games/IdentificationGame/IdentificationGame.o: \
+ Exscitech/Games/IdentificationGame/IdentificationGame.C \
+ Exscitech/Games/IdentificationGame/IdentificationGame.hpp \
+ /usr/include/qt4/QtGui/QBoxLayout  \
+  /usr/include/qt4/QtGui/QComboBox \
+  Exscitech/Games/Game.hpp \
+ /usr/include/qt4/QtCore/QObject  \
+ Exscitech/Display/QtWindow.hpp /usr/include/qt4/QtGui/QWidget \
+  /usr/include/qt4/QtGui/QPushButton \
+  /usr/include/qt4/QtGui/QLabel \
+  /usr/include/qt4/QtGui/QLineEdit \
+  /usr/include/qt4/QtGui/QTextEdit \
+ /usr/include/qt4/QtGui/QFileDialog  \
+ /usr/include/qt4/QtGui/QStyle  \
+ /usr/include/qt4/QtCore/QFile  VMDApp.h \
+ PluginMgr.h ResizeArray.h ../plugins/include/vmdplugin.h NameList.h \
+ utilities.h hash.h JString.h Axes.h Displayable.h Matrix4.h Pickable.h \
+ VMDDisplayList.h MaterialList.h DispCmds.h MoleculeList.h Molecule.h \
+ DrawMolecule.h BaseMolecule.h Atom.h Residue.h Timestep.h QMTimestep.h \
+ QMData.h Fragment.h intstack.h SmallRing.h Inform.h SmallRingLinkages.h \
+ inthash.h DrawMolItem.h config.h AtomColor.h AtomRep.h AtomSel.h \
+ PickMode.h VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h \
+ Exscitech/Games/GameController.hpp Exscitech/Display/VmdGlWidget.hpp \
+ /usr/include/qt4/QtOpenGL/QGLWidget  \
+  Exscitech/Utilities/ErrorLog.hpp \
+ Exscitech/Games/GameInfoManager.hpp
+Exscitech/Games/LindseyGame/LindseyGame.o: \
+ Exscitech/Games/LindseyGame/LindseyGame.C \
+ Exscitech/Games/LindseyGame/LindseyGame.hpp \
+ /usr/include/qt4/QtGui/QWidget  \
+ /usr/include/qt4/QtGui/QComboBox  \
+ /usr/include/qt4/QtCore/QTimer  \
+  Exscitech/Games/Game.hpp \
+ /usr/include/qt4/QtCore/QObject  \
+ Exscitech/Utilities/WorkunitId.hpp /usr/include/qt4/QtXml/QDomDocument \
+  Exscitech/Display/QtWindow.hpp \
+ /usr/include/qt4/QtGui/QPushButton  \
+ /usr/include/qt4/QtGui/QBoxLayout  \
+ /usr/include/qt4/QtGui/QLineEdit  \
+  /usr/include/qt4/QtCore/QFile \
+  /usr/include/qt4/QtGui/QFileDialog \
+  /usr/include/qt4/QtGui/QStyle \
+  /usr/include/qt4/QtGui/QFontMetrics \
+  /usr/include/qt4/QtGui/QMessageBox \
+  VMDApp.h PluginMgr.h ResizeArray.h \
+ ../plugins/include/vmdplugin.h NameList.h utilities.h hash.h JString.h \
+ Scene.h Displayable.h Matrix4.h Pickable.h VMDDisplayList.h \
+ MaterialList.h Axes.h DispCmds.h MoleculeList.h Molecule.h \
+ DrawMolecule.h BaseMolecule.h Atom.h Residue.h Timestep.h QMTimestep.h \
+ QMData.h Fragment.h intstack.h SmallRing.h Inform.h SmallRingLinkages.h \
+ inthash.h DrawMolItem.h config.h AtomColor.h AtomRep.h AtomSel.h \
+ PickMode.h VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h \
+ Exscitech/Display/WebLinkWidget.hpp /usr/include/qt4/QtGui/QLabel \
+  Exscitech/Utilities/TransformUtility.hpp \
+ Displayable.h Exscitech/Graphics/Animation/KeyFrame.hpp \
+ Exscitech/Math/Vector3.hpp Exscitech/Math/Math.hpp \
+ Exscitech/Math/Quaternion.hpp Exscitech/Math/Matrix3x3.hpp \
+ Exscitech/Types.hpp Exscitech/Math/Matrix3x4.hpp \
+ Exscitech/Games/GameInfoManager.hpp Exscitech/Games/GameController.hpp \
+ Exscitech/Display/VmdGlWidget.hpp /usr/include/qt4/QtOpenGL/QGLWidget \
+  Exscitech/Utilities/ErrorLog.hpp \
+ Exscitech/Utilities/ServerCommunicationManager.hpp
+Exscitech/Graphics/Scene.o: Exscitech/Graphics/Scene.C VMDApp.h \
+ PluginMgr.h ResizeArray.h ../plugins/include/vmdplugin.h NameList.h \
+ utilities.h hash.h JString.h Exscitech/Types.hpp \
+ Exscitech/Games/GameController.hpp /usr/include/qt4/QtGui/QPushButton \
+  Exscitech/Display/VmdGlWidget.hpp \
+ /usr/include/qt4/QtOpenGL/QGLWidget  \
+ Exscitech/Utilities/ErrorLog.hpp Exscitech/Graphics/Scene.hpp \
+ Displayable.h Matrix4.h Pickable.h VMDDisplayList.h MaterialList.h \
+ Exscitech/Graphics/Drawable.hpp Exscitech/Graphics/IDrawable.hpp \
+ Exscitech/Display/Camera.hpp Exscitech/Graphics/Transformable.hpp \
+ Exscitech/Math/Vector3.hpp Exscitech/Math/Math.hpp \
+ Exscitech/Math/Matrix3x3.hpp Exscitech/Math/Quaternion.hpp \
+ Exscitech/Math/Matrix3x4.hpp Exscitech/Math/Matrix4x4.hpp \
+ Exscitech/Math/Vector4.hpp Exscitech/Math/Vector2.hpp
+Exscitech/Graphics/Transformable.o: Exscitech/Graphics/Transformable.C \
+ Exscitech/Constants.hpp Exscitech/Types.hpp Exscitech/Math/Vector3.hpp \
+ Exscitech/Math/Math.hpp Exscitech/Math/Vector4.hpp \
+ Exscitech/Graphics/Transformable.hpp Exscitech/Math/Matrix3x3.hpp \
+ Exscitech/Math/Quaternion.hpp Exscitech/Math/Matrix3x4.hpp \
+ Exscitech/Math/Matrix4x4.hpp
+Exscitech/Graphics/Drawable.o: Exscitech/Graphics/Drawable.C \
+ Exscitech/Graphics/Drawable.hpp Exscitech/Graphics/IDrawable.hpp \
+ Exscitech/Display/Camera.hpp Exscitech/Graphics/Transformable.hpp \
+ Exscitech/Math/Vector3.hpp Exscitech/Math/Math.hpp \
+ Exscitech/Math/Matrix3x3.hpp Exscitech/Types.hpp \
+ Exscitech/Math/Quaternion.hpp Exscitech/Math/Matrix3x4.hpp \
+ Exscitech/Math/Matrix4x4.hpp Exscitech/Math/Vector4.hpp \
+ Exscitech/Math/Vector2.hpp
+Exscitech/Graphics/MoleculeLoader.o: Exscitech/Graphics/MoleculeLoader.C \
+ Exscitech/Constants.hpp Exscitech/Types.hpp Exscitech/Math/Vector3.hpp \
+ Exscitech/Math/Math.hpp Exscitech/Math/Vector4.hpp \
+ Exscitech/Graphics/MoleculeLoader.hpp Exscitech/Graphics/AtomicName.hpp \
+ Exscitech/Graphics/BallAndStickMolecule.hpp Exscitech/Graphics/Atoms.hpp \
+ Exscitech/Graphics/Drawable.hpp Exscitech/Graphics/IDrawable.hpp \
+ Exscitech/Display/Camera.hpp Exscitech/Graphics/Transformable.hpp \
+ Exscitech/Math/Matrix3x3.hpp Exscitech/Math/Quaternion.hpp \
+ Exscitech/Math/Matrix3x4.hpp Exscitech/Math/Matrix4x4.hpp \
+ Exscitech/Math/Vector2.hpp Exscitech/Graphics/Shaders/ShaderProgram.hpp \
+ Exscitech/Graphics/Bonds.hpp Exscitech/Graphics/Drawable.hpp \
+ Exscitech/Graphics/SpaceFillMolecule.hpp \
+ Exscitech/Graphics/LabeledMolecule.hpp \
+ Exscitech/Graphics/LabeledAtoms.hpp /usr/include/qt4/QtCore/QString \
+  /usr/include/qt4/QtGui/QFont \
+ Exscitech/Games/GameController.hpp /usr/include/qt4/QtGui/QPushButton \
+  Exscitech/Display/VmdGlWidget.hpp \
+ /usr/include/qt4/QtOpenGL/QGLWidget  \
+ Exscitech/Utilities/ErrorLog.hpp Exscitech/Graphics/Lighting/Texture.hpp \
+ Exscitech/Graphics/FullQuad.hpp Exscitech/Utilities/TextUtility.hpp \
+ Exscitech/Graphics/Bonds.hpp Exscitech/Graphics/Atoms.hpp VMDApp.h \
+ PluginMgr.h ResizeArray.h ../plugins/include/vmdplugin.h NameList.h \
+ utilities.h hash.h JString.h Molecule.h DrawMolecule.h BaseMolecule.h \
+ Atom.h Residue.h Timestep.h Matrix4.h QMTimestep.h QMData.h Fragment.h \
+ intstack.h SmallRing.h Inform.h SmallRingLinkages.h inthash.h \
+ Displayable.h Pickable.h VMDDisplayList.h MaterialList.h DrawMolItem.h \
+ config.h DispCmds.h AtomColor.h AtomRep.h AtomSel.h PickMode.h \
+ VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h MoleculeList.h \
+ Molecule.h Scene.h
+Exscitech/Graphics/Skybox.o: Exscitech/Graphics/Skybox.C \
+ Exscitech/Graphics/Skybox.hpp Exscitech/Graphics/Drawable.hpp \
+ Exscitech/Graphics/IDrawable.hpp Exscitech/Display/Camera.hpp \
+ Exscitech/Graphics/Transformable.hpp Exscitech/Math/Vector3.hpp \
+ Exscitech/Math/Math.hpp Exscitech/Math/Matrix3x3.hpp Exscitech/Types.hpp \
+ Exscitech/Math/Quaternion.hpp Exscitech/Math/Matrix3x4.hpp \
+ Exscitech/Math/Matrix4x4.hpp Exscitech/Math/Vector4.hpp \
+ Exscitech/Math/Vector2.hpp Exscitech/Graphics/Shaders/ShaderProgram.hpp \
+ Exscitech/Graphics/Lighting/Texture.hpp \
+ Exscitech/Graphics/Lighting/Material.hpp
+Exscitech/Graphics/VolmapExscitech.o: \
+ Exscitech/Graphics/VolmapExscitech.C \
+ Exscitech/Graphics/VolmapExscitech.hpp VolumetricData.h VMDApp.h \
+ PluginMgr.h ResizeArray.h ../plugins/include/vmdplugin.h NameList.h \
+ utilities.h hash.h JString.h Molecule.h DrawMolecule.h BaseMolecule.h \
+ Atom.h Residue.h Timestep.h Matrix4.h QMTimestep.h QMData.h Fragment.h \
+ intstack.h SmallRing.h Inform.h SmallRingLinkages.h inthash.h \
+ Displayable.h Pickable.h VMDDisplayList.h MaterialList.h DrawMolItem.h \
+ config.h DispCmds.h AtomColor.h AtomRep.h AtomSel.h PickMode.h \
+ VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h Isosurface.h Scene.h \
+ MoleculeList.h Molecule.h UIText.h UIObject.h TclTextInterp.h \
+ TextInterp.h TextEvent.h Command.h DisplayDevice.h Stack.h \
+ Exscitech/Graphics/VolmapPiece.hpp Exscitech/Graphics/Drawable.hpp \
+ Exscitech/Graphics/IDrawable.hpp Exscitech/Display/Camera.hpp \
+ Exscitech/Graphics/Transformable.hpp Exscitech/Math/Vector3.hpp \
+ Exscitech/Math/Math.hpp Exscitech/Math/Matrix3x3.hpp Exscitech/Types.hpp \
+ Exscitech/Math/Quaternion.hpp Exscitech/Math/Matrix3x4.hpp \
+ Exscitech/Math/Matrix4x4.hpp Exscitech/Math/Vector4.hpp \
+ Exscitech/Math/Vector2.hpp Exscitech/Graphics/Shaders/ShaderProgram.hpp \
+ Exscitech/Graphics/Shaders/LightUniformManager.hpp \
+ Exscitech/Graphics/Lighting/Material.hpp \
+ Exscitech/Graphics/Lighting/Texture.hpp \
+ Exscitech/Games/GameController.hpp /usr/include/qt4/QtGui/QPushButton \
+  Exscitech/Display/VmdGlWidget.hpp \
+ /usr/include/qt4/QtOpenGL/QGLWidget  \
+ Exscitech/Utilities/ErrorLog.hpp
+Exscitech/Graphics/SpaceFillMolecule.o: \
+ Exscitech/Graphics/SpaceFillMolecule.C \
+ Exscitech/Graphics/SpaceFillMolecule.hpp Exscitech/Graphics/Drawable.hpp \
+ Exscitech/Graphics/IDrawable.hpp Exscitech/Display/Camera.hpp \
+ Exscitech/Graphics/Transformable.hpp Exscitech/Math/Vector3.hpp \
+ Exscitech/Math/Math.hpp Exscitech/Math/Matrix3x3.hpp Exscitech/Types.hpp \
+ Exscitech/Math/Quaternion.hpp Exscitech/Math/Matrix3x4.hpp \
+ Exscitech/Math/Matrix4x4.hpp Exscitech/Math/Vector4.hpp \
+ Exscitech/Math/Vector2.hpp Exscitech/Graphics/Shaders/ShaderProgram.hpp \
+ Exscitech/Graphics/MoleculeLoader.hpp Exscitech/Graphics/AtomicName.hpp \
+ Exscitech/Constants.hpp
+Exscitech/Graphics/SSAO.o: Exscitech/Graphics/SSAO.C \
+ Exscitech/Graphics/SSAO.hpp Exscitech/Graphics/Drawable.hpp \
+ Exscitech/Graphics/IDrawable.hpp Exscitech/Display/Camera.hpp \
+ Exscitech/Graphics/Transformable.hpp Exscitech/Math/Vector3.hpp \
+ Exscitech/Math/Math.hpp Exscitech/Math/Matrix3x3.hpp Exscitech/Types.hpp \
+ Exscitech/Math/Quaternion.hpp Exscitech/Math/Matrix3x4.hpp \
+ Exscitech/Math/Matrix4x4.hpp Exscitech/Math/Vector4.hpp \
+ Exscitech/Math/Vector2.hpp Exscitech/Graphics/Shaders/ShaderProgram.hpp \
+ Exscitech/Graphics/FullQuad.hpp
+Exscitech/Graphics/FullQuad.o: Exscitech/Graphics/FullQuad.C \
+ Exscitech/Graphics/FullQuad.hpp \
+ Exscitech/Graphics/Shaders/ShaderProgram.hpp Exscitech/Math/Vector2.hpp \
+ Exscitech/Types.hpp Exscitech/Math/Math.hpp Exscitech/Math/Vector3.hpp \
+ Exscitech/Math/Vector4.hpp Exscitech/Math/Matrix4x4.hpp \
+ Exscitech/Math/Matrix3x4.hpp Exscitech/Math/Matrix3x3.hpp \
+ Exscitech/Math/Quaternion.hpp
+Exscitech/Graphics/Animation/KeyFrame.o: \
+ Exscitech/Graphics/Animation/KeyFrame.C \
+ Exscitech/Graphics/Animation/KeyFrame.hpp Exscitech/Math/Vector3.hpp \
+ Exscitech/Math/Math.hpp Exscitech/Math/Quaternion.hpp
+Exscitech/Graphics/Lighting/Material.o: \
+ Exscitech/Graphics/Lighting/Material.C \
+ Exscitech/Graphics/Lighting/Texture.hpp Exscitech/Types.hpp \
+ Exscitech/Graphics/Lighting/Material.hpp Exscitech/Math/Vector3.hpp \
+ Exscitech/Math/Math.hpp Exscitech/Math/Vector4.hpp
+Exscitech/Graphics/Lighting/Light.o: Exscitech/Graphics/Lighting/Light.C \
+ Exscitech/Graphics/Lighting/Light.hpp Exscitech/Types.hpp \
+ Exscitech/Math/Vector3.hpp Exscitech/Math/Math.hpp \
+ Exscitech/Math/Vector4.hpp Exscitech/Graphics/Lighting/PointLight.hpp \
+ Exscitech/Graphics/Lighting/DirectionalLight.hpp \
+ Exscitech/Graphics/Lighting/SpotLight.hpp
+Exscitech/Graphics/Lighting/PointLight.o: \
+ Exscitech/Graphics/Lighting/PointLight.C \
+ Exscitech/Graphics/Lighting/PointLight.hpp \
+ Exscitech/Graphics/Lighting/Light.hpp Exscitech/Types.hpp \
+ Exscitech/Math/Vector3.hpp Exscitech/Math/Math.hpp \
+ Exscitech/Math/Vector4.hpp
+Exscitech/Graphics/Lighting/DirectionalLight.o: \
+ Exscitech/Graphics/Lighting/DirectionalLight.C \
+ Exscitech/Graphics/Lighting/DirectionalLight.hpp \
+ Exscitech/Graphics/Lighting/Light.hpp Exscitech/Types.hpp \
+ Exscitech/Math/Vector3.hpp Exscitech/Math/Math.hpp \
+ Exscitech/Math/Vector4.hpp
+Exscitech/Graphics/Lighting/SpotLight.o: \
+ Exscitech/Graphics/Lighting/SpotLight.C \
+ Exscitech/Graphics/Lighting/SpotLight.hpp \
+ Exscitech/Graphics/Lighting/Light.hpp Exscitech/Types.hpp \
+ Exscitech/Math/Vector3.hpp Exscitech/Math/Math.hpp \
+ Exscitech/Math/Vector4.hpp
+Exscitech/Graphics/Lighting/MaterialLibrary.o: \
+ Exscitech/Graphics/Lighting/MaterialLibrary.C \
+ Exscitech/Graphics/Lighting/Material.hpp Exscitech/Math/Vector3.hpp \
+ Exscitech/Math/Math.hpp Exscitech/Math/Vector4.hpp \
+ Exscitech/Graphics/Lighting/Texture.hpp Exscitech/Types.hpp \
+ Exscitech/Graphics/Lighting/MaterialLibrary.hpp
+Exscitech/Graphics/Lighting/Texture.o: \
+ Exscitech/Graphics/Lighting/Texture.C \
+ Exscitech/Graphics/Lighting/Texture.hpp Exscitech/Types.hpp \
+ Exscitech/Graphics/Lighting/CubeMap.hpp \
+ Exscitech/Utilities/DebuggingUtility.hpp
+Exscitech/Graphics/Lighting/CubeMap.o: \
+ Exscitech/Graphics/Lighting/CubeMap.C \
+ Exscitech/Graphics/Lighting/CubeMap.hpp \
+ Exscitech/Graphics/Lighting/Texture.hpp Exscitech/Types.hpp
+Exscitech/Graphics/Mesh/Mesh.o: Exscitech/Graphics/Mesh/Mesh.C \
+ Exscitech/Graphics/Mesh/Mesh.hpp Exscitech/Graphics/Drawable.hpp \
+ Exscitech/Graphics/IDrawable.hpp Exscitech/Display/Camera.hpp \
+ Exscitech/Graphics/Transformable.hpp Exscitech/Math/Vector3.hpp \
+ Exscitech/Math/Math.hpp Exscitech/Math/Matrix3x3.hpp Exscitech/Types.hpp \
+ Exscitech/Math/Quaternion.hpp Exscitech/Math/Matrix3x4.hpp \
+ Exscitech/Math/Matrix4x4.hpp Exscitech/Math/Vector4.hpp \
+ Exscitech/Math/Vector2.hpp Exscitech/Graphics/Mesh/Vertex.hpp \
+ Exscitech/Graphics/Mesh/VertexDescriptor.hpp \
+ Exscitech/Graphics/Mesh/VertexAttribute.hpp \
+ Exscitech/Graphics/Mesh/VertexBuffer.hpp \
+ Exscitech/Graphics/Mesh/IndexBuffer.hpp \
+ Exscitech/Graphics/Mesh/MeshPart.hpp \
+ Exscitech/Graphics/Lighting/Material.hpp \
+ Exscitech/Graphics/Lighting/Texture.hpp \
+ Exscitech/Graphics/Shaders/ShaderProgram.hpp \
+ Exscitech/Graphics/Shaders/LightUniformManager.hpp \
+ Exscitech/Graphics/Lighting/MaterialLibrary.hpp
+Exscitech/Graphics/Mesh/MeshPart.o: Exscitech/Graphics/Mesh/MeshPart.C \
+ Exscitech/Graphics/Lighting/Material.hpp Exscitech/Math/Vector3.hpp \
+ Exscitech/Math/Math.hpp Exscitech/Math/Vector4.hpp \
+ Exscitech/Graphics/Lighting/Texture.hpp Exscitech/Types.hpp \
+ Exscitech/Graphics/Mesh/MeshPart.hpp Exscitech/Graphics/Drawable.hpp \
+ Exscitech/Graphics/IDrawable.hpp Exscitech/Display/Camera.hpp \
+ Exscitech/Graphics/Transformable.hpp Exscitech/Math/Matrix3x3.hpp \
+ Exscitech/Math/Quaternion.hpp Exscitech/Math/Matrix3x4.hpp \
+ Exscitech/Math/Matrix4x4.hpp Exscitech/Math/Vector2.hpp \
+ Exscitech/Graphics/Mesh/Vertex.hpp \
+ Exscitech/Graphics/Mesh/VertexDescriptor.hpp \
+ Exscitech/Graphics/Mesh/VertexAttribute.hpp \
+ Exscitech/Graphics/Mesh/VertexBuffer.hpp \
+ Exscitech/Graphics/Mesh/IndexBuffer.hpp \
+ Exscitech/Graphics/Shaders/ShaderProgram.hpp \
+ Exscitech/Graphics/Shaders/LightUniformManager.hpp \
+ Exscitech/Graphics/Mesh/Mesh.hpp \
+ Exscitech/Graphics/Lighting/MaterialLibrary.hpp \
+ Exscitech/Utilities/CameraUtility.hpp DisplayDevice.h Matrix4.h Stack.h \
+ ResizeArray.h utilities.h Matrix4.h \
+ Exscitech/Utilities/DebuggingUtility.hpp
+Exscitech/Graphics/Mesh/Vertex.o: Exscitech/Graphics/Mesh/Vertex.C \
+ Exscitech/Graphics/Mesh/Vertex.hpp \
+ Exscitech/Graphics/Mesh/VertexDescriptor.hpp \
+ Exscitech/Graphics/Mesh/VertexAttribute.hpp Exscitech/Types.hpp \
+ Exscitech/Math/Vector3.hpp Exscitech/Math/Math.hpp
+Exscitech/Graphics/Mesh/VertexAttribute.o: \
+ Exscitech/Graphics/Mesh/VertexAttribute.C \
+ Exscitech/Graphics/Mesh/VertexAttribute.hpp Exscitech/Types.hpp
+Exscitech/Graphics/Mesh/VertexBuffer.o: \
+ Exscitech/Graphics/Mesh/VertexBuffer.C \
+ Exscitech/Graphics/Mesh/VertexBuffer.hpp Exscitech/Types.hpp \
+ Exscitech/Graphics/Mesh/Vertex.hpp \
+ Exscitech/Graphics/Mesh/VertexDescriptor.hpp \
+ Exscitech/Graphics/Mesh/VertexAttribute.hpp Exscitech/Math/Vector3.hpp \
+ Exscitech/Math/Math.hpp
+Exscitech/Graphics/Mesh/IndexBuffer.o: \
+ Exscitech/Graphics/Mesh/IndexBuffer.C \
+ Exscitech/Graphics/Mesh/IndexBuffer.hpp Exscitech/Types.hpp
+Exscitech/Graphics/Mesh/VertexDescriptor.o: \
+ Exscitech/Graphics/Mesh/VertexDescriptor.C \
+ Exscitech/Graphics/Mesh/VertexDescriptor.hpp \
+ Exscitech/Graphics/Mesh/VertexAttribute.hpp Exscitech/Types.hpp
+Exscitech/Graphics/Mesh/ObjMeshLoader.o: \
+ Exscitech/Graphics/Mesh/ObjMeshLoader.C Exscitech/Constants.hpp \
+ Exscitech/Types.hpp Exscitech/Math/Vector3.hpp Exscitech/Math/Math.hpp \
+ Exscitech/Math/Vector4.hpp Exscitech/Graphics/Lighting/Material.hpp \
+ Exscitech/Graphics/Lighting/Texture.hpp \
+ Exscitech/Graphics/Lighting/MaterialLibrary.hpp \
+ Exscitech/Graphics/Mesh/ObjMeshLoader.hpp \
+ Exscitech/Graphics/Drawable.hpp Exscitech/Graphics/IDrawable.hpp \
+ Exscitech/Display/Camera.hpp Exscitech/Graphics/Transformable.hpp \
+ Exscitech/Math/Matrix3x3.hpp Exscitech/Math/Quaternion.hpp \
+ Exscitech/Math/Matrix3x4.hpp Exscitech/Math/Matrix4x4.hpp \
+ Exscitech/Math/Vector2.hpp Exscitech/Graphics/Mesh/Mesh.hpp \
+ Exscitech/Graphics/Mesh/Vertex.hpp \
+ Exscitech/Graphics/Mesh/VertexDescriptor.hpp \
+ Exscitech/Graphics/Mesh/VertexAttribute.hpp \
+ Exscitech/Graphics/Mesh/VertexBuffer.hpp \
+ Exscitech/Graphics/Mesh/IndexBuffer.hpp \
+ Exscitech/Graphics/Mesh/MeshPart.hpp \
+ Exscitech/Graphics/Shaders/ShaderProgram.hpp \
+ Exscitech/Graphics/Shaders/LightUniformManager.hpp
+Exscitech/Graphics/Shaders/Shader.o: Exscitech/Graphics/Shaders/Shader.C \
+ Exscitech/Graphics/Shaders/Shader.hpp \
+ Exscitech/Graphics/Shaders/ShaderUtility.hpp
+Exscitech/Graphics/Shaders/ShaderProgram.o: \
+ Exscitech/Graphics/Shaders/ShaderProgram.C \
+ Exscitech/Graphics/Shaders/Shader.hpp \
+ Exscitech/Graphics/Shaders/ShaderUtility.hpp \
+ Exscitech/Graphics/Shaders/ShaderProgram.hpp Exscitech/Math/Vector2.hpp \
+ Exscitech/Types.hpp Exscitech/Math/Math.hpp Exscitech/Math/Vector3.hpp \
+ Exscitech/Math/Vector4.hpp Exscitech/Math/Matrix4x4.hpp \
+ Exscitech/Math/Matrix3x4.hpp Exscitech/Math/Matrix3x3.hpp \
+ Exscitech/Math/Quaternion.hpp
+Exscitech/Graphics/Shaders/ShaderUtility.o: \
+ Exscitech/Graphics/Shaders/ShaderUtility.C \
+ Exscitech/Graphics/Shaders/ShaderUtility.hpp \
+ Exscitech/Utilities/DebuggingUtility.hpp
+Exscitech/Graphics/Shaders/LightUniformManager.o: \
+ Exscitech/Graphics/Shaders/LightUniformManager.C \
+ Exscitech/Graphics/Shaders/LightUniformManager.hpp \
+ Exscitech/Display/Camera.hpp Exscitech/Graphics/Transformable.hpp \
+ Exscitech/Math/Vector3.hpp Exscitech/Math/Math.hpp \
+ Exscitech/Math/Matrix3x3.hpp Exscitech/Types.hpp \
+ Exscitech/Math/Quaternion.hpp Exscitech/Math/Matrix3x4.hpp \
+ Exscitech/Math/Matrix4x4.hpp Exscitech/Math/Vector4.hpp \
+ Exscitech/Math/Vector2.hpp Exscitech/Graphics/Lighting/Material.hpp \
+ Exscitech/Graphics/Lighting/Texture.hpp \
+ Exscitech/Graphics/Lighting/Light.hpp \
+ Exscitech/Graphics/Lighting/PointLight.hpp \
+ Exscitech/Graphics/Lighting/DirectionalLight.hpp \
+ Exscitech/Graphics/Lighting/SpotLight.hpp
+Exscitech/Math/Quaternion.o: Exscitech/Math/Quaternion.C \
+ Exscitech/Constants.hpp Exscitech/Types.hpp Exscitech/Math/Vector3.hpp \
+ Exscitech/Math/Math.hpp Exscitech/Math/Vector4.hpp \
+ Exscitech/Math/Quaternion.hpp Exscitech/Math/Matrix3x3.hpp
+Exscitech/Display/QtOpenGLDisplayDevice.o: \
+ Exscitech/Display/QtOpenGLDisplayDevice.C \
+  config.h \
+ Exscitech/Display/QtOpenGLDisplayDevice.hpp \
+ /usr/include/qt4/QtGui/QWidget  \
+  /usr/include/qt4/QtOpenGL/QGLWidget \
+ OpenGLRenderer.h DisplayDevice.h Matrix4.h Stack.h ResizeArray.h \
+ utilities.h Scene.h Displayable.h Pickable.h VMDDisplayList.h \
+ MaterialList.h NameList.h hash.h OpenGLExtensions.h OpenGLCache.h \
+ Exscitech/Display/VmdGlWidget.hpp
+Exscitech/Display/QtWindow.o: Exscitech/Display/QtWindow.C \
+ /usr/include/qt4/QtCore/Qt  \
+  /usr/include/qt4/QtGui/QKeyEvent \
+  /usr/include/qt4/QtGui/QMouseEvent \
+ /usr/include/qt4/QtGui/QApplication \
+ VMDApp.h PluginMgr.h ResizeArray.h ../plugins/include/vmdplugin.h \
+ NameList.h utilities.h hash.h JString.h DisplayDevice.h Matrix4.h \
+ Stack.h Exscitech/Games/GameController.hpp \
+ /usr/include/qt4/QtGui/QPushButton  \
+ Exscitech/Display/VmdGlWidget.hpp /usr/include/qt4/QtOpenGL/QGLWidget \
+  Exscitech/Utilities/ErrorLog.hpp \
+ Exscitech/Display/QtWindow.hpp /usr/include/qt4/QtGui/QWidget \
+ Exscitech/Display/GameSelectionWindow.hpp \
+ /usr/include/qt4/QtCore/QObject  \
+ /usr/include/qt4/QtGui/QLabel  \
+  /usr/include/qt4/QtWebKit/QWebView \
+ Exscitech/Display/GameChoiceWidget.hpp
+Exscitech/Display/VmdGlWidget.o: Exscitech/Display/VmdGlWidget.C \
+ Exscitech/Display/VmdGlWidget.hpp /usr/include/qt4/QtOpenGL/QGLWidget \
+ Exscitech/Display/QtOpenGLDisplayDevice.hpp \
+ /usr/include/qt4/QtGui/QWidget  \
+ OpenGLRenderer.h DisplayDevice.h Matrix4.h Stack.h ResizeArray.h \
+ utilities.h Scene.h Displayable.h Pickable.h VMDDisplayList.h \
+ MaterialList.h NameList.h hash.h OpenGLExtensions.h OpenGLCache.h \
+ Exscitech/Games/GameController.hpp /usr/include/qt4/QtGui/QPushButton \
+ Exscitech/Utilities/ErrorLog.hpp VMDApp.h PluginMgr.h \
+ ../plugins/include/vmdplugin.h JString.h DisplayDevice.h \
+ /usr/include/qt4/QtGui/QMouseEvent  \
+ /usr/include/qt4/QtGui/QKeyEvent
+Exscitech/Display/GameSelectionWindow.o: \
+ Exscitech/Display/GameSelectionWindow.C /usr/include/qt4/QtCore/QMap \
+  /usr/include/qt4/QtGui/QKeyEvent \
+  /usr/include/qt4/QtGui/QMouseEvent \
+ /usr/include/qt4/QtGui/QTabWidget  \
+ /usr/include/qt4/QtGui/QBoxLayout  \
+ /usr/include/qt4/QtGui/QLabel  \
+  /usr/include/qt4/QtGui/QMessageBox \
+ /usr/include/qt4/QtGui/QScrollArea  \
+  VMDApp.h PluginMgr.h \
+ ResizeArray.h ../plugins/include/vmdplugin.h NameList.h utilities.h \
+ hash.h JString.h Exscitech/Games/GameController.hpp \
+ /usr/include/qt4/QtGui/QPushButton  \
+ Exscitech/Display/VmdGlWidget.hpp /usr/include/qt4/QtOpenGL/QGLWidget \
+  Exscitech/Utilities/ErrorLog.hpp \
+ Exscitech/Games/GameInfoManager.hpp \
+ Exscitech/Display/GameSelectionWindow.hpp /usr/include/qt4/QtGui/QWidget \
+  /usr/include/qt4/QtCore/QObject \
+  /usr/include/qt4/QtWebKit/QWebView \
+ Exscitech/Display/GameChoiceWidget.hpp \
+ Exscitech/Display/GameWidgetScrollArea.hpp
+Exscitech/Display/GameChoiceWidget.o: \
+ Exscitech/Display/GameChoiceWidget.C \
+ Exscitech/Display/GameChoiceWidget.hpp /usr/include/qt4/QtGui/QWidget \
+ /usr/include/qt4/QtGui/QLabel  \
+ Exscitech/Games/GameController.hpp /usr/include/qt4/QtGui/QPushButton \
+ Exscitech/Display/VmdGlWidget.hpp /usr/include/qt4/QtOpenGL/QGLWidget \
+  Exscitech/Utilities/ErrorLog.hpp \
+ Exscitech/Games/GameInfoManager.hpp /usr/include/qt4/QtGui/QBoxLayout \
+  /usr/include/qt4/QtGui/QStyle \
+  /usr/include/qt4/QtGui/QApplication \
+ 
+Exscitech/Display/WebLinkWidget.o: Exscitech/Display/WebLinkWidget.C \
+ Exscitech/Display/WebLinkWidget.hpp /usr/include/qt4/QtGui/QWidget \
+ /usr/include/qt4/QtGui/QLabel  \
+ /usr/include/qt4/QtGui/QDesktopServices \
+  /usr/include/qt4/QtCore/QUrl \
+  
+Exscitech/Display/GameWidgetScrollArea.o: \
+ Exscitech/Display/GameWidgetScrollArea.C \
+ /usr/include/qt4/QtGui/QKeyEvent  \
+  /usr/include/qt4/QtGui/QBoxLayout \
+ Exscitech/Display/GameWidgetScrollArea.hpp /usr/include/qt4/QtCore/QMap \
+  /usr/include/qt4/QtGui/QWidget \
+ /usr/include/qt4/QtGui/QScrollArea  \
+ Exscitech/Display/GameChoiceWidget.hpp /usr/include/qt4/QtGui/QLabel \
+  Exscitech/Games/GameController.hpp \
+ /usr/include/qt4/QtGui/QPushButton  \
+ Exscitech/Display/VmdGlWidget.hpp /usr/include/qt4/QtOpenGL/QGLWidget \
+  Exscitech/Utilities/ErrorLog.hpp
+Exscitech/Display/Camera.o: Exscitech/Display/Camera.C \
+ Exscitech/Display/Camera.hpp Exscitech/Graphics/Transformable.hpp \
+ Exscitech/Math/Vector3.hpp Exscitech/Math/Math.hpp \
+ Exscitech/Math/Matrix3x3.hpp Exscitech/Types.hpp \
+ Exscitech/Math/Quaternion.hpp Exscitech/Math/Matrix3x4.hpp \
+ Exscitech/Math/Matrix4x4.hpp Exscitech/Math/Vector4.hpp \
+ Exscitech/Math/Vector2.hpp Exscitech/Utilities/CameraUtility.hpp \
+ DisplayDevice.h Matrix4.h Stack.h ResizeArray.h utilities.h Matrix4.h
+Exscitech/Display/LoginWindow.o: Exscitech/Display/LoginWindow.C \
+ /usr/include/qt4/QtGui/QCloseEvent  \
+  Exscitech/Display/LoginWindow.hpp \
+ /usr/include/qt4/QtCore/QVariant  \
+ /usr/include/qt4/QtGui/QAction  \
+ /usr/include/qt4/QtGui/QApplication \
+  /usr/include/qt4/QtGui/QButtonGroup \
+  /usr/include/qt4/QtGui/QHBoxLayout \
+  /usr/include/qt4/QtGui/QHeaderView \
+  /usr/include/qt4/QtGui/QLabel \
+  /usr/include/qt4/QtGui/QLineEdit \
+  /usr/include/qt4/QtGui/QMainWindow \
+  /usr/include/qt4/QtGui/QPushButton \
+ /usr/include/qt4/QtGui/QStatusBar  \
+ /usr/include/qt4/QtGui/QVBoxLayout /usr/include/qt4/QtGui/QWidget \
+ Exscitech/Display/GameSelectionWindow.hpp \
+ /usr/include/qt4/QtCore/QObject  \
+ /usr/include/qt4/QtWebKit/QWebView  \
+ Exscitech/Display/GameChoiceWidget.hpp \
+ Exscitech/Games/GameController.hpp Exscitech/Display/VmdGlWidget.hpp \
+ /usr/include/qt4/QtOpenGL/QGLWidget  \
+  Exscitech/Utilities/ErrorLog.hpp \
+ Exscitech/Utilities/ServerCommunicationManager.hpp \
+ /usr/include/qt4/QtXml/QDomDocument 
+Exscitech/Display/ImageSelectionWidget.o: \
+ Exscitech/Display/ImageSelectionWidget.C \
+ /usr/include/qt4/QtGui/QHBoxLayout  \
+  /usr/include/qt4/QtGui/QScrollBar \
+ Exscitech/Display/ImageSelectionWidget.hpp \
+ /usr/include/qt4/QtGui/QWidget  \
+ /usr/include/qt4/QtGui/QListView  \
+ /usr/include/qt4/QtGui/QStandardItemModel \
+ /usr/include/qt4/QtGui/QPushButton  \
+ 
+Exscitech/Display/ToggleWidget.o: Exscitech/Display/ToggleWidget.C \
+ Exscitech/Display/ToggleWidget.hpp /usr/include/qt4/QtGui/QWidget \
+ Exscitech/Display/ToggleButton.hpp /usr/include/qt4/QtGui/QPushButton \
+  /usr/include/qt4/QtGui/QBoxLayout \
+ 
+Exscitech/Display/ToggleButton.o: Exscitech/Display/ToggleButton.C \
+ Exscitech/Display/ToggleButton.hpp /usr/include/qt4/QtGui/QWidget \
+ /usr/include/qt4/QtGui/QPushButton  \
+ 
+Exscitech/Utilities/TransformUtility.o: \
+ Exscitech/Utilities/TransformUtility.C Molecule.h DrawMolecule.h \
+ BaseMolecule.h NameList.h ResizeArray.h utilities.h hash.h Atom.h \
+ Residue.h Timestep.h Matrix4.h QMTimestep.h QMData.h Fragment.h \
+ intstack.h SmallRing.h Inform.h SmallRingLinkages.h inthash.h \
+ Displayable.h Pickable.h VMDDisplayList.h MaterialList.h DrawMolItem.h \
+ config.h DispCmds.h AtomColor.h AtomRep.h AtomSel.h PickMode.h \
+ VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h Matrix4.h \
+ Exscitech/Graphics/Transformable.hpp Exscitech/Math/Vector3.hpp \
+ Exscitech/Math/Math.hpp Exscitech/Math/Matrix3x3.hpp Exscitech/Types.hpp \
+ Exscitech/Math/Quaternion.hpp Exscitech/Math/Matrix3x4.hpp \
+ Exscitech/Math/Matrix4x4.hpp Exscitech/Math/Vector4.hpp \
+ Exscitech/Utilities/TransformUtility.hpp Displayable.h \
+ Exscitech/Graphics/Animation/KeyFrame.hpp
+Exscitech/Utilities/CameraUtility.o: Exscitech/Utilities/CameraUtility.C \
+ VMDApp.h PluginMgr.h ResizeArray.h ../plugins/include/vmdplugin.h \
+ NameList.h utilities.h hash.h JString.h \
+ Exscitech/Games/GameController.hpp /usr/include/qt4/QtGui/QPushButton \
+  Exscitech/Display/VmdGlWidget.hpp \
+ /usr/include/qt4/QtOpenGL/QGLWidget  \
+ Exscitech/Utilities/ErrorLog.hpp Exscitech/Utilities/CameraUtility.hpp \
+ DisplayDevice.h Matrix4.h Stack.h Matrix4.h Exscitech/Math/Vector3.hpp \
+ Exscitech/Math/Math.hpp Exscitech/Math/Vector2.hpp Exscitech/Types.hpp \
+ Exscitech/Math/Matrix3x4.hpp Exscitech/Math/Matrix3x3.hpp \
+ Exscitech/Math/Quaternion.hpp Exscitech/Math/Matrix4x4.hpp \
+ Exscitech/Math/Vector4.hpp
+Exscitech/Utilities/KeyboardBuffer.o: \
+ Exscitech/Utilities/KeyboardBuffer.C \
+ Exscitech/Utilities/KeyboardBuffer.hpp
+Exscitech/Utilities/BulletUtility.o: Exscitech/Utilities/BulletUtility.C \
+ Exscitech/Graphics/VolmapExscitech.hpp VolumetricData.h VMDApp.h \
+ PluginMgr.h ResizeArray.h ../plugins/include/vmdplugin.h NameList.h \
+ utilities.h hash.h JString.h Molecule.h DrawMolecule.h BaseMolecule.h \
+ Atom.h Residue.h Timestep.h Matrix4.h QMTimestep.h QMData.h Fragment.h \
+ intstack.h SmallRing.h Inform.h SmallRingLinkages.h inthash.h \
+ Displayable.h Pickable.h VMDDisplayList.h MaterialList.h DrawMolItem.h \
+ config.h DispCmds.h AtomColor.h AtomRep.h AtomSel.h PickMode.h \
+ VolumeTexture.h Surf.h MSMSInterface.h VMDThreads.h Isosurface.h Scene.h \
+ MoleculeList.h Molecule.h UIText.h UIObject.h TclTextInterp.h \
+ TextInterp.h TextEvent.h Command.h DisplayDevice.h Stack.h \
+ Exscitech/Graphics/VolmapPiece.hpp Exscitech/Graphics/Drawable.hpp \
+ Exscitech/Graphics/IDrawable.hpp Exscitech/Display/Camera.hpp \
+ Exscitech/Graphics/Transformable.hpp Exscitech/Math/Vector3.hpp \
+ Exscitech/Math/Math.hpp Exscitech/Math/Matrix3x3.hpp Exscitech/Types.hpp \
+ Exscitech/Math/Quaternion.hpp Exscitech/Math/Matrix3x4.hpp \
+ Exscitech/Math/Matrix4x4.hpp Exscitech/Math/Vector4.hpp \
+ Exscitech/Math/Vector2.hpp Exscitech/Graphics/Shaders/ShaderProgram.hpp \
+ Exscitech/Graphics/Shaders/LightUniformManager.hpp \
+ Exscitech/Graphics/Lighting/Material.hpp \
+ Exscitech/Graphics/Lighting/Texture.hpp \
+ Exscitech/Games/GameController.hpp /usr/include/qt4/QtGui/QPushButton \
+  Exscitech/Display/VmdGlWidget.hpp \
+ /usr/include/qt4/QtOpenGL/QGLWidget  \
+ Exscitech/Utilities/ErrorLog.hpp Exscitech/Graphics/Mesh/Mesh.hpp \
+ Exscitech/Graphics/Mesh/Vertex.hpp \
+ Exscitech/Graphics/Mesh/VertexDescriptor.hpp \
+ Exscitech/Graphics/Mesh/VertexAttribute.hpp \
+ Exscitech/Graphics/Mesh/VertexBuffer.hpp \
+ Exscitech/Graphics/Mesh/IndexBuffer.hpp \
+ Exscitech/Graphics/Mesh/MeshPart.hpp \
+ Exscitech/Graphics/Lighting/MaterialLibrary.hpp \
+ Exscitech/Utilities/IndexedTriangleList.hpp \
+ Exscitech/Utilities/BulletUtility.hpp
+Exscitech/Utilities/ServerCommunicationManager.o: \
+ Exscitech/Utilities/ServerCommunicationManager.C \
+ /usr/include/qt4/QtCore/QFile  \
+ /usr/include/qt4/QtCore/QCryptographicHash \
+ /usr/include/qt4/QtXml/QDomDocument  \
+ Exscitech/Utilities/ServerCommunicationManager.hpp \
+ Exscitech/Games/GameController.hpp /usr/include/qt4/QtGui/QPushButton \
+  Exscitech/Display/VmdGlWidget.hpp \
+ /usr/include/qt4/QtOpenGL/QGLWidget  \
+ Exscitech/Utilities/ErrorLog.hpp Exscitech/Utilities/HostIdManager.hpp
+Exscitech/Utilities/TextUtility.o: Exscitech/Utilities/TextUtility.C \
+ Exscitech/Utilities/TextUtility.hpp
+Exscitech/Utilities/HostIdManager.o: Exscitech/Utilities/HostIdManager.C \
+ Exscitech/Utilities/HostIdManager.hpp \
+ /usr/include/qt4/QtXml/QDomDocument  \
+ Exscitech/Utilities/ServerCommunicationManager.hpp \
+ Exscitech/Games/GameController.hpp /usr/include/qt4/QtGui/QPushButton \
+  Exscitech/Display/VmdGlWidget.hpp \
+ /usr/include/qt4/QtOpenGL/QGLWidget  \
+ Exscitech/Utilities/ErrorLog.hpp /usr/include/qt4/QtCore/QFile \
+  /usr/include/qt4/QtCore/QTextStream \
+  
+Exscitech/Utilities/WorkunitId.o: Exscitech/Utilities/WorkunitId.C \
+ Exscitech/Utilities/WorkunitId.hpp /usr/include/qt4/QtXml/QDomDocument \
+ 
+Exscitech/Utilities/ErrorLog.o: Exscitech/Utilities/ErrorLog.C \
+ Exscitech/Utilities/ErrorLog.hpp /usr/include/qt4/QtCore/QDateTime \
+ Exscitech/Games/GameController.hpp /usr/include/qt4/QtGui/QPushButton \
+  Exscitech/Display/VmdGlWidget.hpp \
+ /usr/include/qt4/QtOpenGL/QGLWidget  \
+ Exscitech/Utilities/ErrorLog.hpp
+Exscitech/Utilities/ProteinServerData.o: \
+ Exscitech/Utilities/ProteinServerData.C \
+ Exscitech/Utilities/ProteinServerData.hpp
+Exscitech/Utilities/ConformationServerData.o: \
+ Exscitech/Utilities/ConformationServerData.C \
+ Exscitech/Utilities/ConformationServerData.hpp
+Exscitech/Utilities/LigandServerData.o: \
+ Exscitech/Utilities/LigandServerData.C \
+ Exscitech/Utilities/LigandServerData.hpp \
+ Exscitech/Utilities/ConformationServerData.hpp
+Exscitech/Display/Moc_GameSelectionWindow.o: \
+ Exscitech/Display/Moc_GameSelectionWindow.C \
+ Exscitech/Display/GameSelectionWindow.hpp /usr/include/qt4/QtGui/QWidget \
+ /usr/include/qt4/QtCore/QObject  \
+ /usr/include/qt4/QtGui/QLabel  \
+ /usr/include/qt4/QtWebKit/QWebView  \
+ Exscitech/Display/GameChoiceWidget.hpp \
+ Exscitech/Games/GameController.hpp /usr/include/qt4/QtGui/QPushButton \
+ Exscitech/Display/VmdGlWidget.hpp /usr/include/qt4/QtOpenGL/QGLWidget \
+ Exscitech/Utilities/ErrorLog.hpp
+Exscitech/Display/Moc_GameChoiceWidget.o: \
+ Exscitech/Display/Moc_GameChoiceWidget.C \
+ Exscitech/Display/GameChoiceWidget.hpp /usr/include/qt4/QtGui/QWidget \
+ /usr/include/qt4/QtGui/QLabel  \
+ Exscitech/Games/GameController.hpp /usr/include/qt4/QtGui/QPushButton \
+ Exscitech/Display/VmdGlWidget.hpp /usr/include/qt4/QtOpenGL/QGLWidget \
+  Exscitech/Utilities/ErrorLog.hpp
+Exscitech/Games/Moc_Game.o: Exscitech/Games/Moc_Game.C \
+ Exscitech/Games/Game.hpp /usr/include/qt4/QtCore/QObject \
+ 
+Exscitech/Games/LindseyGame/Moc_LindseyGame.o: \
+ Exscitech/Games/LindseyGame/Moc_LindseyGame.C \
+ Exscitech/Games/LindseyGame/LindseyGame.hpp \
+ /usr/include/qt4/QtGui/QWidget  \
+ /usr/include/qt4/QtGui/QComboBox  \
+ /usr/include/qt4/QtCore/QTimer  \
+  Exscitech/Games/Game.hpp \
+ /usr/include/qt4/QtCore/QObject  \
+ Exscitech/Utilities/WorkunitId.hpp /usr/include/qt4/QtXml/QDomDocument \
+  Exscitech/Display/QtWindow.hpp
+Exscitech/Games/IdentificationGame/Moc_IdentificationGame.o: \
+ Exscitech/Games/IdentificationGame/Moc_IdentificationGame.C \
+ Exscitech/Games/IdentificationGame/IdentificationGame.hpp \
+ /usr/include/qt4/QtGui/QBoxLayout  \
+  /usr/include/qt4/QtGui/QComboBox \
+  Exscitech/Games/Game.hpp \
+ /usr/include/qt4/QtCore/QObject  \
+ Exscitech/Display/QtWindow.hpp /usr/include/qt4/QtGui/QWidget \
+ 
+Exscitech/Display/Moc_LoginWindow.o: Exscitech/Display/Moc_LoginWindow.C \
+ Exscitech/Display/LoginWindow.hpp /usr/include/qt4/QtCore/QVariant \
+ /usr/include/qt4/QtGui/QAction  \
+  /usr/include/qt4/QtGui/QApplication \
+  /usr/include/qt4/QtGui/QButtonGroup \
+  /usr/include/qt4/QtGui/QHBoxLayout \
+  /usr/include/qt4/QtGui/QHeaderView \
+  /usr/include/qt4/QtGui/QLabel \
+  /usr/include/qt4/QtGui/QLineEdit \
+  /usr/include/qt4/QtGui/QMainWindow \
+  /usr/include/qt4/QtGui/QPushButton \
+ /usr/include/qt4/QtGui/QStatusBar  \
+ /usr/include/qt4/QtGui/QVBoxLayout /usr/include/qt4/QtGui/QWidget \
+ 
+Exscitech/Display/Moc_ImageSelectionWidget.o: \
+ Exscitech/Display/Moc_ImageSelectionWidget.C \
+ Exscitech/Display/ImageSelectionWidget.hpp \
+ /usr/include/qt4/QtGui/QWidget  \
+ /usr/include/qt4/QtGui/QListView  \
+ /usr/include/qt4/QtGui/QStandardItemModel \
+ /usr/include/qt4/QtGui/QPushButton  \
+ 
+Exscitech/Games/JobSubmitGame/Moc_JobSubmitGame.o: \
+ Exscitech/Games/JobSubmitGame/Moc_JobSubmitGame.C \
+ Exscitech/Games/JobSubmitGame/JobSubmitGame.hpp \
+ /usr/include/qt4/QtCore/QObject  \
+  Exscitech/Display/QtWindow.hpp \
+ /usr/include/qt4/QtGui/QWidget  \
+ Exscitech/Games/Game.hpp Exscitech/Math/Vector2.hpp Exscitech/Types.hpp \
+ Exscitech/Math/Math.hpp Exscitech/Math/Matrix3x3.hpp \
+ Exscitech/Math/Quaternion.hpp Exscitech/Math/Vector3.hpp
+Exscitech/Display/Moc_ToggleWidget.o: \
+ Exscitech/Display/Moc_ToggleWidget.C Exscitech/Display/ToggleWidget.hpp \
+ /usr/include/qt4/QtGui/QWidget  \
+ Exscitech/Display/ToggleButton.hpp /usr/include/qt4/QtGui/QPushButton \
+ 
+hash.o: hash.c hash.h
+inthash.o: inthash.c inthash.h
+intstack.o: intstack.c intstack.h
+msmpot.o: msmpot.c msmpot_internal.h msmpot.h
+msmpot_compute.o: msmpot_compute.c msmpot_internal.h msmpot.h
+msmpot_cubic.o: msmpot_cubic.c msmpot_internal.h msmpot.h
+msmpot_setup.o: msmpot_setup.c msmpot_internal.h msmpot.h
+vmdsock.o: vmdsock.c vmdsock.h
+vmddlopen.o: vmddlopen.c vmddlopen.h
+pcre.o: pcre.c pcreinternal.h pcre.h pcretables.h
+fitrms.o: fitrms.c
+ParseTree.o AtomLexer.o AtomParser.o: y.tab.h

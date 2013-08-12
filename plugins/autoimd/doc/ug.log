@@ -1,0 +1,327 @@
+This is pdfTeX, Version 3.14159-1.10b (Web2C 7.4.5) (format=pdflatex 2004.7.26)  31 JUL 2006 17:19
+**ug
+(./ug.tex{/usr/local/share/texmf/pdftex/config/pdftex.cfg}
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, n
+ohyphenation, loaded.
+(/usr/local/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/local/share/texmf/tex/latex/base/size10.clo
+File: size10.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/share/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2001/08/31 v1.1 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 80.
+
+(/usr/local/share/texmf/tex/latex/graphics/pdftex.def
+File: pdftex.def 2002/06/19 v0.03k graphics/color for pdftex
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/local/share/texmf/tex/latex/html/html.sty
+(/usr/local/share/texmf/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2003/01/22 v6.73n Hypertext links for LaTeX
+\@linkdim=\dimen105
+\Hy@linkcounter=\count88
+\Hy@pagecounter=\count89
+
+(/usr/local/share/texmf/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2003/01/22 v6.73n Hyperref: PDFDocEncoding definition (HO)
+)
+(/usr/local/share/texmf/tex/latex/config/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive and teTeX
+)
+Package hyperref Info: Hyper figures OFF on input line 1792.
+Package hyperref Info: Link nesting OFF on input line 1797.
+Package hyperref Info: Hyper index ON on input line 1800.
+Package hyperref Info: Plain pages ON on input line 1805.
+Package hyperref Info: Backreferencing OFF on input line 1812.
+
+Implicit mode ON; LaTeX internals redefined
+Package hyperref Info: Bookmarks ON on input line 1916.
+(/usr/local/share/texmf/tex/latex/html/url.sty
+Package: url 1999/03/02  ver 1.4  Verb mode for urls, email addresses, and file
+ names
+)
+LaTeX Info: Redefining \url on input line 2055.
+\Fld@menulength=\count90
+\Field@Width=\dimen106
+\Fld@charsize=\dimen107
+\Choice@toks=\toks15
+\Field@toks=\toks16
+Package hyperref Info: Hyper figures OFF on input line 2513.
+Package hyperref Info: Link nesting OFF on input line 2518.
+Package hyperref Info: Hyper index ON on input line 2521.
+Package hyperref Info: backreferencing OFF on input line 2528.
+Package hyperref Info: Link coloring OFF on input line 2533.
+\c@Item=\count91
+\c@Hfootnote=\count92
+)
+*hyperref using default driver hpdftex*
+(/usr/local/share/texmf/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2003/01/22 v6.73n Hyperref driver for pdfTeX
+
+(/usr/local/share/texmf/tex/latex/psnfss/pifont.sty
+Package: pifont 2002/09/08 PSNFSS-v9.0a Pi font support (SPQR) 
+LaTeX Font Info:    Try loading font information for U+pzd on input line 62.
+
+(/usr/local/share/texmf/tex/latex/psnfss/upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Try loading font information for U+psy on input line 63.
+
+(/usr/local/share/texmf/tex/latex/psnfss/upsy.fd
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+))
+\Fld@listcount=\count93
+\@outlinefile=\write3
+)
+Package: html 1999/07/19 v1.38 hypertext commands for latex2html (nd, hws, rrm)
+
+\c@lpart=\count94
+\c@lchapter=\count95
+\c@chapter=\count96
+\c@lsection=\count97
+\c@lsubsection=\count98
+\c@lsubsubsection=\count99
+\c@lparagraph=\count100
+\c@lsubparagraph=\count101
+\c@lsubsubparagraph=\count102
+\ptrfile=\write4
+)
+\c@nitems=\count103
+ (./ug_macros.tex)
+(./ug.aux)
+\openout1 = `ug.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+ (/usr/local/share/texmf/tex/context/base/supp-pdf.tex
+(/usr/local/share/texmf/tex/context/base/supp-mis.tex
+loading : Context Support Macros / Missing
+\protectiondepth=\count104
+\scratchcounter=\count105
+\scratchtoks=\toks17
+\scratchdimen=\dimen108
+\scratchskip=\skip43
+\scratchmuskip=\muskip10
+\scratchbox=\box26
+\scratchread=\read1
+\scratchwrite=\write5
+\zeropoint=\dimen109
+\minusone=\count106
+\thousandpoint=\dimen110
+\emptytoks=\toks18
+\nextbox=\box27
+\nextdepth=\dimen111
+\everyline=\toks19
+\!!counta=\count107
+\!!countb=\count108
+\recursecounter=\count109
+)
+loading : Context Support Macros / PDF
+\nofMPsegments=\count110
+\nofMParguments=\count111
+\everyMPtoPDFconversion=\toks20
+)
+Package hyperref Info: Link coloring OFF on input line 23.
+ (/usr/local/share/texmf/tex/latex/hyperref/nameref.sty
+Package: nameref 2001/01/27 v2.19 Cross-referencing by name of section
+\c@section@level=\count112
+)
+LaTeX Info: Redefining \ref on input line 23.
+LaTeX Info: Redefining \pageref on input line 23.
+ (./ug.out) (./ug.out)
+\openout3 = `ug.out'.
+
+(./ug_title.tex) [1
+
+{/usr/local/share/texmf/dvips/config/pdftex.map}] (./ug.toc)
+\tf@toc=\write6
+\openout6 = `ug.toc'.
+
+[2] (./ug_text.tex
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 17.
+(/usr/local/share/texmf/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 17.
+
+<autoimd-diagram.pdf, id=67, 301.125pt x 288.07625pt>
+File: autoimd-diagram.pdf Graphic file (type pdf)
+
+<use autoimd-diagram.pdf>
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 31.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 31.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 31.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 31.
+ [3 <./autoimd-diagram.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
+
+ []
+
+<autoimd-GUI.pdf, id=109, 431.6125pt x 298.11375pt>
+File: autoimd-GUI.pdf Graphic file (type pdf)
+ <use autoimd-GUI.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
+
+ []
+
+<simsettings-GUI.pdf, id=110, 543.02875pt x 443.6575pt>
+File: simsettings-GUI.pdf Graphic file (type pdf)
+
+<use simsettings-GUI.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
+
+ []
+
+[4 <./autoimd-GUI.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
+
+ []
+
+[5 <./simsettings-GUI.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--141
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 194--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--208
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
+
+ []
+
+) [8] (./ug.aux) ) 
+Here is how much of TeX's memory you used:
+ 2845 strings out of 95437
+ 37623 string characters out of 1189861
+ 89493 words of memory out of 1000001
+ 5796 multiletter control sequences out of 10000+50000
+ 8838 words of font info for 31 fonts, out of 500000 for 1000
+ 14 hyphenation exceptions out of 1000
+ 34i,8n,36p,391b,309s stack positions out of 1500i,500n,5000p,200000b,5000s
+ 166 PDF objects out of 300000
+ 34 named destinations out of 131072
+ 80 words of extra memory for PDF output out of 65536
+{/usr/local/share/texmf/dvips/tetex/f7b6d320.enc}</usr/local/
+share/texmf/fonts/type1/bluesky/cm/cmbx8.pfb></usr/local/share/texmf/fonts/type
+1/bluesky/cm/cmsl8.pfb></usr/local/share/texmf/fonts/type1/bluesky/cm/cmr8.pfb>
+</usr/local/share/texmf/fonts/type1/bluesky/cm/cmr6.pfb>{/usr/local/share/texmf
+/dvips/tetex/09fbbfac.enc}</usr/local/share/texmf/fonts/type1/bluesky/cm/cmtt10
+.pfb></usr/local/share/texmf/fonts/type1/bluesky/cm/cmr7.pfb>{/usr/local/share/
+texmf/dvips/tetex/bbad153f.enc}</usr/local/share/texmf/fonts/type1/bluesky/cm/c
+msy10.pfb>{/usr/local/share/texmf/dvips/tetex/74afc74c.enc}</usr/local/share/te
+xmf/fonts/type1/bluesky/cm/cmti10.pfb></usr/local/share/texmf/fonts/type1/blues
+ky/cm/cmbx10.pfb></usr/local/share/texmf/fonts/type1/bluesky/cm/cmbx12.pfb></us
+r/local/share/texmf/fonts/type1/bluesky/cm/cmr10.pfb></usr/local/share/texmf/fo
+nts/type1/bluesky/cm/cmr12.pfb></usr/local/share/texmf/fonts/type1/bluesky/cm/c
+mr17.pfb>
+Output written on ug.pdf (8 pages, 264286 bytes).

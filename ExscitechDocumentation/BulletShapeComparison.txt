@@ -1,0 +1,18 @@
+
+btConvexTriangleMeshShape
+-Can be Dynamic
+-Shares geometry with the source
+-Can take multiple indexed vertex lists
+-Not recommended by Bullet - use btConvexHullShape instead for performance.
+
+btConvexHullShape
+-Can be Dynamic
+-Duplicates geometry from source
+-Can add one point at a time
+-Recommended for performance for any complex convex shape.
+
+btBvhTriangleMeshShape
+-Can NOT be Dynamic
+-Shares geometry with the source
+-Can take multiple indexed vertx lists
+-Used for static geometry in the world.

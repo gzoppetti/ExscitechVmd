@@ -1,0 +1,235 @@
+# Makefile for cionize
+
+#.SILENT:
+
+.SUFFIXES: 
+
+AR= ar
+ARFLAGS = cr
+RANLIB = ranlib
+CUDAHOME = /Projects/vmd/cuda/sdk
+
+COMPILEDIR = ../compile
+ARCHDIR=${COMPILEDIR}/lib_${ARCH}/bin/cionize1.0
+SRCDIR=.
+INCDIR=-I. -I../include -I${COMPILEDIR}/lib_${ARCH}/molfile
+
+VPATH = ${ARCHDIR}
+
+#
+# Rules
+#
+
+bins: ${ARCHDIR} ${ARCHDIR}/cionize
+win32bins:
+# enable builds of cionize on Windows.
+# win32bins: ${ARCHDIR} ${ARCHDIR}/cionize.exe
+dynlibs: 
+staticlibs: 
+win32staticlibs: 
+
+COPTO = -o
+
+distrib:
+	for localname in `find ../compile -name cionize -print` ; do \
+		pluginname=`echo $$localname | sed s/..\\\/compile\\\/lib_// `; \
+		dir=`dirname $(PLUGINDIR)/$$pluginname`; \
+		mkdir -p $$dir; \
+		cp $$localname $(PLUGINDIR)/$$pluginname; \
+	done
+
+${ARCHDIR}:
+	mkdir -p ${ARCHDIR}
+
+IONIZEOBJS = ${ARCHDIR}/hash.o ${ARCHDIR}/threads.o ${ARCHDIR}/util.o ${ARCHDIR}/getplugins.o ${ARCHDIR}/energythr.o ${ARCHDIR}/cionize_gridio.o ${ARCHDIR}/cionize_molfileio.o ${ARCHDIR}/cionize_internals.o ${ARCHDIR}/cionize_userio.o ${ARCHDIR}/binary_gridio.o
+MGPOTOBJS = ${ARCHDIR}/mgpot.o ${ARCHDIR}/mgpot_error.o ${ARCHDIR}/mgpot_lattice.o ${ARCHDIR}/mgpot_setup.o ${ARCHDIR}/mgpot_shortrng.o ${ARCHDIR}/mgpot_longrng.o ${ARCHDIR}/mgpot_cubic.o ${ARCHDIR}/mgpot_quintic1.o
+#MGPOTFLAGS = -DDEBUG
+
+GPUOBJS = ${ARCHDIR}/cudaenergythr.o ${ARCHDIR}/mgpot_cuda_shortrng.o
+#GPUOBJS = ${ARCHDIR}/mgpot_cuda_shortrng.o
+
+# Win32/Win64 compiles
+${ARCHDIR}/cionize.exe : ${IONIZEOBJS} ${MGPOTOBJS} ${ARCHDIR}/cionize.o ${COMPILEDIR}/lib_${ARCH}/molfile/libmolfile_plugin.lib
+	LINK ${IONIZEOBJS} ${MGPOTOBJS} /OUT:${ARCHDIR}/cionize.exe /LIBPATH:${COMPILEDIR}/lib_${ARCH}/molfile libmolfile_plugin.lib ${TCLLIB} ${TCLLDFLAGS} ${NETCDFLIB} ${NETCDFLDFLAGS}
+
+# all other platforms
+${ARCHDIR}/cionize: ${IONIZEOBJS} ${MGPOTOBJS} ${ARCHDIR}/cionize.o ${COMPILEDIR}/lib_${ARCH}/molfile/libmolfile_plugin.a
+	${CXX} ${CXXFLAGS} ${ARCHDIR}/cionize.o ${IONIZEOBJS} ${MGPOTOBJS} -o ${ARCHDIR}/cionize -L${COMPILEDIR}/lib_${ARCH}/molfile -lmolfile_plugin ${TCLLIB} ${TCLLDFLAGS} ${NETCDFLIB} ${NETCDFLDFLAGS} -lm -ldl
+
+${ARCHDIR}/iccionize: ${IONIZEOBJS} ${MGPOTOBJS} ${ARCHDIR}/cionize.o ${COMPILEDIR}/lib_${ARCH}/molfile/libmolfile_plugin.a
+	${CXX} ${CXXFLAGS} ${ARCHDIR}/cionize.o ${IONIZEOBJS} ${MGPOTOBJS} -o ${ARCHDIR}/iccionize -L${COMPILEDIR}/lib_${ARCH}/molfile -lmolfile_plugin ${TCLLIB} ${TCLLDFLAGS} ${NETCDFLIB} ${NETCDFLDFLAGS} ${LFLAGS}
+
+${ARCHDIR}/hash.o: hash.h hash.c
+	${CC}  ${CCFLAGS} ${INCDIR} -c ${SRCDIR}/hash.c $(COPTO)${ARCHDIR}/hash.o
+
+${ARCHDIR}/threads.o: threads.h threads.c
+	${CC}  ${CCFLAGS} ${INCDIR} -c ${SRCDIR}/threads.c $(COPTO)${ARCHDIR}/threads.o
+
+${ARCHDIR}/util.o: util.h util.c
+	${CC}  ${CCFLAGS} ${INCDIR} -c ${SRCDIR}/util.c $(COPTO)${ARCHDIR}/util.o
+
+${ARCHDIR}/getplugins.o: getplugins.h getplugins.c
+	${CC}  ${CCFLAGS} ${INCDIR} -c ${SRCDIR}/getplugins.c $(COPTO)${ARCHDIR}/getplugins.o
+	
+${ARCHDIR}/energythr.o: energythr.h energythr.c ${ARCHDIR}/util.o ${ARCHDIR}/threads.o
+	${CC}  ${CCFLAGS} ${INCDIR} -c ${SRCDIR}/energythr.c $(COPTO)${ARCHDIR}/energythr.o
+
+${ARCHDIR}/cionize.o: hash.h cionize.c ${ARCHDIR}/energythr.o ${ARCHDIR}/threads.o ${ARCHDIR}/util.o mgpot.h ${ARCHDIR}/mgpot.o
+	${CC}  ${CCFLAGS} ${INCDIR} -c ${SRCDIR}/cionize.c $(COPTO)${ARCHDIR}/cionize.o
+
+${ARCHDIR}/mgpot.o: mgpot.h mgpot.c mgpot_defn.h mgpot_lattice.h mgpot_split.h mgpot_error.h util.h
+	${CC}  ${CCFLAGS} ${MGPOTFLAGS} ${INCDIR} -c ${SRCDIR}/mgpot.c $(COPTO)${ARCHDIR}/mgpot.o
+
+${ARCHDIR}/mgpot_error.o: mgpot_error.c mgpot_error.h
+	${CC}  ${CCFLAGS} ${MGPOTFLAGS} ${INCDIR} -c ${SRCDIR}/mgpot_error.c $(COPTO)${ARCHDIR}/mgpot_error.o
+
+${ARCHDIR}/mgpot_lattice.o: mgpot_lattice.c mgpot_lattice.h mgpot_error.h
+	${CC}  ${CCFLAGS} ${MGPOTFLAGS} ${INCDIR} -c ${SRCDIR}/mgpot_lattice.c $(COPTO)${ARCHDIR}/mgpot_lattice.o
+
+${ARCHDIR}/cionize_gridio.o: cionize_gridio.h cionize_gridio.c
+	${CC}  ${CCFLAGS} ${INCDIR} -c ${SRCDIR}/cionize_gridio.c $(COPTO)${ARCHDIR}/cionize_gridio.o
+
+${ARCHDIR}/cionize_molfileio.o: cionize_molfileio.h cionize_molfileio.c
+	${CC}  ${CCFLAGS} ${INCDIR} -c ${SRCDIR}/cionize_molfileio.c $(COPTO)${ARCHDIR}/cionize_molfileio.o
+
+${ARCHDIR}/cionize_userio.o: cionize_userio.h cionize_userio.c
+	${CC}  ${CCFLAGS} ${INCDIR} -c ${SRCDIR}/cionize_userio.c $(COPTO)${ARCHDIR}/cionize_userio.o
+
+${ARCHDIR}/cionize_internals.o: cionize_internals.h cionize_internals.c
+	${CC}  ${CCFLAGS} ${INCDIR} -c ${SRCDIR}/cionize_internals.c $(COPTO)${ARCHDIR}/cionize_internals.o
+
+${ARCHDIR}/binary_gridio.o: binary_gridio.h binary_gridio.c
+	${CC}  ${CCFLAGS} ${INCDIR} -c ${SRCDIR}/binary_gridio.c $(COPTO)${ARCHDIR}/binary_gridio.o
+
+${ARCHDIR}/mgpot_setup.o: mgpot_setup.c mgpot_defn.h mgpot_lattice.h mgpot_split.h mgpot_error.h
+	${CC}  ${CCFLAGS} ${MGPOTFLAGS} ${INCDIR} -c ${SRCDIR}/mgpot_setup.c $(COPTO)${ARCHDIR}/mgpot_setup.o
+
+${ARCHDIR}/mgpot_shortrng.o: mgpot_shortrng.c mgpot_defn.h mgpot_lattice.h mgpot_split.h mgpot_error.h
+	${CC}  ${CCFLAGS} ${MGPOTFLAGS} ${INCDIR} -c ${SRCDIR}/mgpot_shortrng.c $(COPTO)${ARCHDIR}/mgpot_shortrng.o
+
+${ARCHDIR}/mgpot_longrng.o: mgpot_longrng.c mgpot_defn.h mgpot_lattice.h mgpot_split.h mgpot_error.h
+	${CC}  ${CCFLAGS} ${MGPOTFLAGS} ${INCDIR} -c ${SRCDIR}/mgpot_longrng.c $(COPTO)${ARCHDIR}/mgpot_longrng.o
+
+${ARCHDIR}/mgpot_cubic.o: mgpot_cubic.c mgpot_defn.h mgpot_lattice.h mgpot_split.h mgpot_error.h
+	${CC}  ${CCFLAGS} ${MGPOTFLAGS} ${INCDIR} -c ${SRCDIR}/mgpot_cubic.c $(COPTO)${ARCHDIR}/mgpot_cubic.o
+
+${ARCHDIR}/mgpot_quintic1.o: mgpot_quintic1.c mgpot_defn.h mgpot_lattice.h mgpot_split.h mgpot_error.h
+	${CC}  ${CCFLAGS} ${MGPOTFLAGS} ${INCDIR} -c ${SRCDIR}/mgpot_quintic1.c $(COPTO)${ARCHDIR}/mgpot_quintic1.o
+
+${ARCHDIR}/cudaenergythr.o: cudaenergythr.cu
+	$(CUDACC) $(CUDACCFLAGS) -c cudaenergythr.cu -o ${ARCHDIR}/cudaenergythr.o
+
+${ARCHDIR}/mgpot_cuda_shortrng.o: mgpot_cuda_shortrng.cu
+	$(CUDACC) $(CUDACCFLAGS) -c mgpot_cuda_shortrng.cu -o ${ARCHDIR}/mgpot_cuda_shortrng.o
+
+${ARCHDIR}/gpuionize: $(IONIZEOBJS) $(MGPOTOBJS) $(GPUOBJS) ${ARCHDIR}/cionize.o
+	$(CXX) $(CXXFLAGS) $(IONIZEOBJS) $(MGPOTOBJS) $(GPUOBJS) ${ARCHDIR}/cionize.o -DCUDA -o $@ $(LFLAGS) -L${COMPILEDIR}/lib_${ARCH}/molfile -lmolfile_plugin -L/home/johns/vmd/lib/netcdf/lib_$(ARCH) -lnetcdf -L/home/johns/vmd/lib/tcl/lib_$(ARCH) -ltcl8.4 $(CUDALIBS)
+
+${ARCHDIR}/gpuionize_1_0: $(IONIZEOBJS) $(MGPOTOBJS) $(GPUOBJS) ${ARCHDIR}/cionize.o
+	$(CXX) $(CXXFLAGS) $(IONIZEOBJS) $(MGPOTOBJS) $(GPUOBJS) ${ARCHDIR}/cionize.o -DCUDA -o $@ $(LFLAGS) -L${COMPILEDIR}/lib_${ARCH}/molfile -lmolfile_plugin -L/home/johns/vmd/lib/netcdf/lib_$(ARCH) -lnetcdf -L/home/johns/vmd/lib/tcl/lib_$(ARCH) -ltcl8.4 $(CUDALIBS)
+
+${ARCHDIR}/gpuionize_0_2: $(IONIZEOBJS) $(MGPOTOBJS) $(GPUOBJS) ${ARCHDIR}/cionize.o
+	$(CXX) $(CXXFLAGS) $(IONIZEOBJS) $(MGPOTOBJS) $(GPUOBJS) ${ARCHDIR}/cionize.o -DCUDA -o $@ $(LFLAGS) -L${COMPILEDIR}/lib_${ARCH}/molfile -lmolfile_plugin -L/home/johns/vmd/lib/netcdf/lib_$(ARCH) -lnetcdf -L/home/johns/vmd/lib/tcl/lib_$(ARCH) -ltcl8.4 $(CUDALIBS)
+
+testcuda: main.o main_util.o
+	$(CXX) $(CXXFLAGS) main.o main_util.o -o $@ $(CUDALIBS)
+
+main.o: mgpot_cuda_shortrng.cu
+	$(CUDACC) $(CUDACCFLAGS) -c mgpot_cuda_shortrng.cu -o $@
+
+main_util.o: util.c util.h
+	$(CC) $(CFLAGS) -I. -c util.c -o $@
+
+linux-cuda:
+	$(MAKE) -f Makefile.mine gpuionize \
+	"CC  = cc" \
+	"CCFLAGS   = -Wall -m32 -O2 -DCUDA" \
+	"CXX  = c++" \
+	"CXXFLAGS   = -Wall -m32 -O2 -DCUDA" \
+	"CUDACC = nvcc" \
+	"CUDALIBS = -L$(CUDAHOME)/common/lib -lcuda -lcudart" \
+	"CUDACCFLAGS = -O2 -Xcompiler "-m32" $(CUDAINCS) -I$(CUDAHOME)/common/inc" \
+	"ARCH = LINUX" \
+	"LFLAGS = -lm" \
+	"TCLLIB = $(TCLLIB)/lib_LINUX" \
+	"NETCDFLIB = $(NETCDFLIB)/lib_LINUX"
+
+linux-cuda-thr:
+	$(MAKE) -f Makefile.mine gpuionize \
+	"CC  = gcc" \
+	"CCFLAGS   = -Wall -m32 -O5 -ffast-math -fomit-frame-pointer -fno-math-errno -DCUDA -DTHR -msse3 -DBINARY_GRIDFILE" \
+	"CXX  = gcc" \
+	"CXXFLAGS   = -Wall -m32 -O5 -ffast-math -fomit-frame-pointer -fno-math-errno -DCUDA -DTHR -msse3 -DBINARY_GRIDFILE" \
+	"CUDACC = nvcc" \
+	"CUDALIBS = -L$(CUDAHOME)/common/lib -lcuda -lcudart" \
+	"CUDACCFLAGS = -O3 -Xcompiler "-m32" $(CUDAINCS) -I$(CUDAHOME)/common/inc -DTHR" \
+	"ARCH = LINUX" \
+	"LFLAGS = -lm -lpthread" \
+	"TCLLIB = $(TCLLIB)/lib_LINUX" \
+	"NETCDFLIB = $(NETCDFLIB)/lib_LINUX"
+
+linux-cuda-thr-1-0:
+	$(MAKE) -f Makefile.mine gpuionize_1_0 \
+	"CC  = gcc" \
+	"CCFLAGS   = -Wall -m32 -O5 -ffast-math -fomit-frame-pointer -fno-math-errno -DCUDA -DTHR -msse3 -DMGPOT_SPACING_1_0" \
+	"CXX  = gcc" \
+	"CXXFLAGS   = -Wall -m32 -O5 -ffast-math -fomit-frame-pointer -fno-math-errno -DCUDA -DTHR -msse3 -DMGPOT_SPACING_1_0" \
+	"CUDACC = nvcc" \
+	"CUDALIBS = -L$(CUDAHOME)/common/lib -lcuda -lcudart" \
+	"CUDACCFLAGS = -O3 -Xcompiler "-m32" $(CUDAINCS) -I$(CUDAHOME)/common/inc -DTHR -DMGPOT_SPACING_1_0" \
+	"ARCH = LINUX" \
+	"LFLAGS = -lm -lpthread" \
+	"TCLLIB = $(TCLLIB)/lib_LINUX" \
+	"NETCDFLIB = $(NETCDFLIB)/lib_LINUX"
+
+linux-cuda-thr-0-2:
+	$(MAKE) -f Makefile.mine gpuionize_0_2 \
+	"CC  = gcc" \
+	"CCFLAGS   = -Wall -m32 -O5 -ffast-math -fomit-frame-pointer -fno-math-errno -DCUDA -DTHR -msse3 -DMGPOT_SPACING_0_2" \
+	"CXX  = gcc" \
+	"CXXFLAGS   = -Wall -m32 -O5 -ffast-math -fomit-frame-pointer -fno-math-errno -DCUDA -DTHR -msse3 -DMGPOT_SPACING_0_2" \
+	"CUDACC = nvcc" \
+	"CUDALIBS = -L$(CUDAHOME)/common/lib -lcuda -lcudart" \
+	"CUDACCFLAGS = -O3 -Xcompiler "-m32" $(CUDAINCS) -I$(CUDAHOME)/common/inc -DTHR -DMGPOT_SPACING_0_2" \
+	"ARCH = LINUX" \
+	"LFLAGS = -lm -lpthread" \
+	"TCLLIB = $(TCLLIB)/lib_LINUX" \
+	"NETCDFLIB = $(NETCDFLIB)/lib_LINUX"
+
+linux-cuda-thr-debug:
+	$(MAKE) -f Makefile.mine gpuionize \
+	"CC  = gcc" \
+	"CCFLAGS   = -Wall -m32 -O2 -g -DCUDA -DTHR" \
+	"CXX  = gcc" \
+	"CXXFLAGS   = -Wall -m32 -O2 -g -DCUDA -DTHR" \
+	"CUDACC = nvcc" \
+	"CUDALIBS = -L$(CUDAHOME)/common/lib -lcuda -lcudart" \
+	"CUDACCFLAGS = -O2 -g -Xcompiler "-m32" $(CUDAINCS) -I$(CUDAHOME)/common/inc -DTHR" \
+	"ARCH = LINUX" \
+	"LFLAGS = -lm -lpthread" \
+	"TCLLIB = $(TCLLIB)/lib_LINUX" \
+	"NETCDFLIB = $(NETCDFLIB)/lib_LINUX"
+
+linux-icc-thr:
+	$(MAKE) -f Makefile.mine iccionize \
+	"CC  = icc" \
+	"CCFLAGS   = -DTHR=1 -axW -fno-exceptions -fomit-frame-pointer -fno-math-errno -no-prec-sqrt -pc32 -vec-report=3 -O3 -msse3 -DMGPOT_GEOMHASH -DBINARY_GRIDFILE" \
+	"CXX  = icpc" \
+	"CXXFLAGS   = -DTHR=1  -axW -fno-exceptions -fomit-frame-pointer -fno-math-errno -no-prec-sqrt -pc32 -vec-report=3 -O3 -msse3 -DMGPOT_GEOMHASH -DBINARY_GRIDFILE" \
+	"ARCH = LINUX" \
+	"LFLAGS = -limf -ltcl8.4 -lpthread -lrt -lnetcdf" \
+	"TCLLIB = $(TCLLIB)/lib_LINUX" \
+	"NETCDFLIB = $(NETCDFLIB)/lib_LINUX"
+
+main:
+	$(MAKE) -f Makefile.mine testcuda \
+	"CC  = cc" \
+	"CCFLAGS   = -Wall -m32 -O2 -DCUDA" \
+	"CXX  = c++" \
+	"CXXFLAGS   = -Wall -m32 -O2 -DCUDA" \
+	"CUDACC = nvcc" \
+	"CUDALIBS = -L$(CUDAHOME)/common/lib -lcuda -lcudart" \
+	"CUDACCFLAGS = -O2 -Xcompiler "-m32" $(CUDAINCS) -I$(CUDAHOME)/common/inc" \
+	"ARCH = LINUX" \
+	"LFLAGS = -lm"
+

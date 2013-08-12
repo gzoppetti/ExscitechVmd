@@ -1,0 +1,19 @@
+newmtl SkyLeft
+Kd 0.2 0.2 0.2
+map_Kd SkyLeft.tga
+
+newmtl SkyBack
+Kd 0.2 0.2 0.2
+map_Kd SkyBack.tga
+
+newmtl SkyRight
+Kd 0.2 0.2 0.2
+map_Kd SkyRight.tga
+
+newmtl SkyFront
+Kd 0.2 0.2 0.2
+map_Kd SkyFront.tga
+
+newmtl SkyTop
+Kd 0.2 0.2 0.2
+map_Kd SkyTop.tga

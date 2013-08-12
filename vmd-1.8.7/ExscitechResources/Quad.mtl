@@ -1,0 +1,5 @@
+# mat0
+newmtl material_0
+Kd 1.0000 1.0000 1.0000
+illum 0
+map_Kd Grass.tga

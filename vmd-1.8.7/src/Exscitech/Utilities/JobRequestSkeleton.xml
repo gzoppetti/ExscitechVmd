@@ -1,0 +1,49 @@
+<scheduler_request>
+    <authenticator>temp</authenticator>
+    <hostid>7180</hostid>
+    <rpc_seqno>1</rpc_seqno>
+    <work_req_seconds>10734.760849</work_req_seconds>
+    <resource_share_fraction>0.500000</resource_share_fraction>
+    <rrs_fraction>1.000000</rrs_fraction>
+    <prrs_fraction>1.000000</prrs_fraction>
+    <estimated_delay>19505.628833</estimated_delay>
+    <duration_correction_factor>1.000000</duration_correction_factor>
+    <platform_name>i686-pc-linux-gnu</platform_name>
+    <code_sign_key>temp</code_sign_key>
+	<cross_project_id>d0fbab08692065ea326b65bcc30c4990</cross_project_id>
+	<time_stats>
+    	<on_frac>0.999885</on_frac>
+    	<connected_frac>-1.000000</connected_frac>
+    	<active_frac>0.999904</active_frac>
+    	<cpu_efficiency>0.867740</cpu_efficiency>
+	</time_stats>
+<host_info>
+    <timezone>-18000</timezone>
+    <domain_name>france.gcl.cis.udel.edu</domain_name>
+    <ip_addr>128.4.34.12</ip_addr>
+    <host_cpid>fb827dac8c547528e29bb8b6ec693961</host_cpid>
+    <p_ncpus>4</p_ncpus>
+    <p_vendor>GenuineIntel</p_vendor>
+    <p_model>Intel(R) Core(TM)2 Extreme CPU Q6800  @ 2.93GHz [Family 6 Model 15 Stepping 11]</p_model>
+    <p_features>fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm syscall nx lm constant_tsc pni monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr lahf_lm</p_features>
+    <p_fpops>2488066215.012265</p_fpops>
+    <p_iops>6314710125.751244</p_iops>
+    <p_membw>1000000000.000000</p_membw>
+    <p_calculated>1297347796.477586</p_calculated>
+    <m_nbytes>8315990016.000000</m_nbytes>
+    <m_cache>4194304.000000</m_cache>
+    <m_swap>2154979328.000000</m_swap>
+    <d_total>59839053824.000000</d_total>
+    <d_free>31338315776.000000</d_free>
+    <os_name>Linux</os_name>
+    <os_version>2.6.22.17-0.1-default</os_version>
+    <accelerators></accelerators>
+    <result>
+    	<stderr_out>
+    		<game_type></game_type>
+    		<request_id></request_id>
+    		<authenticator></authenticator>
+    	</stderr_out>
+    </result>
+</host_info>
+</scheduler_request>

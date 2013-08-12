@@ -1,0 +1,80 @@
+<!--#set var="TITLE" value="Autoionize Plugin, Version 1.2"-->
+<!--#include virtual="/Research/vmd/include/header-vmd.shtml"-->
+
+<h2 align="center"><a href="http://www.chem.duke.edu/~ilya/">Ilya Balabin</a>, Marcos Sotomayor</h2>
+<img align=right src="autoionizegui.gif">
+
+<b>Why adding ions?</b> Some proteins may be (and sometimes are) sensitive
+to the ionic strength of the surrounding solvent. Even when that is not the
+case, adding ions is commonly used to make the net electric charge of the
+system zero. In molecular dynamics (MD) simulations with periodic boundary
+conditions, the energy of the electrostatic interactions is often computed
+using the particle-mesh Ewald (PME) summation, which requires the system
+to be electrically neutral. The vmd autoionize plugin provides a quick and
+easy means to make the net charge of the system zero by adding sodium and
+chlorine ions to the solvent. Ion placement is random, but but there are
+minimum distances between ions and molecule as well as between any two ions.<br>
+
+<br>
+<b>Graphical Interface</b>
+The graphical interface provides some reasonable default values for
+adding ions to a solvated system, with the same functionality provided
+by the text command interface described below.
+
+<p>
+<b>Text command usage.</b> 
+The text command syntax is simple. To load the plugin, run
+the following command:<br>
+ <br>
+ <code>package require autoionize</code><br>
+ <br>
+ Running <code>autoionize</code> with no arguments gives a short overview
+of the syntax.&nbsp; You can add ions in either of the following two ways:<br>
+ <br>
+<code>autoionize -psf file.psf -pdb file.pdb -is 0.05<br>
+</code><br>
+tells <i>autoionize</i> to compute the sodium and chlorine ion numbers so
+that the net chatge of the system is zero, and the average ionic concentration 
+of the solution is (in this case) 0.05. <b>Note:</b> Autoionize defines this as the TOTAL ion concentration, for example, (#Na + #Cl)/V. Thus, this figure will be twice the ionic strength of the same solution (for monovalent ions). Alternatively, <br>
+<code><br>
+</code><code>autoionize -psf file.psf -pdb file.pdb -nna NNa -cl NCl<br>
+ </code><br>
+explicitly makes <i>autoionize</i> place the given numbers of the sodium
+(NNa) and chlorine (NCl) ions. In this case, the system may not be electrically
+neutral.<br>
+<br>
+Additional options for <i>autoionize</i> include the following:<br>
+<ul>
+  <li>&nbsp; -o &lt;prefix&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: output file prefix (default 'ionized')</li>
+  <li>&nbsp; -from &lt;distance&gt;&nbsp;&nbsp;&nbsp; : min distance from
+molecule (default 5A)</li>
+  <li>&nbsp; -between &lt;distance&gt; : min distance between ions (default
+5A)</li>
+</ul>
+Adding ions to a 100,000-atom system takes about 30 seconds on a 766MHz laptop.<br>
+<b><br>
+<br>
+Changing ion type.</b> For some biological molecules, one may want to place
+potassium ions instead of sodium. That can be easily done by using the <a
+ href="sod2pot.tcl">sod2pot.tcl</a> script.<br>
+ <code><br>
+ </code><code>source sod2pot.tcl<br>
+ </code><br>
+takes the coordinate file ("ionized.pdb") and the structure file ("ionized.psf")
+of the original system and creates files "sod2pot.psf/pdb", where sodium
+ions are replaced with potassium. With minor changes (knowledge of Tcl programming
+is not necessary), this script can be used for replacing any kind of ions
+with any other kind.<br>
+<br>
+ <b>Caveats and Limitations.</b> <i>Autoionize</i> places ions randomly,
+which is acceptable if the electric charge of the molecule is relatively
+small. If the charge is big, the ions no longer are nearly uniformly distributed
+in the solvent; instead, they form a screening clowd around the molecule.
+An example of such systems is a double-helix DNA, which carries a 1e charge
+per base pair. In such cases, one needs to place ions with regard to the
+electrostatic potential of the molecule. <br>
+<br>
+
+<!--#include virtual="/Research/vmd/include/footer-vmd.shtml"-->
+

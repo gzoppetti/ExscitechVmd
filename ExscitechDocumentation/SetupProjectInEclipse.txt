@@ -1,0 +1,41 @@
+Required Libraries / Dependences
+----------------------------------------------------
+tcl8.5-dev
+tk8.5-dev
+libnetcdf-dev
+libfltk-dev 1.1 ONLY
+fmod
+bullet 2.79
+Qt 4.7.3
+curl
+GLEW
+boost 1.4.9
+DevIL
+
+Installing VMD
+----------------------------------------------------
+Checkout trunk folder as a new project with the new project wizard
+Select Makefile project with existing code
+In a terminal, navigate to <Project>/MuScripts and run BuildVmd.sh
+Your Makefile in vmd-1.8.7/src may have been changed.  Check out the latest from the repository again to ensure you have our copy.
+Navigate to vmd-1.8.7/src and locate the Makefile (not the Makefile directly inside vmd-1.8.7) 
+Right click, go to Build Target, and click Create
+Make the following targets
+  -veryclean
+  -mocs
+  -depend
+  -all
+run Make in the following order
+  make veryclean
+  make mocs
+  make depend
+  make all
+  
+Once the project is built, we need to set up the Run Configuration.
+Click the arrow next to the Run button and go to "Run Configurations..." (Make sure you are in C++ perspective)
+Make a new Run Configuration and click the browse button under Project.
+Navigate to <Project Directory>/vmd-1.8.7/LINUXAMD64 and select vmd_linuxamd64
+Back in the Run Configuration window, go to the Enviornment tab.
+Create a new Environment Variable named VMDDIR and set it to <Project Directory>/vmd-1.8.7
+
+You should now be able to run the project through eclipse.

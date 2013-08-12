@@ -1,0 +1,125 @@
+
+Identifiers
+===========
+
+o Choose mnemonic names for identifiers! This goes a long way toward
+making code more readable. Include units when relevant.
+
+protein, gameWindow, worldHeightInInches
+
+o Avoid names like "pos1" and "pos2". What distinguishes one from the
+other?
+
+o Avoid multiple abbreviations in a single identifier and use standard abbreviations.
+Downcase all but the first character in an acronym
+
+elapsedTimeInMs instead of elTimeMs
+VmdProfile instead of VMDProfile
+
+o Use lower camel case for variables and upper camel case for types
+(classes, structs, typedefs, unions, enums).
+
+CallbackType, Game, GameState
+
+o Avoid global variables! If one is absolutely necessary, prefix it
+with "g_" and ensure it is declared within a namespace.
+
+g_numLigands
+
+o Prefer local variables to fields, and fields to global variables. 
+
+o Preface instance variables with "m_" if non-static or "ms_" if
+static.
+
+m_numMolecules, ms_protein
+
+o Almost always avoid meaningless names like "temp" or "var1". If 
+insignficant loop counters can use "i", "j", etc.
+
+Methods/Functions
+=================
+
+o Start function names with a verb. 
+
+convertScreenToWorldCoords (int x, int y)
+
+o Keep methods short so they can be viewed without scrolling. 
+
+o Divide long expressions into simpler ones.
+
+  int molId = Game::ms_app->molecule_new (ss.str().c_str(), 0);
+  
+  should be 
+
+  // What is "ss", by the way?
+  std::string moleculeName = ss.str ();
+  int moleculeId = Game::ms_vmdApp->molecule_new (moleculeName.c_str (), 0);
+
+o Pass class objects by constant reference. 
+
+Classes
+=======
+
+o Make separate sections for public types, private types, public
+methods, private methods, public fields, private fields, etc.
+
+o Ensure classes are coherent and perform one and only one responsibility.
+
+o Avoid protected and public fields. 
+
+o Push operations toward the data instead of pulling data toward the
+operation. I.e., ensure that the method that "owns" the data operates
+on the data. This helps to avoid unnecessary getters and setters.
+
+o Code destructors when appropriate to release resources acquired by
+the constructor.
+
+Comments
+========
+
+o Omit useless comments. 
+
+// Animate the protein
+animateProtein ();
+
+should be 
+
+// Translate protein upwards until it's off the screen
+animateProtein ();
+
+o Describe the intent of a block of code, not how the code implements
+the intent.
+
+o Comment hard-to-follow logic. 
+
+o Capitalize the first letter of a comment.  
+  If using only one clause or sentence don't use a period.
+  If using multiple sentences use a period.  
+  Avoid comments at the end of a line like this // Comment
+
+Examples:
+  // Compute velocity as a function of time
+  v = f (t); 
+  instead of 
+  v = f (t); // Compute velocity ...
+
+  // No comment necessary
+  currentTimeInMs = getCurrentTimeInMs ();
+  // Convert earth location to box point
+  //   This comment isn't necessary either
+  boxPoint = convertEarthLocationToBox (earthLoc);
+
+
+Header Files
+============
+
+o Group system headers. Group local headers and separate the two
+groups with an empty line.
+
+#include <string>
+#include <iostream>
+
+#include "GraphicsUtility.h"
+
+
+

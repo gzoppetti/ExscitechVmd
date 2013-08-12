@@ -1,0 +1,10 @@
+<result>
+      <name>AAAA</name>
+      <final_cpu_time>9000.000000</final_cpu_time>
+      <exit_status>0</exit_status>
+      <state>5</state>
+      <outcome>1</outcome>
+      <platform>AAAA</platform>
+      <version_num>1</version_num>
+      <stderr_out></stderr_out>
+</result>

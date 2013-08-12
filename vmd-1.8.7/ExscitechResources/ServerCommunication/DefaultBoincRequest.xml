@@ -1,0 +1,33 @@
+<scheduler_request>
+    <authenticator>1</authenticator>
+    <hostid>1</hostid>
+    <rpc_seqno>1</rpc_seqno>
+    <core_client_major_version>1</core_client_major_version>
+    <core_client_minor_version>1</core_client_minor_version>
+    <core_client_release>1</core_client_release>
+    <work_req_seconds>1</work_req_seconds>
+    <platform_name>a</platform_name>
+    <code_sign_key>1
+</code_sign_key>
+<host_info>
+    <timezone>1</timezone>
+    <domain_name>a</domain_name>
+    <ip_addr>1</ip_addr>
+    <p_ncpus>1</p_ncpus>
+    <p_vendor>a</p_vendor>
+    <p_model>a</p_model>
+    <p_features>a</p_features>
+    <p_fpops>1</p_fpops>
+    <p_iops>1</p_iops>
+    <p_membw>1</p_membw>
+    <p_calculated>1</p_calculated>
+    <m_nbytes>1</m_nbytes>
+    <m_cache>1</m_cache>
+    <m_swap>1</m_swap>
+    <d_total>1</d_total>
+    <d_free>1</d_free>
+    <os_name>a</os_name>
+    <os_version>a</os_version>
+    <accelerators></accelerators>
+</host_info>
+</scheduler_request>

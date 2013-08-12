@@ -1,0 +1,10 @@
+<result>
+      <name>lg1c1_345</name>
+      <final_cpu_time>9000.000000</final_cpu_time>
+      <exit_status>0</exit_status>
+      <state>5</state>
+      <outcome>1</outcome>
+      <platform>LG1c1</platform>
+      <version_num>1</version_num>
+      <stderr_out>end of exscitech game</stderr_out>
+</result>

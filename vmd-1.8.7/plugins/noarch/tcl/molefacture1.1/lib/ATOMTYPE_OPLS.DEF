@@ -1,0 +1,325 @@
+# Please go to the end to see rules of defining an atom  
+
+============================================================================================
+                        Defination begin
+============================================================================================
+--------------------------------------------------------------------------------------------
+WILDATOM XX C N O S P
+WILDATOM XA O S
+WILDATOM XB N P
+WILDATOM XC F Cl Br I
+WILDATOM XD S P
+-------------------------------------------------------------------------------------------- 
+ f1  f2    f3  f4  f5  f6  f7  f8      		f9          
+-------------------------------------------------------------------------------------------- 
+
+// *** Bromine ***
+ATD Br     *  35   1   *   &
+ATD BrM    *  35   0   *   &
+
+// *** Carbons ***
+
+ATD CTF    *   6   4   *   *   *          (F,F,H) &
+ATD CTF    *   6   4   *   *   *          (F,F,F) &
+
+ATD CZ     *   6   2   0   *   *          (N[TB]) &
+
+ATD CTC    *   6   *   *   *   *          (C(N[TB])) &
+
+ATD CZA    *   6   2   1   *   *          (H,C[TB]) &
+ATD CZD    *   6   2   0   *   *          (C[TB](H), C(H,H)) &
+ATD CZC    *   6   2   0   *   *          (C[TB](H), C(H)) &
+ATD CZB    *   6   2   0   *   *          (C[TB](H)) &
+
+ATD CT     *   6   4   *   *   * &
+
+ATD CO     *   6   4   *   *   *          (O(C)) &
+
+ATD CY     *   6   4   *   *   [RG3] &
+ATD CY     *   6   4   *   *   [RG4] &
+
+ATD CAN    *   6   3   1   *   [RG6,AR1]     (C,N) &
+
+ATD CBG    *   6   3   0   *   [RG6,RG5,AR1] (N,C,C) &
+
+ATD CK     *   6   3   1   *   [AR1,RG5] (N3(C),N2(C)) &
+
+ATD CMP    *   6   3   1   *   [AR1,RG6] (C3,N(C)) &
+
+ATD CQ     *   6   3   0   *   [AR1,RG6] (N3(H,H),N3(H,C),N2(C)) &
+
+ATD CTN    *   6   4   3   *   *         (C3[AR1,RG6](C3[AR1,RG6],C3[AR1,RG6])) &
+
+ATD CTF    *   6   4   0   *   *         (F,F,F,F) &
+
+ATD CAA    *   6   3   0   *   *         (N3(H,H),N3(H,H)) &
+
+ATD CA     *   6   3   *   *   [AR1,RG6] &
+
+ATD C!     *   6   3   0   *   [AR1,RG6] (C3[AR1,RG6],C3[AR1,RG6],C3[AR1,RG6]) &
+ATD C!     *   6   3   0   *   [AR1.AR2.AR3,RG6] (C3[AR1,RG6](C,C),C3) &
+
+
+ATD CN     *   6   3   0   *   [AR1,RG6,RG5] (N2[AR1,RG5],C3[AR1,RG6],C3[AR1,RG6,RG5]) &
+
+ATD CW     *   6   3   *   *   [AR1.AR2.AR3,RG5] (N3[AR1.AR2.AR3,RG5](H,C3),C3[AR1.AR2.AR3,RG5]) &
+ATD CW     *   6   3   *   *   [AR1.AR2.AR3,RG5] (O2[AR1.AR2.AR3,RG5](C3),C3[AR1.AR2.AR3,RG5]) &
+ATD CW     *   6   3   *   *   [AR1.AR2.AR3,RG5] (O2[AR1.AR2.AR3,RG5](N2),C3[AR1.AR2.AR3,RG5]) &
+
+ATD CB      *   6   3   *   *       [RG5,RG6,AR1.AR2.AR3]   &
+
+ATD CQP    *   6   3   1   *   [AR1,RG6] (N2,N2) &
+
+ATD CR     *   6   3   1   *   [AR2,RG5] (N3(H,C3),N2) &
+ATD CR     *   6   3   1   *   [AR2,RG5] (N3(H,C3),O2) &
+ATD CR     *   6   3   1   *   [AR2,RG5] (N3(H,C3),S2) &
+
+ATD CSI    *   6   3   1   *   [AR1,RG5] (C3[AR1,RG5](N),C3[AR1,RG5](C3,H)) &
+
+ATD CU     *   6   3   *   *   [AR2,RG5] (N3[AR1.AR2.AR3,RG5](H,N2),C3[AR1.AR2.AR3,RG5]) &
+ATD CU     *   6   3   *   *   [AR2,RG5] (N2[AR1.AR2.AR3,RG5](H,N2),C3[AR1.AR2.AR3,RG5]) &
+ATD CU     *   6   3   *   *   [AR2,RG5] (N2[AR1.AR2.AR3,RG5](O2),C3[AR1.AR2.AR3,RG5]) &
+
+ATD CV     *   6   3   1   *   [AR1,RG5] (N2[AR1.AR2.AR3,RG5],C3[AR1.AR2.AR3,RG5](H)) &
+
+
+ATD C      *   6   3   *   *   *         (O[DB]) &
+
+ATD C=     *   6   3   *   *   *         (C[DB],C[SB](C[DB])) &
+
+ATD CM     *   6   3   *   *   *         (C[DB]) &
+
+ATD CS     *   6   3   1   *   [AR2,RG5] (C3[AR2,RG5],C3[AR2,RG5](O2[RG5])) &
+
+ATD CZN    *   6   2   0   *   *         (N[TB],C[AR1,RG6]) &
+
+ATD C$     *   6   3   0   *   [RG4]     (O[DB],C[RG4],N[RG4]) &
+
+
+// *** Calcium ***
+ATD Ca     *   20  0   *   *   &
+
+// *** Chlorine ***
+ATD Cl     *   17  1   *   *   &
+ATD Cl<    *   17  0   *   *   &
+
+// *** fluorine
+ATD FM     *   9   0   *   *   &
+
+ATD FN     *   9   1   *   *   *         (C(F,F,O(C[AR1,RG6]))) &
+
+ATD FP     *   9   1   *   *   *         (C4(O,C)) &
+
+ATD F      *   9   1   *   *   &
+
+// *** Hydrogen
+ATD H3     *   1   1   *   *   *         (N4) &
+ATD H3     *   1   1   *   *   *         (N3(H,C3(N,N,N))) &
+
+ATD HO     *   1   1   *   *   *         (O(C)) &
+
+ATD HS     *   1   1   *   *   *         (S(C4)) &
+
+ATD HCE    *   1   1   *   *   *         (C(C3(O[DB]))) &
+ATD HCE    *   1   1   *   *   *         (C(C[TB'])) &
+
+
+ATD HCK    *   1   1   *   *   *         (C(C[DB'])) &
+
+ATD HCN    *   1   1   *   *   *         (C[TB]) &
+ATD HCN    *   1   1   *   *   *         (C(N3(O,O))) &
+ATD HCN    *   1   1   *   *   *         (C(N4)) &
+
+ATD HCF    *   1   1   *   *   *         (C(O[DB],N3)) &
+
+ATD H4     *   1   1   *   *   *         (C[RG6,AR1](C(H,C(N3,N2[AR1,RG6])),N(C[RG6,AR1],C4))) &
+
+ATD H5     *   1   1   *   *   *         (C[RG6,AR1](N2[AR1,RG6],N2[AR1,RG6](C(N3(H,H)),C[AR1,RG6]))) &
+
+ATD HAP    *   1   1   *   *   *         (C[RG6,AR1](C[RG6,AR1](C[RG6,AR1],N3(H,H)))) &
+
+ATD HCU    *   1   1   *   *   *         (C[RG6,AR1](C[RG6,AR1](H,N[RG6,AR1]),C[AR1,RG6](N3(H,H),N2[AR1,RG6]))) &
+
+ATD HC     *   1   1   *   *   *         (C4) &
+ATD HA     *   1   1   *   *   *         (C3[AR1]) &
+
+
+ATD H      *   1   1   *   1   *   &
+ATD H      *   1   1   *   2   *   &
+ATD H      *   1   1   *   3   *   &
+ATD H      *   1   1   *   *   *         (O) &
+ATD H      *   1   1   *   *   *         (N) &
+
+
+// *** iodine
+ATD I      *   53  1   *   *   *   &
+
+ATD IM     *   53  0   *   *   *   &
+
+// *** potassium
+ATD K      *   19  0   *   *  &
+
+// *** lithium
+ATD Li     *   3   0   *   *  &
+
+// *** magnesium
+ATD Mg     *   12  0   *   *  &
+
+// *** nitrogen
+ATD N_O    *   7   3   *   *  *         (O1,O1,O1) &
+
+ATD NZ     *   7   1   *   *  *         (C[TB']) &
+
+ATD NO     *   7   3   0   *  *         (O1,O1) &
+
+ATD N_N    *   7   3   1   *  *         (C3(O1))
+
+ATD N$     *   7   3   0   *  [RG4]     (C3[RG4](O1),C4[RG4]) &
+
+
+ATD N2     *   7   3   *   *   [DB]        &
+
+ATD N3     *   7   4   *   *   &
+
+ATD NA     *   7   3   *   *  [AR1]   &
+
+ATD NB     *   7   2   *   *  [AR1.AR2.AR3,RG5] &
+ATD NB     *   7   2   *   *  [AR1.AR2.AR3,RG6] (N3) &
+
+ATD NC     *   7   2   *   *  [AR1,RG6] &
+
+ATD NM     *   7   3   0   *  *       (C(O1)) &
+
+ATD NT     *   7   3   2   *  [SB] &
+ATD NT     *   7   3   1   *  [SB] &
+
+ATD NTT     *   7   3   0   *  [SB] &
+
+// *** Sodium
+ATD Na      *   11  0   *  * &
+
+// *** Oxygen
+ATD O_N     *   8   1   *  *    * (N(O1,O1,O1)) &
+
+ATD OS      *   8   2   *  *    * (C,C) &
+ATD OS      *   8   2   *  *    [RG5,AR1.AR2.AR3] (C3,N2) &
+
+ATD OYS     *   8   1   *  *    * (S3) &
+
+ATD ON      *   8   1   *  *    * (C3(O1,O1)) &
+
+ATD OYF     *   8   1   *  *    * (S4(O1,O1)) &
+
+ATD O_M     *   8   1   *  *    * (C3(N3)) &
+
+ATD O2M     *   8   1   *  *    * (C3(O1,O1)) &
+ATD O2M     *   8   1   *  *    * (C3(O1,O2(H))) &
+
+ATD OHH     *   8   2   *  *    * (C3(O1)) &
+
+ATD OS      *   8   2   *  *    * (C3(O1)) &
+
+ATD OH2     *   8   2   1  *    *  (C4(O(H),O(H))) &
+ATD OH2     *   8   2   1  *    *  (C3[AR1,RG6]) &
+
+ATD OH      *   8   2   1  *    *  (C4) &
+
+ATD O      *   8   1   *  *    *  (C3[DB']) &
+
+// *** Phosphorus
+ATD P+      *   15  4   *  *   *   [SB] (C,C,C,C) &
+
+ATD P       *   15  4   *  *   *   *    (O[DB],O[DB])
+
+// *** Sulfur
+ATD S       *   16  2   *  *   *   *    (S2,C4)
+
+ATD SH      *   16  2   1  *   *   *    (C)
+
+ATD SZ      *   16  4   *  *   *   *    (O1,O1)
+ATD SZ      *   16  3   *  *   *   *    (O1)
+
+ATD SH2     *   16  2   2  *   *  &
+
+// *** Zinc
+ATD Zn      *   30  0   *  * &
+
+--------------------------------------------------------------------------------------------
+============================================================================================
+
+
+
+
+============================================================================================
+			Field descriptions
+============================================================================================
+f1  ATD, which stands for atom type defination, ATD should always in the first three columns 
+f2  Atom type name, can be letters or numbers   
+f3  Residue names, which means this description is only applied to atoms in special residues
+f4  Atomic number 
+f5  Number of attached atoms 
+f6  Number of attached hydrogen atoms
+f7  For hydrogen, number of the electron-withdrawal atoms connected to the atom that the 
+    hydrogen attached
+f8  atomic property
+f9  Chemical enviornment definations
+
+
+============================================================================================
+			Specific symbols
+============================================================================================
+*  Ignore this field
+&  End of defination 
+.  "or" operation in the ring and aromatity descriptions 
+
+
+============================================================================================
+			Predefined words
+============================================================================================
+EW   Electron-withdraw atom
+AA   Amino acid residue
+NA   Nucleric acid
+BIO  AA + NA
+
+AR1  Pure aromatic atom (such as benzene and pyridine)
+AR2  Atom in a planar ring, usually the ring has two continous single bonds and at least two 
+     double bonds
+AR3  Atom in a planar ring, which has one or several double bonds formed between non-ring atoms
+     and the ring atoms
+AR4  Atom other than AR1, AR2, AR3 and AR5. 
+AR5  Pure aliphatic atom in a ring, which is made of sp3 carbon
+
+RG   Ring (from 3-membered to nine-membered)
+RG3  3-membered ring 
+RG4  4-membered ring 
+RG5  5-membered ring 
+RG6  6-membered ring 
+RG7  7-membered ring 
+RG8  8-membered ring 
+RG9  9-membered ring 
+NR   non-ring atom
+
+SB   Single bond
+DB   Double bond
+TB   Triple bond
+AB   Aromatic bond
+DL   Delocalized bond (9 in AM1-BCC)
+sb   Single bond, including aromtaic single, delocalized bond (9 in AM1-BCC) 
+db   Double bond, including aromatic double
+tb   Triple bond
+ 
+'    Bond type (SB sb etc) followed by ' means the current atom forms this kind of bond with the 
+     immediately precessor in a chain of atoms
+     For example, (XD3[SB',db]) means the current atom XD3 has a double bond with the atom in 
+     defination 
+''   Bond type (SB sb etc) followed by '' means the current atom does not form this kind of bond 
+     with the immediately precessor in a chain of atoms
+============================================================================================
+			Miscellaneous
+============================================================================================
+1. maximum line length is 500 characters
+2. no space in the atomic property string
+3. no space in the chemical environment string 
+4. no filed missing before &
+5. the defination order is crucial, special atom types should defined before the more general 
+   ones
